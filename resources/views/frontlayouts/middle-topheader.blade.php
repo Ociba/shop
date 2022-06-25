@@ -10,7 +10,7 @@
         <div class="col-sm-4 col-xs-6 header-middle">
             <div class="header-middle-top">
                 
-                <div id="logo"> <!--<a href="index.html"><img src="{{asset('front/image/logo.png')}}" title="E-Commerce" alt="E-Commerce" class="img-responsive" /></a>-->JOOME <br> <span class="header-title">Get Accomodation,Agriculture Produce & Equipments,Shop Items</span> </div>
+                <div id="logo"> <a href="index.html"><img style="height:50px;" src="{{asset('front/image/logo1.jpg')}}" title="E-Commerce" alt="E-Commerce" class="img-responsive" /></a>{{--JOOME <br> <span class="header-title">Get Accomodation,Agriculture Produce & Equipments,Shop Items</span>--}}</div>
             </div>
         </div>
         <div class="col-sm-4 col-xs-6 header-right">

@@ -1,3 +1,8 @@
+<style>
+.dropdown-menu li > a:hover{
+    background:#55ad37; color:#ffffff;
+}
+</style>
 <nav id="menu" class="navbar">
     <div class="nav-inner container">
         <div class="navbar-header"><span id="category" class="visible-xs">Categories</span>
@@ -11,7 +16,7 @@
                 <li><a href="/agricultureproduce/all-produce"   class="parent"  >Agriculture Produce</a> </li>
                 <li><a href="/agricultureequipments/all-agriculture-equipments"   class="parent"  >Agriculture Equipments</a> </li>
                 <li><a href="#" class="active parent">JOOME</a>
-                    <ul>
+                    <ul class="dropdown-menu">
                         <li><a href="/about/about-joome">About Us</a></li>
                         <li><a href="/blog/our-blog">Blog</a></li>
                         <li><a href="/news/our-news">News</a></li>

@@ -114,7 +114,7 @@
 		display:inline-block;
 		width:100%;
 		padding:5px;
-		color:#666666;
+		color:#55ad37;
 	}
 	.main-navigation li ul{
 		position:static;
@@ -126,7 +126,7 @@
 		border:none;
 	}	
 	.main-navigation li ul ul{display:block;}
-	.main-navigation li li a{padding:5px 10px;color:#666666;}
+	.main-navigation li li a{padding:5px 10px;color:#55ad37;}
 	.main-navigation  li a:hover{color:#fe5723;}
 	.main-navigation li li:hover{background: #333645;}
 	.main-navigation li.collapsable:hover{background:#fff;}

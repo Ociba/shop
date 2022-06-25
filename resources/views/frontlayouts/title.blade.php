@@ -1,1 +1,1 @@
-<title>Joome-Grocery,Agriclture & Accomodation Center</title>
+<title>Joome-Grocery,Agriculture & Accomodation Center</title>

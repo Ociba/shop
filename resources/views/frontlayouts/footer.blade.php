@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="footer-top-cms">
-            <div class="footer-logo"> <a href="#">JOOME<br>Get Accomodation,Agriculture Produce<br> & Equipments,Shop Items</a> </div>
+            <div class="footer-logo"> <a href="#">{{--JOOME<br>Get Accomodation,Agriculture Produce<br> & Equipments,Shop Items</a>--}} <img style="height:130px;" src="{{asset('front/image/logo.png')}}" title="Joome" alt="Joome" class="img-responsive" /></a></div>
             <div class="footer-desc"> <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span> </div>
             <div class="footer-social">
                 <h5>Social</h5>

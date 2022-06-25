@@ -6,8 +6,12 @@
         <h4 class="p-name"><a href="singale-blog.html">Image Post Format</a></h4>
         <ul class="blog-meta">
           <li><i class="fa fa-clock-o"></i><span class="dt-published">December 23, 2015</span></li>
-          <li><i class="fa fa-thumbs-up"></i><span>2</span> Likes</li>
-          <li><i class="fa fa-thumbs-down"></i><span>2</span> UnLikes</li>
+          <li> 
+           @livewire('front.likes-form')
+          </li>
+          <li></span>
+          @livewire('front.unlikes-form')
+          </li>
           <li><i class="fa fa-user"></i><span><a rel="author" title="Posts by Admin" href="#">Admin admin</a></span></li>
         </ul>
         <p class="p-summary"></p>

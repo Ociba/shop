@@ -26,6 +26,7 @@
       @livewire('front.side-specials')
     </div>
      @livewire('front.agriculture-equipment')
+     @livewire('front.carousel')
   </div>
 </div>
 @include('frontlayouts.footer')

@@ -7,7 +7,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="e-commerce site well design with responsive view." />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-@include('frontlayouts.css')
+<link href="front/image/catalog/cart.html" rel="icon" />
+<link href="{{ asset('front/css/bootstrap.min.css')}}" rel="stylesheet" media="screen" />
+<link href="{{ asset('front/javascript/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href="{{ asset('front/css/stylesheet.css')}}" rel="stylesheet">
+<link href="{{ asset('front/css/responsive.css')}}" rel="stylesheet">
+<link href="{{ asset('front/javascript/owl-carousel/owl.carousel.css')}}" type="text/css" rel="stylesheet" media="screen" />
+<link href="{{ asset('front/javascript/owl-carousel/owl.transitions.css')}}" type="text/css" rel="stylesheet" media="screen" />
 </head>
 <body>
 @include('frontlayouts.preloader')
@@ -259,13 +267,19 @@
                 </div>
                 <h3 class="productblock-title">Featured</h3>
                 @livewire('front.featured')
-               @livewire('front.blog-latest')
+                @livewire('front.blog-latest')
             </div>
             @livewire('front.slider2')
         </div>
     </div>
 </div>
 @include('frontlayouts.footer')
-@include('frontlayouts.javascript')
+<script src="{{ asset('front/javascript/jquery-2.1.1.min.js')}}" type="text/javascript"></script>
+<script src="{{ asset('front/javascript/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script type="text/javascript" src="{{ asset('front/javascript/template_js/jstree.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('front/javascript/template_js/template.js')}}"></script>
+<script src="{{ asset('front/javascript/common.js')}}" type="text/javascript"></script>
+<script src="{{ asset('front/javascript/global.js')}}" type="text/javascript"></script>
+<script src="{{ asset('front/javascript/owl-carousel/owl.carousel.min.js')}}" type="text/javascript"></script>
 </body>
 </html>

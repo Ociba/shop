@@ -7,3 +7,6 @@
 <link href="{{ asset('front/css/responsive.css')}}" rel="stylesheet">
 <link href="{{ asset('front/javascript/owl-carousel/owl.carousel.css')}}" type="text/css" rel="stylesheet" media="screen" />
 <link href="{{ asset('front/javascript/owl-carousel/owl.transitions.css')}}" type="text/css" rel="stylesheet" media="screen" />
+<link rel="stylesheet" href="{{ asset('carousel/css/owl.carousel.min.css')}}">
+<link rel="stylesheet" href="{{ asset('carousel/css/owl.theme.default.min.css')}}">
+<link rel="stylesheet" href="{{ asset('carousel/css/style.css')}}">
