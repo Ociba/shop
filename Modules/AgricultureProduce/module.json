@@ -1,0 +1,13 @@
+{
+    "name": "AgricultureProduce",
+    "alias": "agricultureproduce",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AgricultureProduce\\Providers\\AgricultureProduceServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

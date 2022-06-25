@@ -1,0 +1,14 @@
+{
+    "Accomodation": true,
+    "Shop": true,
+    "AgricultureProduce": true,
+    "AgricultureEquipments": true,
+    "About": true,
+    "Blog": true,
+    "News": true,
+    "ContactForm": true,
+    "Cart": true,
+    "Checkout": true,
+    "ErrorPage": true,
+    "ProductDetails": true
+}

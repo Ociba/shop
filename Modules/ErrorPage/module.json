@@ -1,0 +1,13 @@
+{
+    "name": "ErrorPage",
+    "alias": "errorpage",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ErrorPage\\Providers\\ErrorPageServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

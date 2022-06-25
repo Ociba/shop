@@ -1,0 +1,13 @@
+{
+    "name": "AgricultureEquipments",
+    "alias": "agricultureequipments",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AgricultureEquipments\\Providers\\AgricultureEquipmentsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
