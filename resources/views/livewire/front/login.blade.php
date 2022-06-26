@@ -22,14 +22,15 @@
           <div class="well">
             <h2>Returning Customer</h2>
             <p><strong>I am a returning customer</strong></p>
-            <form enctype="multipart/form-data" method="post" action="http://html.lionode.com/focus/login.html">
+            <form  method="POST" action="{{ route('login') }}">
+               @csrf
               <div class="form-group">
                 <label for="input-email" class="control-label">E-Mail Address</label>
-                <input type="text" class="form-control" id="input-email" placeholder="E-Mail Address" value="" name="email">
+                <input type="email" class="form-control" id="email" name="email" :value="old('email')" required autofocus>
               </div>
               <div class="form-group">
                 <label for="input-password" class="control-label">Password</label>
-                <input type="password" class="form-control" id="input-password" placeholder="Password" value="" name="password">
+                <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password">
                 @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}">Forgotten Password</a>
                 @endif

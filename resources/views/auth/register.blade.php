@@ -1,4 +1,4 @@
-{{--<x-guest-layout>
+<x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -57,9 +57,9 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>--}}
+</x-guest-layout>
 
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 
 <html lang="en">
 
@@ -86,7 +86,7 @@
             <div class="column-block">
                 <div class="columnblock-title">Account</div>
                 <div class="account-block">
-                    <div class="list-group"> <a class="list-group-item" href="login.html">Login</a> <a class="list-group-item" href="register.html">Register</a> <a class="list-group-item" href="forgetpassword.html">Forgotten Password</a> <a class="list-group-item" href="#">My Account</a> <a class="list-group-item" href="#">Address Book</a> <a class="list-group-item" href="#">Wish List</a> <a class="list-group-item" href="#">Order History</a> <a class="list-group-item" href="download.html">Downloads</a> <a class="list-group-item" href="#">Reward Points</a> <a class="list-group-item" href="#">Returns</a> <a class="list-group-item" href="#">Transactions</a> <a class="list-group-item" href="#">Newsletter</a><a class="list-group-item last" href="#">Recurring payments</a> </div>
+                    <div class="list-group"> <a class="list-group-item" href="/login">Login</a> <a class="list-group-item" href="register.html">Register</a> <a class="list-group-item" href="forgetpassword.html">Forgotten Password</a> <a class="list-group-item" href="#">My Account</a> <a class="list-group-item" href="#">Address Book</a> <a class="list-group-item" href="#">Wish List</a> <a class="list-group-item" href="#">Order History</a> <a class="list-group-item" href="download.html">Downloads</a> <a class="list-group-item" href="#">Reward Points</a> <a class="list-group-item" href="#">Returns</a> <a class="list-group-item" href="#">Transactions</a> <a class="list-group-item" href="#">Newsletter</a><a class="list-group-item last" href="#">Recurring payments</a> </div>
                 </div>
             </div>
         </div>
@@ -96,4 +96,4 @@
 @include('frontlayouts.footer')
 </body>
 @include('frontlayouts.javascript')
-</html>
+</html>--}}

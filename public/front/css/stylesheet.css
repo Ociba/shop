@@ -1352,7 +1352,7 @@ ul.main-navigation > li.menu-last ul ul {
 	text-transform: uppercase;
 	font-family: 'Arimo', arial;
 	font-size: 14px;
-	background: #23282a;
+	background: #55ad37;
 	color: #fff;
 	margin: 0;
 	padding: 13px 20px 11px;
@@ -2250,7 +2250,7 @@ video {
 	float: right;
 }
 #submit:hover {
-	background-color: #23282a;
+	background-color: #55ad37;
 }
 #commentform label {
 	margin-bottom: 30px;

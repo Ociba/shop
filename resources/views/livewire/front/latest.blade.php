@@ -8,7 +8,7 @@
                         <div class="button-group">
                             <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
                             <button type="button" class="addtocart-btn" >Add to Cart</button>
-                            <a href="/productdetails/view-details"><button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button></a>
+                            <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><a href="/productdetails/view-details"><i class="fa fa-exchange"></i></a></button>
                         </div>
                     </div>
                     <div class="caption product-detail">

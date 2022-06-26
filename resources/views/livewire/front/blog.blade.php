@@ -9,7 +9,7 @@
           <li> 
            @livewire('front.likes-form')
           </li>
-          <li></span>
+          <li>
           @livewire('front.unlikes-form')
           </li>
           <li><i class="fa fa-user"></i><span><a rel="author" title="Posts by Admin" href="#">Admin admin</a></span></li>

@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::prefix('accomodation')->group(function() {
+Route::prefix('accomodation')->group(function() { 
     Route::get('/all-accomodation', 'AccomodationController@index')->name('Accomodations');
+});
+ 
+Route::group(['prefix'=>'accomodation', 'middleware'=>['auth']],function(){  
+    Route::get('/adnin-available-accomodation', 'AdminController@getAdminAccomodation')->name('Available Accomodations');
+    Route::get('/adnin-accomodation-categories', 'AdminController@getAccomodationCategories')->name('Accomodation Categories');
 });

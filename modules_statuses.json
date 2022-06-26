@@ -10,5 +10,6 @@
     "Cart": true,
     "Checkout": true,
     "ErrorPage": true,
-    "ProductDetails": true
+    "ProductDetails": true,
+    "Admin": true
 }
