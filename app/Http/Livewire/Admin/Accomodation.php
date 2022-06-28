@@ -10,6 +10,9 @@ use Livewire\WithPagination;
 class Accomodation extends Component
 {
     use WithPagination, WithSorting;
+
+    protected $listeners =['Accomodation' =>'$refresh'];
+
     protected $paginationTheme = 'bootstrap';
 
     public $sortBy = 'location';
@@ -19,7 +22,7 @@ class Accomodation extends Component
         $available_accomodation=$this->getAvailableAccomodation();
         return view('livewire.admin.accomodation',compact('available_accomodation'));
     }
-       /*
+    /*
     * this function gets the accomodation Details
     */
    private function getAvailableAccomodation(){
@@ -29,4 +32,5 @@ class Accomodation extends Component
      ->search($this->search)
     ->Paginate($this->perPage,['acomodations.*','users.name','categories.category']);
     }
+   
 }

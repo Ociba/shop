@@ -1394,6 +1394,16 @@ ul.main-navigation > li.menu-last ul ul {
 	text-transform: capitalize;
 	color: #55ad37;
 }
+.view {
+    background-color: #ff6600;	
+	color:#ffffff;
+	padding:5px;
+}
+.addtocart-btn2 {
+    background-color: #55ad37;
+	color:#ffffff;
+	padding:4px;
+}
 .column-left .product-grid .button-group .addtocart-btn:hover,  .column-right .product-grid .button-group .addtocart-btn:hover {
 	color: #55ad37;
 }

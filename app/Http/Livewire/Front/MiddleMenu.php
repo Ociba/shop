@@ -4,11 +4,11 @@ namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
 
-class Cart extends Component
+class MiddleMenu extends Component
 {
-    protected $listeners = ['Cart' => '$refresh'];
-      public $cartItems = [];
-  
+    protected $listeners = ['MiddleMenu' => '$refresh'];
+    public $cartItems = [];
+
       public function removeCart($id)
       {
           \Cart::remove($id);
@@ -31,8 +31,7 @@ class Cart extends Component
   
       public function render()
       {
-          //$this->cartItems = \Cart::getContent()->toArray();
           $this->cartItems = \Cart::getContent();
-          return view('livewire.front.cart');
+          return view('livewire.front.middle-menu');
       }
 }

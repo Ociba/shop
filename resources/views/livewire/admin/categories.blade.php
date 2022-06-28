@@ -1,6 +1,5 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
-    @livewireStyles
     <div class="card">
         <div class="card-body">
             <div class="row align-items-center m-l-0">
@@ -55,7 +54,7 @@
                         @foreach($all_categories as $i=>$categories)
                         <tr>
                             <td> {{$all_categories->firstItem() + $i}}</td>
-                            <td hidden>{{$all_categories->id}}</td>
+                            <td hidden>{{$categories->id}}</td>
                             <td>{{$categories->category}}</td>
                             <td>{{$categories->name}}</td>
                             <td>
@@ -67,11 +66,15 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="row mt-2">
-                {{$all_categories->links()}}
-                </div>
+            </div>
+            <div class="row mt-2">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                      Showing {{$all_categories->firstItem()}} to {{$all_categories->lastItem()}} out of {{$all_categories->total()}} items
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 ml-0">
+                      {{$all_categories->links()}}
+                    </div>
             </div>
         </div>
     </div>
-    @livewireScripts
 </div>

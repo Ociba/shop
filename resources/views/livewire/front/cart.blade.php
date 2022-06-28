@@ -1,7 +1,12 @@
 <div>
     {{-- Care about people's approval and you will be their prisoner. --}}
+    @if ($message = Session::get('success'))
+        <div class="p-4 mb-3 bg-green-400 rounded">
+                <p class="text-success">{{ $message }}</p>
+        </div>
+    @endif
     <div class="col-sm-9" id="content">
-      <h1>Shopping Cart                &nbsp;(10.00kg) </h1>
+      <h1>Shopping Cart                &nbsp;({{ Cart::getTotalQuantity()}}) </h1>
       <form enctype="multipart/form-data" method="post" action="#">
         <div class="table-responsive">
           <table class="table table-bordered">
@@ -9,26 +14,29 @@
               <tr>
                 <td class="text-center">Image</td>
                 <td class="text-left">Product Name</td>
-                <td class="text-left">Model</td>
                 <td class="text-left">Quantity</td>
                 <td class="text-right">Unit Price</td>
                 <td class="text-right">Total</td>
+                <td class="text-right">Remove</td>
               </tr>
             </thead>
             <tbody>
+            @foreach ($cartItems as $item)
               <tr>
-                <td class="text-center"><a href="product.html"><img class="img-thumbnail" title="iPhone" alt="iPhone" src="{{ asset('front/image/product/2product50x59.jpg')}}"></a></td>
-                <td class="text-left"><a href="product.html">iPhone</a></td>
-                <td class="text-left">product 11</td>
+                <td class="text-center"><a href="product.html"><img class="img-thumbnail" title="iPhone" alt="iPhone" src="/storage/accomodation_photos/{{ $item->attributes->image }}" style="height:40px; width:50px;"></a></td>
+                <td class="text-left"><a href="product.html">{{ $item['name'] }}</a></td>
                 <td class="text-left"><div style="max-width: 200px;" class="input-group btn-block">
-                    <input type="text" class="form-control quantity" size="1" value="1" name="quantity">
+                    {{--<input type="text" class="form-control quantity" size="1" value="{{ $item['quantity'] }}" name="quantity">--}}
                     <span class="input-group-btn">
-                    <button class="btn btn-primary" title="" data-toggle="tooltip" type="submit" data-original-title="Update"><i class="fa fa-refresh"></i></button>
-                    <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove"><i class="fa fa-times-circle"></i></button>
+                    <livewire:front.cart-update :item="$item" :key="$item['id']"/>
                     </span></div></td>
-                <td class="text-right">$254.00</td>
-                <td class="text-right">$254.00</td>
+                <td class="text-right">ugx:{{ number_format($item['price']) }}</td>
+                <td class="text-right">ugx:{{ number_format(($item['price']* $item['quantity']))}}</td>
+                <td class="text-center">
+                <a href="#" class="px-4 py-2 text-white bg-red-600" wire:click.prevent="removeCart('{{$item['id']}}')">x</a>
+                </td>
               </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
@@ -469,19 +477,15 @@
             <tbody>
               <tr>
                 <td class="text-right"><strong>Sub-Total:</strong></td>
-                <td class="text-right">$210.00</td>
+                <td class="text-right">ugx:{{ number_format(Cart::getTotal()) }}</td>
               </tr>
               <tr>
-                <td class="text-right"><strong>Eco Tax (-2.00):</strong></td>
-                <td class="text-right">$2.00</td>
-              </tr>
-              <tr>
-                <td class="text-right"><strong>VAT (20%):</strong></td>
-                <td class="text-right">$42.00</td>
+                <td class="text-right"><strong>Transport:</strong></td>
+                <td class="text-right">ugx:4,000</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>Total:</strong></td>
-                <td class="text-right">$254.00</td>
+                <td class="text-right">ugx:{{ number_format(Cart::getTotal() + 4000) }}</td>
               </tr>
             </tbody>
           </table>

@@ -1,1 +1,1 @@
-<title>TechNest Holding Limited | {{request()->route()->getName()}}</title>
+<title>Joome-Grocery,Agriculture & Accomodation Center | {{request()->route()->getName()}}</title>

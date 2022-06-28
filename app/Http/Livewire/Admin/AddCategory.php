@@ -15,7 +15,6 @@ class AddCategory extends ModalComponent
 
     protected $rules =[
         'category'   =>'required|unique:categories',
-        'created_by' =>'required',
     ];
     public function createCategory(){
         $this->validate();

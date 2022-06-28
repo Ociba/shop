@@ -1,8 +1,14 @@
 <div>
     {{-- The best athlete wants his opponent at his best. --}}
-    @livewireStyles
     <div class="card">
         <div class="card-body">
+            <div class="row align-items-center m-l-0">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+                    <button onclick="Livewire.emit('openModal', 'admin.add-accomodation')" class="btn btn-info  m-l-15 text-white mb-3"><i class="fa fa-plus-circle"></i> Add Accomodation</button>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6">
@@ -72,35 +78,39 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($available_accomodation as $i=>$available_accomodation)
+                        @foreach($available_accomodation as $i=>$accomodations)
                         <tr>
                             <td> {{$available_accomodation->firstItem() + $i}}</td>
-                            <td hidden>{{$available_accomodation->id}}</td>
-                            <td>{{$available_accomodation->name}}</td>
-                            <td>{{$available_accomodation->category}}</td>
-                            <td>{{$available_accomodation->property_size}}</td>
-                            <td>{{$available_accomodation->bedroom}}</td>
-                            <td>{{$available_accomodation->bathroom}}</td>
-                            <td>{{$available_accomodation->location}}</td>
-                            <td>{{$available_accomodation->price}}</td>
-                            <td>{{$available_accomodation->discount}}</td>
-                            <td>{{$available_accomodation->discount_price}}</td>
-                            <td>{{$available_accomodation->photo}}</td>
-                            <td>{{ $available_accomodation->property_status}}</td>
+                            <td hidden>{{$accomodations->id}}</td>
+                            <td>{{$accomodations->name}}</td>
+                            <td>{{$accomodations->category}}</td>
+                            <td>{{$accomodations->property_size}}</td>
+                            <td>{{$accomodations->bedroom}}</td>
+                            <td>{{$accomodations->bathroom}}</td>
+                            <td>{{$accomodations->location}}</td>
+                            <td>{{ number_format($accomodations->price)}}</td>
+                            <td>{{$accomodations->discount}}</td>
+                            <td>{{$accomodations->discount_price}}</td>
+                            <td><img src="{{ asset('storage/accomodation_photos/'.$accomodations->photo)}}" style="width:40px;height:40px;"></td>
+                            <td>{{ $accomodations->property_status}}</td>
                             <td>
-                                <a href="/admin/edit/{{$available_accomodation->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
+                                <a href="/admin/edit/{{$accomodations->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
                                
-                                <a href="/admin/delete-accomodation$available_accomodation/{{$available_accomodation->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                <a href="/admin/delete-accomodation/{{$accomodations->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                <div class="row mt-2">
-                {{$available_accomodation->links()}}
-                </div>
+            </div>
+            <div class="row mt-2">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                      Showing {{$available_accomodation->firstItem()}} to {{$available_accomodation->lastItem()}} out of {{$available_accomodation->total()}} items
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 ml-0">
+                      {{$available_accomodation->links()}}
+                    </div>
             </div>
         </div>
     </div>
-    @livewireScripts
 </div>
