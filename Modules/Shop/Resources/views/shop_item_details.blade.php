@@ -24,11 +24,12 @@
         <div id="column-left" class="col-sm-3 hidden-xs column-left">
             <div class="column-block">
                 @livewire('front.side-categories')
-                @livewire('front.side-best-seller')
+                @livewire('front.side-specials')
             </div>
         </div>
         <div id="content" class="col-sm-9">
-            @livewire('front.product-details', ['acomodations_id'=>$acomodations_id])
+            @livewire('front.shop-items-details', ['shop_id'=>$shop_id])
+             @livewire('front.carousel')
         </div>
     </div>
 </div>

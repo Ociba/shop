@@ -16,6 +16,7 @@
 <header>
     @include('frontlayouts.topheader')
     @include('frontlayouts.middle-topheader')
+    @include('frontlayouts.menu')
 </header>
 @include('frontlayouts.css')
 <div class="container">

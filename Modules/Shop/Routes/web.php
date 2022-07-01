@@ -12,5 +12,11 @@
 */
 
 Route::prefix('shop')->group(function() {
-    Route::get('/all-shop-items', 'ShopController@index')->name('Shop');
+    Route::get('/all-shop-items', 'ShopController@index')->name('Shop');  
+    Route::get('/view-details/{shop_id}', 'ShopController@getShopItemDetails')->name('Shop Item Detais');
 });
+Route::group(['prefix'=>'shop', 'middleware'=>['auth']],function(){ 
+    Route::get('/shop-items', 'ShopController@getShopItems')->name('Available Items');
+    Route::get('/shop-items-categories', 'ShopController@getShopItemsCategories')->name('Shop Item Categories');
+    Route::get('/out-of-stock-shop-items', 'ShopController@getOutofStockItems')->name('Out of Stock');
+  });

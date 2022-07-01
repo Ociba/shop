@@ -12,12 +12,13 @@ use Session;
 class Accomodation extends Component
 {
     use WithPagination;
-    
+    protected $listeners =['Front/Accomodation' =>'$refresh'];
     public $name;
     public $price;
     public $quantity;
     public $image;
     public $search;
+    public $perPage=4;
 
     protected $rules =[
         'name'     =>'required',
@@ -37,8 +38,13 @@ class Accomodation extends Component
    private function getAvailableAccomodation(){
     return Acomodation::join('categories','categories.id','acomodations.category_id')
      ->join('users','users.id','acomodations.user_id')
-     //->orderBy($this->sortBy, $this->sortDirection)
-     //->search($this->search)
-    ->get(['acomodations.*','users.name','categories.category']);
+     ->orderBy('acomodations.created_at','Desc')
+    ->Paginate($this->perPage,['acomodations.*','users.name','users.telephone','categories.category']);
+    }
+    /**
+     * This functions enables loading more
+     */
+    public function load(){
+        $this->perPage +=4;
     }
 }

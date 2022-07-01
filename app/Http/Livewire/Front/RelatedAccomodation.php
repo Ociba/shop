@@ -5,26 +5,19 @@ namespace App\Http\Livewire\Front;
 use Livewire\Component;
 use App\Models\Acomodation;
 
-class ProductDetails extends Component
+class RelatedAccomodation extends Component
 {
-    public $acomodations_id;
-
-    public function mount($acomodations_id){
-        $this->acomodations_id = $acomodations_id;
-    }
-
     public function render()
-    {
-        $accomoda    =$this->getAvailableAccomodation();
-        return view('livewire.front.product-details',compact('accomoda'));
+    {  
+        $related_accomodation =$this->relatedAccomodation();
+        return view('livewire.front.related-accomodation',compact('related_accomodation'));
     }
      /*
     * this function gets the accomodation Details
     */
-   private function getAvailableAccomodation(){
+   private function relatedAccomodation(){
     return Acomodation::join('categories','categories.id','acomodations.category_id')
      ->join('users','users.id','acomodations.user_id')
-     ->where('acomodations.id',$this->acomodations_id)
     ->get(['acomodations.*','users.name','users.telephone','categories.category']);
     }
 }

@@ -3,7 +3,7 @@
         <div class="col-sm-4 col-xs-6 header-left">
         <div class="shipping">
                     <div class="shipping-img"></div>
-                    <div class="shipping-text">Delivered to You <span class="shipping-detail">We Can Deliver all products</span></div>
+                    <div class="shipping-text">Delivered to You <span class="shipping-detail">We Can Deliver all products</span><i class="fa fa-motocycle"></i></div>
                 </div>
             
         </div>

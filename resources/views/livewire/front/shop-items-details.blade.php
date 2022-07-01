@@ -2,26 +2,16 @@
     {{-- Do your work, then step back. --}}
     <div class="row">
         <div class="col-sm-6">
-            @foreach($accomoda as $accomodation)
+            @foreach($single_shop_item as $shop)
             <ul class="thumbnails">
-                <li><a class="thumbnail fancybox" href="{{ asset('storage/accomodation_photos/'.$accomodation->photo)}}" title="iPod Classic"><img src="{{ asset('storage/accomodation_photos/'.$accomodation->photo)}}" style="height:100%; width:100%" title="iPod Classic" alt="iPod Classic" /></a></li>
-                <div id="product-thumbnail" class="owl-carousel">
-                    @php
-                    $accomodation_id=$this->acomodations_id;
-                    $get_all_accomodation =\DB::table('acomodations')->join('categories','categories.id','acomodations.category_id')->where('acomodations.category_id',$accomodation_id)->get('acomodations.*');
-                    @endphp
-                    @foreach($get_all_accomodation as $cat)
-                    <div class="item">
-                        <li class="image-additional"><a class="thumbnail fancybox" rel="gallery1"  href="{{ asset('storage/accomodation_photos/'.$cat->photo)}}" title="iPod Classic"> <img src="{{ asset('storage/accomodation_photos/'.$cat->photo)}}" title="iPod Classic" alt="iPod Classic" /></a></li>
-                    </div>
-                    @endforeach
-                </div>
+                <li><a class="thumbnail fancybox" href="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" title="iPod Classic"><img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:40%; width:40%" title="iPod Classic" alt="iPod Classic" /></a></li>
+               
             </ul>
             @endforeach
         </div>
         <div class="col-sm-6">
-            @foreach($accomoda as $details)
-            <h1 class="productpage-title">{{$details->category}}</h1>
+            @foreach($single_shop_item as $details)
+            <h1 class="productpage-title">{{$details->item_name}}</h1> 
             {{--<div class="rating product"> 
                 <span class="fa fa-stack">
                     <i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i>
@@ -53,38 +43,25 @@
                 </li>
                 {{--<li><span class="productinfo-tax">Ex Tax: $100.00</span></li>--}}
             </ul>
-            <hr>
-            <ul class="list-unstyled product_info">
-                <li>
-                    <label>Size:</label>
-                    <span> <a href="#">{{$details->property_size}}</a></span></li>
-                <li>
-                    <label>Bedrooms:</label>
-                    <span> {{$details->bedroom}}</span></li>
-                <li>
-                <label>Bedrooms:</label>
-                <span> {{$details->bedroom}}</span></li>
-                <li>
-                <label>Batherooms:</label>
-                <span> {{$details->bathroom}}</span></li>
-                <li>
-                <label>Garage:</label>
-                <span> {{$details->garage}}</span></li>
-                <li>
-                <label>Status:</label>
-                <span style="text-transform:capitalize;"> {{$details->property_status}}</span></li>
-                <li>
-                    <label>Location:</label>
-                    <span> {{$details->location}}</span></li>
-            </ul>
-            <hr>
             <p class="product-desc">{{$details->description}} </p>
             <div id="product">
-                <div class="form-group">
-                    <div class="btn-group">
-                        <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block addtocart" title="{{$details->telephone}}"><i class="fa fa-eye"> View Contact</i></button>
+                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                     <input type="hidden" value="{{ $details->id }}" name="id">
+                      <input type="hidden" value="{{ $details->item_name }}" name="name">
+                      <input type="hidden" value="{{ $details->price }}" name="price">
+                      <input type="hidden" value="{{ $details->photo }}"  name="image">
+                    <div class="form-group">
+                        <label class="control-label qty-label" for="input-quantity">Qty</label>
+                        <input type="text" name="quantity" value="1"  size="2" id="input-quantity" class="form-control productpage-qty" />
+                        <input type="hidden" name="product_id" value="48" />
+                        <div class="btn-group">
+                            <button type="button" data-toggle="tooltip" class="btn btn-default wishlist" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                            <button type="submit" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block addtocart" title=""><i class="fa fa-shopping-cart"> Add To Cart</i></button>
+                            <button type="button" data-toggle="tooltip" class="btn btn-default compare" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         @endforeach
@@ -99,7 +76,7 @@
                 <div class="cpt_product_description ">
                     <div>
                         <p> <strong>Information About This Property</strong></p>
-                        @foreach($accomoda as $details)
+                        @foreach($single_shop_item as $details)
                         <p>{{$details->description}}</p>
                         @endforeach
                     </div>
@@ -146,6 +123,4 @@
             </div>
         </div>
     </div>
-    <h3 class="productblock-title">Related Products</h3>
-     @livewire('front.related-accomodation')
 </div>

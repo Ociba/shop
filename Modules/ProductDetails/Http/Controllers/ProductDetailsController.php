@@ -12,9 +12,9 @@ class ProductDetailsController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index($acomodations_id)
     {
-        return view('productdetails::index');
+        return view('productdetails::index',compact('acomodations_id'));
     }
 
     /**

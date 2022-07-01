@@ -12,11 +12,28 @@ class ShopController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index() 
     {
         return view('shop::index');
     }
-
+    /**
+     * This function gets shop items
+     */
+    public function getShopItems(){
+        return view('shop::shop_items');
+    }
+     /**
+     * This function gets shop items categories
+     */
+    public function getShopItemsCategories(){
+        return view('shop::shop_item_category');
+    }
+     /**
+     * This function gets shop items categories
+     */
+    public function getShopItemDetails($shop_id){
+        return view('shop::shop_item_details',compact('shop_id'));
+    }
     /**
      * Show the form for creating a new resource.
      * @return Renderable

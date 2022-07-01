@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\CartController;
-
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LogoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,17 +19,9 @@ use App\Http\Controllers\CartController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });getFrontOrder
 Route::get('/dashboard',[DashboardController::Class,'getDashboard'])->name('Admin Dashboard')->middleware('auth');
-Route::get('/my-order',[DashboardController::Class,'getFrontOrder'])->name('My Order')->middleware('auth');
+Route::get('/my-order',[OrderController::Class,'getFrontOrder'])->name('My Order')->middleware('auth');
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
-Route::get('/cart/my-cart', [CartController::class, 'cart']);
+Route::get('/cart/my-cart', [CartController::class, 'cart']); 
+Route::get('/logout',[LogoutController::Class, 'logoutUser']);
+Route::get('/submit-order',[OrderController::Class,'submitOrder'])->middleware('auth');

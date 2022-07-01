@@ -1,8 +1,8 @@
 <div>
     {{-- Care about people's approval and you will be their prisoner. --}}
     @if ($message = Session::get('success'))
-        <div class="p-4 mb-3 bg-green-400 rounded">
-                <p class="text-success">{{ $message }}</p>
+        <div class="p-4 mb-3 bg-sucess">
+                <p style="color:#ffffff;">{{ $message }}</p>
         </div>
     @endif
     <div class="col-sm-9" id="content">
@@ -23,7 +23,7 @@
             <tbody>
             @foreach ($cartItems as $item)
               <tr>
-                <td class="text-center"><a href="product.html"><img class="img-thumbnail" title="iPhone" alt="iPhone" src="/storage/accomodation_photos/{{ $item->attributes->image }}" style="height:40px; width:50px;"></a></td>
+                <td class="text-center"><a href="product.html"><img class="img-thumbnail" title="iPhone" alt="iPhone" src="/storage/shop_items_photos/{{ $item->attributes->image }}" style="height:40px; width:50px;"></a></td>
                 <td class="text-left"><a href="product.html">{{ $item['name'] }}</a></td>
                 <td class="text-left"><div style="max-width: 200px;" class="input-group btn-block">
                     {{--<input type="text" class="form-control quantity" size="1" value="{{ $item['quantity'] }}" name="quantity">--}}

@@ -1,4 +1,5 @@
 <div>
+@livewireStyles
     {{-- Success is as dangerous as failure. --}}
     <div id="content" class="col-sm-9">
       <h2 class="category-title">{{request()->route()->getName()}}</h2>
@@ -57,33 +58,23 @@
                 <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
             </div>
           </div>
-          <div class="m-2">
-               {{--<a href="/productdetails/view-details" type="button" class="view">View Details</a>--}}
-               <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                      <input type="hidden" value="{{ $accomodation->id }}" name="id">
-                      <input type="hidden" value="{{ $accomodation->category }}" name="name">
-                      <input type="hidden" value="{{ $accomodation->price }}" name="price">
-                      <input type="hidden" value="{{ $accomodation->photo }}"  name="image">
-                      <input type="hidden" value="1" name="quantity">
-                      <div class="col-xs-12">
-                      <button type="submit" class="addtocart-btn2">Add to Cart</button>
-                      </div>
-                  </form>
+           <div class="m-2">
+                  <div class="col-xs-12 mb-5">
+                  <a href="/productdetails/view-details/{{$accomodation->id}}" type="button" class="view">View Details</a>
+                  <button type="button" class="addtocart-btn2" title="{{$accomodation->telephone}}"><i class="fa fa-eye"></i> View Contact</button>
+                  </div>
             </div>
         </div>
         @endforeach
       </div>
       <div class="category-page-wrapper">
-        <div class="result-inner"> {{--Showing {{$available_accomodation->firstItem()}} to {{$available_accomodation->lastItem()}} out of {{$available_accomodation->total()}} items--}}</div>
+        <div class="result-inner"> Showing {{$available_accomodation->firstItem()}} to {{$available_accomodation->lastItem()}} out of {{$available_accomodation->total()}} items</div>
         <div class="pagination-inner">
           <ul class="pagination">
-            {{--<li class="active"><span>1</span></li>
-            <li><a href="category.html">2</a></li>
-            <li><a href="category.html">&gt;</a></li>
-            <li><a href="category.html">&gt;|</a></li>--}}
+            <button wire:click="load" class="addtocart-btn2">Load More</button>
           </ul>
         </div>
       </div>
     </div>
 </div>
+@livewireScripts

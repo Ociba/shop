@@ -42,6 +42,7 @@ class AddAccomodation extends ModalComponent
     public function createAccomodation(){
         $this->validate();
         $this->emit('Accomodation','refreshComponent');
+        $this->emit('Front/Accomodation','refreshComponent');
         
         Acomodation::create(array(
         'category_id'       =>$this->category_id,

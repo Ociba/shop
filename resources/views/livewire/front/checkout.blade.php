@@ -1,7 +1,7 @@
 <div>
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
     <div class="col-sm-9" id="content">
-      <h1>Checkout</h1>
+      <h1>Checkout ({{ Cart::getTotalQuantity()}} Item(s)) -ugx:{{ number_format(Cart::getTotal() + 4000) }}</h1> 
       <div id="accordion" class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -30,15 +30,17 @@
                 <div class="col-sm-6">
                   <h2>Returning Customer</h2>
                   <p>I am a returning customer</p>
+                  <form  method="POST" action="{{ route('login') }}">
+                   @csrf
                   <div class="form-group">
                     <label for="input-email" class="control-label">E-Mail</label>
-                    <input type="text" class="form-control" id="input-email" placeholder="E-Mail" value="" name="email">
+                    <input type="email" class="form-control" id="email" name="email" :value="old('email')" required autofocus>
                   </div>
                   <div class="form-group">
                     <label for="input-password" class="control-label">Password</label>
-                    <input type="password" class="form-control" id="input-password" placeholder="Password" value="" name="password">
-                    <a href="http://localhost/opc001/index.php?route=account/forgotten">Forgotten Password</a></div>
-                  <input type="button" class="btn btn-primary" data-loading-text="Loading..." id="button-login" value="Login">
+                      <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password">
+                    {{--<a href="http://localhost/opc001/index.php?route=account/forgotten">Forgotten Password</a></div>--}}
+                  <button type="submit" class="btn btn-primary" data-loading-text="Loading..." id="button-login" value="Login">Login</a>
                 </div>
               </div>
             </div>
@@ -843,49 +845,52 @@
           <div id="collapse-checkout-confirm" class="panel-collapse collapse in" aria-expanded="true" style="">
             <div class="panel-body">
               <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
                       <td class="text-left">Product Name</td>
-                      <td class="text-left">Model</td>
+                      <td class="text-left">Photo</td>
                       <td class="text-right">Quantity</td>
                       <td class="text-right">Unit Price</td>
                       <td class="text-right">Total</td>
                     </tr>
                   </thead>
                   <tbody>
+                  @foreach ($cartItems as $item)
                     <tr>
-                      <td class="text-left"><a href="http://localhost/opc001/index.php?route=product/product&amp;product_id=46">Sony VAIO</a></td>
-                      <td class="text-left">Product 19</td>
-                      <td class="text-right">1</td>
-                      <td class="text-right">$1,000.00</td>
-                      <td class="text-right">$1,000.00</td>
+                      <td class="text-left">{{ $item['name'] }}</td>
+                      <td class="text-left"><img src="/storage/shop_items_photos/{{ $item->attributes->image }}" style="height:40px; width:50px;"></td>
+                      <td class="text-right">{{ $item['quantity'] }}</td>
+                      <td class="text-right">ugx:{{ number_format($item['price']) }}</td>
+                      <td class="text-right">ugx:{{ number_format(($item['price']* $item['quantity']))}}</td>
                     </tr>
+                    @endforeach
                   </tbody>
                   <tfoot>
                     <tr>
                       <td class="text-right" colspan="4"><strong>Sub-Total:</strong></td>
-                      <td class="text-right">$1,000.00</td>
+                      <td class="text-right">ugx:{{ number_format(Cart::getTotal()) }}</td>
                     </tr>
                     <tr>
-                      <td class="text-right" colspan="4"><strong>Flat Shipping Rate:</strong></td>
-                      <td class="text-right">$5.00</td>
+                      <td class="text-right" colspan="4"><strong>Transport</strong></td>
+                      <td class="text-right">ugx:4,000</td>
                     </tr>
                     <tr>
                       <td class="text-right" colspan="4"><strong>Total:</strong></td>
-                      <td class="text-right">$1,005.00</td>
+                      <td class="text-right">ugx:{{ number_format(Cart::getTotal() + 4000) }}</td>
                     </tr>
                   </tfoot>
                 </table>
               </div>
-              <div class="buttons">
+              {{--<div class="buttons">
                 <div class="pull-right">
                   <input type="button" data-loading-text="Loading..." class="btn btn-primary" id="button-confirm" value="Confirm Order">
                 </div>
-              </div>
+              </div>--}}
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </div>

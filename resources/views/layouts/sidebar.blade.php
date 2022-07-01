@@ -49,6 +49,33 @@
             </ul>
         </li>
         <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-shopping-cart"></i>
+                <div>Shop</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-primary">0+</div>
+                </div>
+            </a>
+            <ul class="sidenav-menu">
+                <li @if(\Request::route()->getName() == "Shop Item Categories") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/shop/shop-items-categories" class="sidenav-link">
+                        <div>Shop Item Categories</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "Available Items") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/shop/shop-items" class="sidenav-link">
+                        <div>Shop Items Available</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "Out of Stock") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/shop/out-of-stock-shop-items" class="sidenav-link">
+                        <div>Out of Stock Items</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
         <li  @if(\Request::route()->getName() == "Packages") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/admin/get-packages" class="sidenav-link">
                 <i class="sidenav-icon feather icon-grid"></i>
