@@ -84,6 +84,7 @@
           </ul>
         </div>
       </div>
+      @livewire('front.carousel')
     </div>
 </div>
 @livewireScripts

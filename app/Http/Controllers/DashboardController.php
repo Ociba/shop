@@ -10,7 +10,7 @@ class DashboardController extends Controller
         if(auth()->user()->user_type == 1){
             return view('dashboard');
         }else{
-            return redirect('/cart/my-order');
+            return redirect('/my-order');
         }
     }
     protected function getFrontOrder(){

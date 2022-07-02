@@ -24,7 +24,7 @@ class Shop extends Component
         $shop_items =$this->getAvailableShopItems();
         return view('livewire.admin.shop',compact('shop_items'));
     }
-     /*
+    /*
     * this function gets the accomodation Details
     */
    private function getAvailableShopItems(){

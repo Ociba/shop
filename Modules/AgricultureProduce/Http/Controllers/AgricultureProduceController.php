@@ -16,7 +16,24 @@ class AgricultureProduceController extends Controller
     {
         return view('agricultureproduce::index');
     }
-
+  /**
+   * This function gets Agriculture Produce  Category 
+   */
+  public function getProduceCategory(){
+    return view('agricultureproduce::produce_category');
+  }
+  /**
+   * This function gets Agriculture Produce 
+   */
+  public function getProduce(){
+    return view('agricultureproduce::produce');
+  }
+  /**
+   * Thisfunction gets produce details when u want to view
+   */
+  public function getProduceDetails($produces_id){
+    return view('agricultureproduce::produce_details',compact('produces_id'));
+  }
     /**
      * Show the form for creating a new resource.
      * @return Renderable

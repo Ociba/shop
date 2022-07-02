@@ -76,10 +76,42 @@
             </ul>
         </li>
         <li class="sidenav-divider mb-1"></li>
-        <li  @if(\Request::route()->getName() == "Packages") class="sidenav-item active" @else class="sidenav-item" @endif>
-            <a href="/admin/get-packages" class="sidenav-link">
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon fas fa-lemon"></i>
+                <div>Produce</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-primary">0+</div>
+                </div>
+            </a>
+            <ul class="sidenav-menu">
+                <li @if(\Request::route()->getName() == "Produce Categories") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/agricultureproduce/produce-category" class="sidenav-link">
+                        <div>Produce Category</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "Produce") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/agricultureproduce/produce" class="sidenav-link">
+                        <div>Produce</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li  @if(\Request::route()->getName() == "Equipments") class="sidenav-item active" @else class="sidenav-item" @endif>
+            <a href="/agricultureequipments/equipment" class="sidenav-link">
+                <i class="sidenav-icon fas fa-gavel"></i>
+                <div>Equipments</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-danger">0+</div>
+                </div>
+            </a>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li  @if(\Request::route()->getName() == "Food") class="sidenav-item active" @else class="sidenav-item" @endif>
+            <a href="/food/food" class="sidenav-link">
                 <i class="sidenav-icon feather icon-grid"></i>
-                <div>Packages</div>
+                <div>Food</div>
                 <div class="pl-1 ml-auto">
                     <div class="badge badge-danger">0+</div>
                 </div>

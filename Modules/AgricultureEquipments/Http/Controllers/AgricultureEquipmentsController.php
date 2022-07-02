@@ -16,7 +16,18 @@ class AgricultureEquipmentsController extends Controller
     {
         return view('agricultureequipments::index');
     }
-
+    /**
+     * This function gets an equipment details
+     */
+    public function getEquipment(){
+        return view('agricultureequipments::equipment');
+    }
+    /**
+     * This fuction gets equipment details for particular id
+     */
+    public function getEquipmentInfo($equipment_id){
+        return view('agricultureequipments::equipment_details', compact('equipment_id'));
+    }
     /**
      * Show the form for creating a new resource.
      * @return Renderable

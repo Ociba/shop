@@ -25,8 +25,7 @@
       @livewire('front.side-refine-search')
       @livewire('front.side-specials')
     </div>
-     @livewire('front.agriculture-produce')
-     @livewire('front.carousel')
+      @livewire('front.agriculture-produce')
   </div>
 </div>
 @include('frontlayouts.footer')

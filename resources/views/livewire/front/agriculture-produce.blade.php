@@ -1,5 +1,6 @@
 <div>
-    {{-- Success is as dangerous as failure. --}}
+    {{-- Success is as dangerous as failure. --}} 
+    @livewireStyles
     <div id="content" class="col-sm-9">
       <h2 class="category-title">{{request()->route()->getName()}}</h2>
       <div class="row category-banner">
@@ -44,241 +45,37 @@
       </div>
       <br />
       <div class="grid-list-wrapper">
+        @foreach($get_all_produces as $produce)
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('front/image/product/pro-1-220x294.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn">Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-              </div>
+            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('storage/produce_photos/'.$produce->image)}}" style="height:150px;" alt="produce" title="produce" class="img-responsive" /> </a>
+              
             </div>
             <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPod Classic"> iPod Classic </a> </h4>
-              <p class="product-desc"> More room to move.
-                
-                With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.
-                
-                Cover Flow.
-                
-                Browse through your music collection by flipping..</p>
-              <p class="price product-price"><span class="price-old">$272.00</span> $122.00 <span class="price-tax">Ex Tax: $100.00</span> </p>
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn">Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
+              <h4 class="product-name"> <a href="product.html" title="produce"> {{$produce->produce_name}} </a> </h4>
+              
+                <p class="price product-price"><span class="price-old">$272.00</span> ugx.{{ number_format($produce->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
+                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
             </div>
           </div>
+          <div class="m-2">
+                      <div class="col-xs-12 mb-5">
+                      <a href="/agricultureproduce/view-produce-details/{{$produce->id}}" type="button" class="view">View Details</a>
+                      <button type="submit" class="addtocart-btn2" style="padding:6px;" title="{{$produce->phone_number}}"><i class="fa fa-eye"></i>View Contact</button>
+                      </div>
+            </div>
         </div>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('front/image/product/pro-2-220x294.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn">Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPod Classic"> iPod Classic </a> </h4>
-              <p class="product-desc"> More room to move.
-                
-                With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.
-                
-                Cover Flow.
-                
-                Browse through your music collection by flipping..</p>
-              <p class="price product-price"> $122.00 <span class="price-tax">Ex Tax: $100.00</span> </p>
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn">Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('front/image/product/pro-3-220x294.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn">Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPod Classic"> iPod Classic </a> </h4>
-              <p class="product-desc"> More room to move.
-                
-                With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.
-                
-                Cover Flow.
-                
-                Browse through your music collection by flipping..</p>
-              <p class="price product-price"> $122.00 <span class="price-tax">Ex Tax: $100.00</span> </p>
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn">Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('front/image/product/pro-4-220x294.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn">Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPod Classic"> iPod Classic </a> </h4>
-              <p class="product-desc"> More room to move.
-                
-                With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.
-                
-                Cover Flow.
-                
-                Browse through your music collection by flipping..</p>
-              <p class="price product-price"> $122.00 <span class="price-tax">Ex Tax: $100.00</span> </p>
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn">Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('front/image/product/pro-5-220x294.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn">Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPod Classic"> iPod Classic </a> </h4>
-              <p class="product-desc"> More room to move.
-                
-                With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.
-                
-                Cover Flow.
-                
-                Browse through your music collection by flipping..</p>
-              <p class="price product-price"> $122.00 <span class="price-tax">Ex Tax: $100.00</span> </p>
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn">Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('front/image/product/pro-6-220x294.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn">Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPod Classic"> iPod Classic </a> </h4>
-              <p class="product-desc"> More room to move.
-                
-                With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.
-                
-                Cover Flow.
-                
-                Browse through your music collection by flipping..</p>
-              <p class="price product-price"> $122.00 <span class="price-tax">Ex Tax: $100.00</span> </p>
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn">Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('front/image/product/pro-7-220x294.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn">Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPod Classic"> iPod Classic </a> </h4>
-              <p class="product-desc"> More room to move.
-                
-                With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.
-                
-                Cover Flow.
-                
-                Browse through your music collection by flipping..</p>
-              <p class="price product-price"> $122.00 <span class="price-tax">Ex Tax: $100.00</span> </p>
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn">Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('front/image/product/pro-8-220x294.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> </a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn">Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPod Classic"> iPod Classic </a> </h4>
-              <p class="product-desc"> More room to move.
-                
-                With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.
-                
-                Cover Flow.
-                
-                Browse through your music collection by flipping..</p>
-              <p class="price product-price"> $122.00 <span class="price-tax">Ex Tax: $100.00</span> </p>
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn">Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
       <div class="category-page-wrapper">
-        <div class="result-inner">Showing 1 to 8 of 10 (2 Pages)</div>
+        <div class="result-inner"> {{--Showing {{$get_all_produces->firstItem()}} to {{$get_all_produces->lastItem()}} out of {{$get_all_produces->total()}} items--}}</div>
         <div class="pagination-inner">
           <ul class="pagination">
-            <li class="active"><span>1</span></li>
-            <li><a href="category.html">2</a></li>
-            <li><a href="category.html">&gt;</a></li>
-            <li><a href="category.html">&gt;|</a></li>
+            {{--<button wire:click="load" class="addtocart-btn2">Load More</button>--}}
           </ul>
         </div>
       </div>
+      @livewire('front.carousel')
     </div>
 </div>
+@livewireScripts
