@@ -4,7 +4,7 @@
     <div id="content" class="col-sm-9">
       <h2 class="category-title">{{request()->route()->getName()}}</h2>
       <div class="row category-banner">
-        <div class="col-sm-12 category-image"><img src="{{ asset('front/image/banners/category-banner.jpg')}}" alt="Desktops" title="Desktops" class="img-thumbnail" /></div>
+        <div class="col-sm-12 category-image"><img src="{{ asset('front/image/banners/5.png')}}" style="width:1000px;" alt="Joome Produce" title="Joome Produce" class="img-thumbnail" /></div>
         <div class="col-sm-12 category-desc">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
       </div>
       <div class="category-page-wrapper">

@@ -12,7 +12,7 @@ class AgricultureEquipment extends Component
         $get_equipments  =$this->getEquipment();
         return view('livewire.front.agriculture-equipment', compact('get_equipments'));
     }
-      /*
+    /*
     * this function gets the Equipments
     */
    private function getEquipment(){

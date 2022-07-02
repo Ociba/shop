@@ -243,9 +243,9 @@
             <div class="customtab">
                 <div id="tabs" class="customtab-wrapper">
                     <ul class='customtab-inner'>
-                        <li class='tab'><a href="#tab-latest">Latest</a></li>
-                        <li class='tab'><a href="#tab-special">Special</a></li>
-                        <li class='tab'><a href="#tab-bestseller">Bestseller</a></li>
+                        <li class='tab'><a href="#tab-latest">Accomodation</a></li>
+                        <li class='tab'><a href="#tab-special">Agriculture Produce</a></li>
+                        <li class='tab'><a href="#tab-bestseller">Agriculture Equipments</a></li>
                     </ul>
                 </div>
                 <div id="tab-latest" class="tab-content">
@@ -265,7 +265,7 @@
                 <div id="subbanner5" class="banner" >
                     <div class="item"> <a href="#"><img src="{{asset('front/image/banners/subbanner5.jpg')}}" alt="Sub Banner5" class="img-responsive" /></a> </div>
                 </div>
-                <h3 class="productblock-title">Featured</h3>
+                <h3 class="productblock-title">Your Shop</h3>
                 @livewire('front.featured')
                 @livewire('front.blog-latest')
             </div>

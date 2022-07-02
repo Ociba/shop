@@ -8,10 +8,10 @@
                     <tbody>
                     @foreach ($cartItems as $item)
                         <tr>
-                            <td class="text-center"><a href="#"><img class="img-thumbnail" title="iPhone" alt="iPhone" src="/storage/accomodation_photos/{{ $item->attributes->image }}" style="height:40px; width:50px;"></a></td>
+                            <td class="text-center"><a href="#"><img class="img-thumbnail" title="iPhone" alt="iPhone" src="/storage/shop_items_photos/{{ $item->attributes->image }}" style="height:40px; width:50px;"></a></td>
                             <td class="text-left"><a href="#">{{ $item['name'] }}</a></td>
                             <td class="text-right"><livewire:front.cart-update :item="$item" :key="$item['id']"/></td>
-                            <td class="text-right">ugx:{{ number_format(Cart::getTotal()) }}</td>
+                            <td class="text-right">ugx:{{ number_format($item['price'] * $item['quantity']  ) }}</td>
                             <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button" wire:click.prevent="removeCart('{{$item['id']}}')"><i class="fa fa-times"></i></button></td>
                         </tr>
                         @endforeach

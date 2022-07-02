@@ -26,7 +26,6 @@
       @livewire('front.side-specials')
     </div>
      @livewire('front.accomodation')
-     @livewire('front.carousel')
   </div>
 </div>
 @include('frontlayouts.footer')
