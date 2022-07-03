@@ -4,7 +4,7 @@
         <div class="col-sm-6">
             @foreach($accomoda as $accomodation)
             <ul class="thumbnails">
-                <li><a class="thumbnail fancybox" href="{{ asset('storage/accomodation_photos/'.$accomodation->photo)}}" title="iPod Classic"><img src="{{ asset('storage/accomodation_photos/'.$accomodation->photo)}}" style="height:100%; width:100%" title="iPod Classic" alt="iPod Classic" /></a></li>
+                <li><a class="thumbnail fancybox" target="_blank"  href="{{ asset('storage/accomodation_photos/'.$accomodation->photo)}}" title="{{$accomodation->category}}"><img src="{{ asset('storage/accomodation_photos/'.$accomodation->photo)}}" style="height:100%; width:100%" title="{{$accomodation->category}}" alt="{{$accomodation->category}}" /></a></li>
                 <div id="product-thumbnail" class="owl-carousel">
                     @php
                     $accomodation_id=$this->acomodations_id;

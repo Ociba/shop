@@ -12,5 +12,6 @@
     "ErrorPage": true,
     "ProductDetails": true,
     "Admin": true,
-    "Food": true
+    "Food": true,
+    "Advertise": true
 }

@@ -1,0 +1,1 @@
+<div class="col-sm-12 category-desc">Get Accomodation,Agriculture Produce  & Agriculture Equipments,Shop Items and Others from Joome Shopping Center at affordable Price & Pocket Friendly. You can Advertise with us by visiting our office locate opposite Soroti University Main Gate or give us a call on 0775401793 OR 0753926367 for more Information.</div>

@@ -5,7 +5,7 @@
       <h2 class="category-title">{{request()->route()->getName()}}</h2>
       <div class="row category-banner">
         <div class="col-sm-12 category-image"><img src="{{ asset('front/image/banners/6.png')}}" style="width:100%;" alt="Joome Accomodation" title="Joome Accomodation" class="img-thumbnail" /></div>
-        <div class="col-sm-12 category-desc">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+       @include('frontlayouts.information')
       </div>
       <div class="category-page-wrapper">
         <div class="col-md-6 list-grid-wrapper">
@@ -48,11 +48,11 @@
         @foreach($available_accomodation as $accomodation)
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="product.html"> <img src="{{ asset('storage/accomodation_photos/'.$accomodation->photo)}}" style="height:150px;" alt="Accomodation" title="Accomodation" class="img-responsive" /> </a>
+            <div class="image product-imageblock"> <a href="/productdetails/view-details/{{$accomodation->id}}"> <img src="{{ asset('storage/accomodation_photos/'.$accomodation->photo)}}" style="height:150px; width:300px;" alt="{{$accomodation->category}} " title="{{$accomodation->category}} " class="img-responsive" /> </a>
               
             </div>
             <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="Accomodation"> {{$accomodation->category}} </a> </h4>
+              <h4 class="product-name"> <a href="/productdetails/view-details/{{$accomodation->id}}" title="{{$accomodation->category}} "> {{$accomodation->category}} </a> </h4>
               
                 <p class="price product-price"><span class="price-old">$272.00</span> ugx.{{ number_format($accomodation->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
                 <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>

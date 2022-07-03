@@ -13,7 +13,7 @@
                     </div>
                     <div class="currency">
                             <div class="btn-group">
-                                <span class="btn btn-link dropdown-toggle" data-toggle="dropdown"> <strong><i class="fa fa-phone"></i> <a href="tel:+256775401793" style="color:#ffffff">0775401793</a> | <a href="tel:+256753926367" style="color:#ffffff">0753 926367</a></strong> </span>
+                                <span class="btn btn-link dropdown-toggle"> <strong><i class="fa fa-phone"></i> <a href="tel:+256775401793" style="color:#ffffff">0775401793</a> | <a href="tel:+256753926367" style="color:#ffffff">0753 926367</a></strong> </span>
                             </div>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
                         <ul class="list-inline">
                             <li class="dropdown"><a href="#" title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span>My Account</span> <span class="caret"></span></a>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="/register">Register</a></li>
-                                    <li><a href="/login">Login</a></li>
+                                    <li><a href="/advertise/advertise-with-us"><i class="fa fa-heart"></i> Advertise With Us</a></li>
+                                    <li><a href="/login"><i class="fa fa-unlock"></i> Login Your Account</a></li>
                                 </ul>
                             </li>
                             <li><a href="#" id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart"></i> <span>Wish List</span><span> (0)</span></a></li>

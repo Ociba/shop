@@ -4,7 +4,7 @@
         <div class="col-sm-6">
             @foreach($single_shop_item as $shop)
             <ul class="thumbnails">
-                <li><a class="thumbnail fancybox" href="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" title="iPod Classic"><img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:40%; width:40%" title="iPod Classic" alt="iPod Classic" /></a></li>
+                <li><a class="thumbnail fancybox" target="_blank" href="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" title="{{$shop->item_name}}"><img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:40%; width:40%" title="{{$shop->item_name}}" alt="{{$shop->item_name}}" /></a></li>
                
             </ul>
             @endforeach

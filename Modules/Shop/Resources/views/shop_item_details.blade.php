@@ -23,8 +23,8 @@
     <div class="row">
         <div id="column-left" class="col-sm-3 hidden-xs column-left">
             <div class="column-block">
-                @livewire('front.side-categories')
-                @livewire('front.side-specials')
+            @livewire('front.side-refine-search')
+            @livewire('front.side-specials')
             </div>
         </div>
         <div id="content" class="col-sm-9">

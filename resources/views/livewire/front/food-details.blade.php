@@ -4,7 +4,7 @@
         <div class="col-sm-6">
             @foreach($get_single_food_details as $food)
             <ul class="thumbnails">
-                <li><a class="thumbnail fancybox" href="{{ asset('storage/shop_items_photos/'.$food->photo)}}" title="iPod Classic"><img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="height:40%; width:40%" title="iPod Classic" alt="iPod Classic" /></a></li>
+                <li><a class="thumbnail fancybox" target="_blank" href="{{ asset('storage/shop_items_photos/'.$food->photo)}}" title="{{$food->food_type}}"><img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="height:40%; width:40%" title="{{$food->food_type}}" alt="{{$food->food_type}}" /></a></li>
                
             </ul>
             @endforeach

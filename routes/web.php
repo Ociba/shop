@@ -25,3 +25,4 @@ Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
 Route::get('/cart/my-cart', [CartController::class, 'cart']); 
 Route::get('/logout',[LogoutController::Class, 'logoutUser']);
 Route::get('/submit-order',[OrderController::Class,'submitOrder'])->middleware('auth');
+Route::get('/information',function(){ return view('information');});

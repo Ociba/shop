@@ -95,7 +95,7 @@ div.required .control-label:before {
 	text-decoration: none;
 	color: #ffffff;
 	background-color: #55ad37;
-	background-image: linear-gradient(to bottom, #3b5998, #1f90bb);
+	background-image: linear-gradient(to bottom, #55ad37, #55ad37);
 	background-repeat: repeat-x;
 }
 .bg-success {
@@ -122,8 +122,8 @@ div.required .control-label:before {
 #top #currency .currency-select:hover {
 	text-shadow: none;
 	color: #ffffff;
-	background-color: #3b5998;
-	background-image: linear-gradient(to bottom, #3b5998, #1f90bb);
+	background-color: #55ad37;
+	background-image: linear-gradient(to bottom, #55ad37, #55ad37);
 	background-repeat: repeat-x;
 }
 #top .btn-link, #top-links a {
@@ -483,7 +483,7 @@ header {
 }
 #top-links .dropdown-menu li a:hover {
 	background: none;
-	color: #fff;
+	color: #55ad37;;
 }
 #top-links .dropdown.open .dropdown-toggle {
 	background: none;
@@ -541,8 +541,8 @@ header {
 #menu .see-all:hover, #menu .see-all:focus {
 	text-decoration: none;
 	color: #ffffff;
-	background-color: #3b5998;
-	background-image: linear-gradient(to bottom, #3b5998, #1f90bb);
+	background-color: #55ad37;
+	background-image: linear-gradient(to bottom, #55ad37, #55ad37);
 	background-repeat: repeat-x;
 }
 #menu #category {

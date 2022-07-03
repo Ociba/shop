@@ -1,7 +1,7 @@
 <div>
     {{-- Stop trying to control. --}}
     <div id="cart" class="btn-group btn-block">
-        <button type="button" class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button"><span id="cart-total">{{Cart::getTotalQuantity()}} item(s) - ugx:{{ number_format(Cart::getTotal() + 4000) }}</span><i class="fa fa-caret-down"></i></button>
+        <button type="button" class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button"><span id="cart-total">{{Cart::getTotalQuantity()}} item(s) - ugx:{{ number_format(Cart::getTotal()) }}</span><i class="fa fa-caret-down"></i></button>
         <ul class="dropdown-menu pull-right cart-dropdown-menu">
             <li>
                 <table class="table table-striped">

@@ -5,7 +5,7 @@
       <h2 class="category-title">{{request()->route()->getName()}}</h2>
       <div class="row category-banner" style="height:10px">
         <div class="col-sm-12 category-image"><img src="{{ asset('front/image/banners/3.png')}}" style="width:100%;;" alt="Joome Shop" title="Joome Shop" class="img-thumbnail" /></div>
-        <div class="col-sm-12 category-desc">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+        @include('frontlayouts.information')
       </div>
       <div class="category-page-wrapper">
         <div class="col-md-6 list-grid-wrapper">
@@ -48,11 +48,11 @@
         @foreach($get_all_shop_items as $shop)
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="/shop/view-details/{{$shop->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:150px;" alt="Joome Shop" title="Joome Shop" class="img-responsive" /> </a>
+            <div class="image product-imageblock"> <a href="/shop/view-details/{{$shop->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:150px;" alt="{{$shop->item_name}} " title="{{$shop->item_name}} " class="img-responsive" /> </a>
               
             </div>
             <div class="caption product-detail">
-              <h4 class="product-name"> <a href="/shop/view-details/{{$shop->id}}" title="Joome Shop"> {{$shop->item_name}} </a> </h4>
+              <h4 class="product-name"> <a href="/shop/view-details/{{$shop->id}}" title="{{$shop->item_name}} "> {{$shop->item_name}} </a> </h4>
               
                 <p class="price product-price"><span class="price-old">$272.00</span> ugx.{{ number_format($shop->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
                 <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
