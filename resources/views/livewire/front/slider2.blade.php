@@ -1,5 +1,8 @@
 <div>
     {{-- Stop trying to control. --}}
+    <div class="blog-heading">
+            <h3>Your Agriculture Eqipments</h3>
+    </div>
     <div id="brand_carouse" class="owl-carousel brand-logo">
          @foreach($get_equipments as $equipments)
         <div class="item text-center"> 

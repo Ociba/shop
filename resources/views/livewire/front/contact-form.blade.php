@@ -6,19 +6,19 @@
           <div class="form-group required">
             <label for="input-name" class="col-sm-2 control-label">Your Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="input-name" value="" name="name">
+              <input type="text" class="form-control" id="input-name" value="" wire:model="name">
             </div>
           </div>
           <div class="form-group required">
-            <label for="input-email" class="col-sm-2 control-label">E-Mail Address</label>
+            <label for="input-email" class="col-sm-2 control-label">Phone Number</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="input-email" value="" name="email">
+              <input type="tel" class="form-control" id="input-email" value="" wire:model="hone_number">
             </div>
           </div>
           <div class="form-group required">
             <label for="input-enquiry" class="col-sm-2 control-label">Enquiry</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="input-enquiry" rows="5" name="enquiry"></textarea>
+              <textarea class="form-control" id="input-enquiry" rows="5" wire:model="enquiry"></textarea>
             </div>
           </div>
         </fieldset>

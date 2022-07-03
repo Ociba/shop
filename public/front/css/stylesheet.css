@@ -1379,7 +1379,7 @@ ul.main-navigation > li.menu-last ul ul {
 	line-height: 15px;
 }
 .column-left .product-grid .product-imageblock > a, .column-right .product-grid .product-imageblock > a,  .column-left .product-slider .product-imageblock > a, .column-right .product-slider .product-imageblock > a {
-	border: 1px solid #ddd;
+	border: 0px solid #ddd;
 	display: inline-block;
 }
 .column-left .product-grid .product-thumb, .column-right .product-grid .product-thumb,  .column-left .product-slider .product-thumb, .column-right .product-slider .product-thumb {
@@ -1428,7 +1428,7 @@ ul.main-navigation > li.menu-last ul ul {
 	padding:4px;
 }
 .column-left .product-grid .button-group .addtocart-btn:hover,  .column-right .product-grid .button-group .addtocart-btn:hover {
-	color: #ffffff;
+	color: #55ad37;
 }
 .column-left .product-grid .product-price, .column-right .product-grid .product-price,  .column-left .product-slider .product-price, .column-right .product-slider .product-price {
 	margin: 0;

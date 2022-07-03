@@ -6,31 +6,15 @@
                     <div class="language">
                         <form action="#" method="post" enctype="multipart/form-data" id="language">
                             <div class="btn-group">
-                                <button class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{asset('front/image/flags/gb.png')}}" alt="English" title="English"> <i class="fa fa-caret-down"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"><img src="{{asset('front/image/flags/lb.png')}}" alt="Arabic" title="Arabic"> Arabic</a></li>
-                                    <li><a href="#"><img src="{{asset('front/image/flags/gb.png')}}" alt="English" title="English"> English</a></li>
-                                </ul>
+                                <a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i> joomeproperty2022@gmail.com </a>
+                       
                             </div>
                         </form>
                     </div>
                     <div class="currency">
-                        <form action="#" method="post" enctype="multipart/form-data" id="currency">
                             <div class="btn-group">
-                                <button class="btn btn-link dropdown-toggle" data-toggle="dropdown"> <strong>$</strong> <i class="fa fa-caret-down"></i> </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block" type="button" name="EUR">€ Euro</button>
-                                    </li>
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block" type="button" name="GBP">£ Pound Sterling</button>
-                                    </li>
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block" type="button" name="USD">$ US Dollar</button>
-                                    </li>
-                                </ul>
+                                <span class="btn btn-link dropdown-toggle" data-toggle="dropdown"> <strong><i class="fa fa-phone"></i> <a href="tel:+256775401793" style="color:#ffffff">0775401793</a> | <a href="tel:+256753926367" style="color:#ffffff">0753 926367</a></strong> </span>
                             </div>
-                        </form>
                     </div>
                 </div>
                 <div class="top-right pull-right">

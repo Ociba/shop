@@ -31,9 +31,6 @@
                 </li>
                 @endforeach
             </ul>
-            <div class="buttons text-right seeall">
-                <button class="btn btn-primary" onClick="location='blog.html';" type="button">See all Blogs</button>
-            </div>
         </div>
     </div>
 </div>

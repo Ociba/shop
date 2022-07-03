@@ -29,213 +29,120 @@
     @livewire('front.discount')
     <div class="row">
         <div id="column-left" class="col-sm-3 hidden-xs column-left">
+            <h3 class="productblock-title">Latest</h3>
+            <div class="row latest-grid product-grid">
+                   @php
+                        $get_shop_items=\DB::table('shops')->join('shop_items_categories','shop_items_categories.id','shops.item_category_id')
+                        ->join('users','users.id','shops.created_by')
+                        ->orderBy('shops.created_at','DESC')->limit(3)
+                        ->get(['shops.*','shop_items_categories.item']);
+                    @endphp
+                    @foreach($get_shop_items as $shop)
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item text-center">
+                    
+                    <div class="product-thumb transition">
+                        <div class="image product-imageblock"><a href="/shop/view-details/{{$shop->id}}"><img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="width:65px;height:40px" alt="Joome Shop" title="Joome Shop" class="img-responsive" /></a>
+                           
+                        </div>
+                        <div class="caption product-detail">
+                            <h4 class="product-name"><a href="/shop/view-details/{{$shop->id}}" title="View Details">{{$shop->item_name}}</a></h4>
+                            <p class="price product-price">Ugx: {{ number_format($shop->price)}}<span class="price-tax">Ex Tax: $100.00</span></p>
+                            
+                        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" value="{{ $shop->id }}" name="id">
+                                <input type="hidden" value="{{ $shop->item_name }}" name="name">
+                                <input type="hidden" value="{{ $shop->price }}" name="price">
+                                <input type="hidden" value="{{ $shop->photo }}"  name="image">
+                                <input type="hidden" value="1" name="quantity">
+                                <div class="col-xs-12 mb-5">
+                                <button type="submit" class="addtocart-btn" style="border:none;">Add to Cart</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <h3 class="productblock-title">Specials</h3>
+            <div class="row special-grid product-grid">
+                @php
+                    $get_food_items=\DB::table('food')->orderBy('food.created_at','DESC')->limit(3)->get();
+                @endphp
+                @foreach($get_food_items as $food)
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
+                    <div class="product-thumb transition">
+                        <div class="image product-imageblock"> <a href="/food/view-food-details/{{$food->id}}"><img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="width:65px;height:40px" alt="Joome Food" title="Joome Food" class="img-responsive" /></a>
+                            
+                        </div>
+                        <div class="caption product-detail">
+                            <h4 class="product-name"> <a href="/food/view-food-details/{{$food->id}}" title="Joome Food">{{$food->food_type}}</a> </h4>
+                            <p class="price product-price"> <span class="price-new">Ugx:{{ number_format($food->amount)}}</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
+                        </div>
+                        <div class="button-group">
+                          <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" value="{{ $food->id }}" name="id">
+                                <input type="hidden" value="{{ $food->food_type }}" name="name">
+                                <input type="hidden" value="{{ $food->amount }}" name="price">
+                                <input type="hidden" value="{{ $food->photo }}"  name="image">
+                                <input type="hidden" value="1" name="quantity">
+                                <div class="col-xs-12 mb-5">
+                                <button type="submit" class="addtocart-btn" style="border:none; hover:green;">Add to Cart</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
             <div class="column-block">
                 <div class="columnblock-title">Categories</div>
                 <div class="category_block">
                     <ul class="box-category treeview-list treeview">
-                        <li><a href="#" class="activSub">Desktops</a>
-                            <ul>
+                        <li><a href="/accomodation/all-accomodation" class="activSub">Accomodation</a>
+                            {{--<ul>
                                 <li><a href="#">PC</a></li>
                                 <li><a href="#">MAC</a></li>
-                            </ul>
+                            </ul>--}}
                         </li>
-                        <li><a href="#" class="activSub">Laptops &amp; Notebooks</a>
-                            <ul>
-                                <li><a href="#">Macs</a></li>
-                                <li><a href="#">Windows</a></li>
-                            </ul>
+                        <li><a href="//shop/all-shop-items" class="activSub">Shop</a>
                         </li>
-                        <li><a href="#" class="activSub">Components</a>
-                            <ul>
-                                <li><a href="#">Mice and Trackballs</a></li>
-                                <li><a href="#" class="activSub" >Monitors</a>
-                                    <ul>
-                                        <li><a href="#"  >test 1</a></li>
-                                        <li><a href="#"  >test 2</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Windows</a></li>
-                            </ul>
+                        <li><a href="/agricultureproduce/all-produce" class="activSub">Agriculture Produce</a>
+                            
                         </li>
-                        <li><a href="#">Tablets</a></li>
-                        <li><a href="#">Software</a></li>
-                        <li><a href="#">Phones & PDAs</a></li>
-                        <li><a href="#">Cameras</a></li>
-                        <li><a href="#">MP3 Players</a></li>
+                        <li><a href="/agricultureequipments/all-agriculture-equipments">Agriculture Equipments</a></li>
+                        <li><a href="/food/all-food">Food</a></li>
+                        <li><a href="/about/about-joome">About Us</a></li>
+                        <li><a href="/blog/our-blog">Blog</a></li>
+                        <li><a href="/news/our-news">News</a></li>
                     </ul>
                 </div>
             </div>
             <div class="blog">
                 <div class="blog-heading">
-                    <h3>Latest Blogs</h3>
+                    <h3>Latest Agric Produce</h3>
                 </div>
                 <div class="blog-inner">
                     <ul id="Latest-blog" class="list-unstyled blog-wrapper">
+                    @php
+                        $get_produce=\DB::table('produces')->join('produce_categories','produce_categories.id','produces.produce_category_id')
+                        ->join('users','users.id','produces.created_by')
+                        ->where('produces.status','available')
+                        ->orderBy('produces.created_at','Desc')->limit('5')
+                        ->get(['produces.*','users.name','produce_categories.produce_category']);
+                    @endphp
+                    @foreach($get_produce as $produce)
                         <li class="item blog-slider-item">
                             <div class="panel-default">
-                                <div class="blog-image"> <a class="blog-imagelink" href="#"><img src="{{asset('front/image/blog/blog_1.jpg')}}" alt="#"></a> </div>
-                                <div class="blog-content"> <a class="blog-name" href="#">
-                                    <h2>Nunc rutrum scel potent</h2>
-                                    </a> <span class="blog-date">06/07/2015</span> </div>
+                                <div class="blog-image"> <a class="blog-imagelink" href="/agricultureproduce/view-produce-details/{{$produce->id}}"><img src="{{asset('storage/produce_photos/'.$produce->image)}}" style="width:65px;height:40px" alt="#"></a> </div>
+                                <div class="blog-content"> <a class="blog-name" href="/agricultureproduce/view-produce-details/{{$produce->id}}">
+                                    <h2>{{$produce->produce_name}}</h2>
+                                    </a> <span class="blog-date">{{ number_format($produce->price)}}</span> </div>
                             </div>
                         </li>
-                        <li class="item blog-slider-item">
-                            <div class="panel-default">
-                                <div class="blog-image"> <a class="blog-imagelink" href="#"><img src="{{asset('front/image/blog/blog_2.jpg')}}" alt="#"></a> </div>
-                                <div class="blog-content"> <a class="blog-name" href="#">
-                                    <h2>Nunc rutrum scel potent</h2>
-                                    </a> <span class="blog-date">06/07/2015</span> </div>
-                            </div>
-                        </li>
-                        <li class="item blog-slider-item">
-                            <div class="panel-default">
-                                <div class="blog-image"> <a class="blog-imagelink" href="#"><img src="{{asset('front/image/blog/blog_5.jpg')}}" alt="#"></a> </div>
-                                <div class="blog-content"> <a class="blog-name" href="#">
-                                    <h2>Nunc rutrum scel potent</h2>
-                                    </a> <span class="blog-date">06/07/2015</span> </div>
-                            </div>
-                        </li>
-                        <li class="item blog-slider-item">
-                            <div class="panel-default">
-                                <div class="blog-image"> <a class="blog-imagelink" href="#"><img src="{{asset('front/image/blog/blog_4.jpg')}}" alt="#"></a> </div>
-                                <div class="blog-content"> <a class="blog-name" href="#">
-                                    <h2>Nunc rutrum scel potent</h2>
-                                    </a> <span class="blog-date">06/07/2015</span> </div>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
-                    <div class="buttons text-right seeall">
-                        <button type="button" onClick="location='blog.html';" class="btn btn-primary">See all Blogs</button>
-                    </div>
-                </div>
-            </div>
-            <h3 class="productblock-title">Latest</h3>
-            <div class="row latest-grid product-grid">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-                    <div class="product-thumb transition">
-                        <div class="image product-imageblock"><a href="product.html"><img src="{{asset('front/image/product/1product50x59.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
-                            <div class="button-group">
-                                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                                <button type="button" class="addtocart-btn">Add to Carts</button>
-                                <a href="/productdetails/view-details" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></a>
-                            </div>
-                        </div>
-                        <div class="caption product-detail">
-                            <h4 class="product-name"><a href="#" title="iPod Classic">iPod Classic</a></h4>
-                            <p class="price product-price">$123.00<span class="price-tax">Ex Tax: $100.00</span></p>
-                            <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                            <button type="button" class="addtocart-btn" >Add to Cart</button>
-                            <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-                    <div class="product-thumb transition">
-                        <div class="image product-imageblock"><a href="#"><img src="{{asset('front/image/product/2product50x59.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
-                            <div class="button-group">
-                                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
-                                <button type="button" class="addtocart-btn">Add to Cart</button>
-                                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
-                            </div>
-                        </div>
-                        <div class="caption product-detail">
-                            <h4 class="product-name"><a href="#" title="iPod Classic">iPod Classic</a></h4>
-                            <p class="price product-price">$122.00<span class="price-tax">Ex Tax: $100.00</span></p>
-                            <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                            <button type="button" class="addtocart-btn" >Add to Cart</button>
-                            <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-                    <div class="product-thumb transition">
-                        <div class="image product-imageblock"><a href="#"><img src="{{asset('front/image/product/3product50x59.jpg')}}" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
-                            <div class="button-group">
-                                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                                <button type="button" class="addtocart-btn">Add to Cart</button>
-                                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                            </div>
-                        </div>
-                        <div class="caption product-detail">
-                            <h4 class="product-name"><a href="#" title="iPod Classic">iPod Classic</a></h4>
-                            <p class="price product-price">$122.00<span class="price-tax">Ex Tax: $100.00</span></p>
-                            <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                            <button type="button" class="addtocart-btn">Add to Cart</button>
-                            <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h3 class="productblock-title">Specials</h3>
-            <div class="row special-grid product-grid">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-                    <div class="product-thumb transition">
-                        <div class="image product-imageblock"> <a href="#"><img src="{{asset('front/image/product/4product50x59.jpg')}}" alt="iPhone" title="iPhone" class="img-responsive" /></a>
-                            <div class="button-group">
-                                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                                <button type="button" class="addtocart-btn" >Add to Cart</button>
-                                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                            </div>
-                        </div>
-                        <div class="caption product-detail">
-                            <h4 class="product-name"> <a href="product.html" title="iPhone">iPhone</a> </h4>
-                            <p class="price product-price"> <span class="price-new">$254.00</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                            <button type="button" class="addtocart-btn" >Add to Cart</button>
-                            <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-                    <div class="product-thumb transition">
-                        <div class="image product-imageblock"> <a href="#"><img src="{{asset('front/image/product/5product50x59.jpg')}}" alt="iPhone" title="iPhone" class="img-responsive" /></a>
-                            <div class="button-group">
-                                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                                <button type="button" class="addtocart-btn" >Add to Cart</button>
-                                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                            </div>
-                        </div>
-                        <div class="caption product-detail">
-                            <h4 class="product-name"> <a href="product.html" title="iPhone">iPhone</a> </h4>
-                            <p class="price product-price"> <span class="price-new">$254.00</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                            <button type="button" class="addtocart-btn" >Add to Cart</button>
-                            <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-                    <div class="product-thumb transition">
-                        <div class="image product-imageblock"> <a href="#"><img src="{{asset('front/image/product/6product50x59.jpg')}}" alt="iPhone" title="iPhone" class="img-responsive" /></a>
-                            <div class="button-group">
-                                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                                <button type="button" class="addtocart-btn" >Add to Cart</button>
-                                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                            </div>
-                        </div>
-                        <div class="caption product-detail">
-                            <h4 class="product-name"> <a href="product.html" title="iPhone">iPhone</a> </h4>
-                            <p class="price product-price"> <span class="price-new">$254.00</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                            <button type="button" class="addtocart-btn" >Add to Cart</button>
-                            <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

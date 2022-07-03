@@ -26,14 +26,12 @@
     </div>
     <div id="column-right" class="col-sm-3 hidden-xs column-left">
       <div class="column-block">
-        <div class="columnblock-title">Categories</div>
-        <div class="blog-categories-block category_block">
-          <div class="list-group"> <a class="list-group-item" href="#">Audio</a> <a class="list-group-item" href="#">Gallery</a> <a class="list-group-item" href="#">Link</a> <a class="list-group-item" href="#">Quote</a> <a class="list-group-item" href="#">Uncategorized</a> <a class="list-group-item last" href="#">Video</a> </div>
-        </div>
+        @livewire('front.side-categories')
       </div>
-      <div class="productblock-title">Recent Posts</div>
       <div class="blog-categories-block category_block">
-        <div class="list-group"> <a class="list-group-item" href="#">Gallery Post Format</a> <a class="list-group-item" href="#">Recent Posts</a> <a class="list-group-item" href="index-2.html#">Gallery Post Format</a> <a class="list-group-item" href="#">Standard Post Format</a> <a class="list-group-item last" href="#">Image Post Format</a> </div>
+      <div class="banner" style="margin-bottom:20px;" >
+        <div class="item" style="margin-bottom:20px;" > <a href="#"><img src="{{ asset('front/image/banners/LeftBanner.jpg')}}" alt="Left Banner" class="img-responsive" /></a> </div>
+      </div>
       </div>
       
       <!-- end blog-sidebar --> 

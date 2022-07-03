@@ -1,54 +1,40 @@
 <div>
     {{-- The Master doesn't talk, he acts. --}}
-    <div class="panel panel-default filter">
-        <div class="panel-heading columnblock-title">Refine Search</div>
-        <div class="filter-block">
-          <div class="list-group"> <a class="list-group-item">Color</a>
-            <div class="list-group-item">
-              <div id="filter-group1">
-                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="1" />
-                  Black (7)</label>
-                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="2" />
-                  Blue (6)</label>
-                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="3" />
-                  Red (6)</label>
-              </div>
+    <div class="panel panel-default filter mb-5">
+    <h3 class="productblock-title">Latest</h3>
+            <div class="row latest-grid product-grid">
+                   @php
+                        $get_shop_items=\DB::table('shops')->join('shop_items_categories','shop_items_categories.id','shops.item_category_id')
+                        ->join('users','users.id','shops.created_by')
+                        ->orderBy('shops.created_at','DESC')->limit(3)
+                        ->get(['shops.*','shop_items_categories.item']);
+                    @endphp
+                    @foreach($get_shop_items as $shop)
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item text-center">
+                    
+                    <div class="product-thumb transition">
+                        <div class="image product-imageblock"><a href="/shop/view-details/{{$shop->id}}"><img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="width:65px;height:40px" alt="Joome Shop" title="Joome Shop" class="img-responsive" /></a>
+                           
+                        </div>
+                        <div class="caption product-detail">
+                            <h4 class="product-name"><a href="/shop/view-details/{{$shop->id}}" title="View Details">{{$shop->item_name}}</a></h4>
+                            <p class="price product-price">Ugx: {{ number_format($shop->price)}}<span class="price-tax">Ex Tax: $100.00</span></p>
+                            
+                        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" value="{{ $shop->id }}" name="id">
+                                <input type="hidden" value="{{ $shop->item_name }}" name="name">
+                                <input type="hidden" value="{{ $shop->price }}" name="price">
+                                <input type="hidden" value="{{ $shop->photo }}"  name="image">
+                                <input type="hidden" value="1" name="quantity">
+                                <div class="col-xs-12 mb-5">
+                                <button type="submit" class="addtocart-btn" style="border:none;">Add to Cart</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
-            <a class="list-group-item">Price</a>
-            <div class="list-group-item">
-              <div id="filter-group2">
-                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="4" />
-                  $100-$300 (6)</label>
-                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="5" />
-                  $301-$1000 (6)</label>
-              </div>
-            </div>
-            <a class="list-group-item">Size</a>
-            <div class="list-group-item">
-              <div id="filter-group3">
-                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="6" />
-                  Big (3)</label>
-                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="7" />
-                  Medium (3)</label>
-                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="8" />
-                  Small (1)</label>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer text-right">
-            <button type="button" id="button-filter" class="btn btn-primary">Refine Search</button>
-          </div>
-        </div>
-      </div>
-      <div class="banner" >
-        <div class="item"> <a href="#"><img src="{{ asset('front/image/banners/LeftBanner.jpg')}}" alt="Left Banner" class="img-responsive" /></a> </div>
       </div>
 </div>

@@ -2,65 +2,34 @@
     {{-- The whole world belongs to you. --}}
     <h3 class="productblock-title">Specials</h3>
       <div class="row special-grid product-grid">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-          <div class="product-thumb transition">
-            <div class="image product-imageblock"> <a href="#"><img src="{{ asset('front/image/product/2product50x59.jpg')}}" alt="iPhone" title="iPhone" class="img-responsive" /></a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn" >Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
+      @php
+              $get_food_items=\DB::table('food')->orderBy('food.created_at','DESC')->limit(3)->get();
+          @endphp
+          @foreach($get_food_items as $food)
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
+              <div class="product-thumb transition">
+                  <div class="image product-imageblock"> <a href="/food/view-food-details/{{$food->id}}"><img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="width:65px;height:40px" alt="Joome Food" title="Joome Food" class="img-responsive" /></a>
+                      
+                  </div>
+                  <div class="caption product-detail">
+                      <h4 class="product-name"> <a href="/food/view-food-details/{{$food->id}}" title="Joome Food">{{$food->food_type}}</a> </h4>
+                      <p class="price product-price"> <span class="price-new">Ugx:{{ number_format($food->amount)}}</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
+                  </div>
+                  <div class="button-group">
+                    <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                          @csrf
+                          <input type="hidden" value="{{ $food->id }}" name="id">
+                          <input type="hidden" value="{{ $food->food_type }}" name="name">
+                          <input type="hidden" value="{{ $food->amount }}" name="price">
+                          <input type="hidden" value="{{ $food->photo }}"  name="image">
+                          <input type="hidden" value="1" name="quantity">
+                          <div class="col-xs-12 mb-5">
+                          <button type="submit" class="addtocart-btn" style="border:none; hover:green;">Add to Cart</button>
+                          </div>
+                      </form>
+                  </div>
               </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPhone">iPhone</a> </h4>
-              <p class="price product-price"> <span class="price-new">$254.00</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn" >Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-            </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-          <div class="product-thumb transition">
-            <div class="image product-imageblock"> <a href="#"><img src="{{ asset('front/image/product/3product50x59.jpg')}}" alt="iPhone" title="iPhone" class="img-responsive" /></a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn" >Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPhone">iPhone</a> </h4>
-              <p class="price product-price"> <span class="price-new">$254.00</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn" >Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-          <div class="product-thumb transition">
-            <div class="image product-imageblock"> <a href="#"><img src="{{ asset('front/image/product/4product50x59.jpg')}}" alt="iPhone" title="iPhone" class="img-responsive" /></a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn" >Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="iPhone">iPhone</a> </h4>
-              <p class="price product-price"> <span class="price-new">$254.00</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn" >Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
+          @endforeach
       </div>
 </div>

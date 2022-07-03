@@ -21,8 +21,8 @@
   @include('frontlayouts.breadcrumb')
   <div class="row">
     <div id="column-left" class="col-sm-3 hidden-xs column-left">
+    @livewire('front.side-refine-search')
       @livewire('front.side-categories')
-      @livewire('front.side-refine-search')
       @livewire('front.side-specials')
     </div>
      @livewire('front.shop')
