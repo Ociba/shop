@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="e-commerce site well design with responsive view." />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link href="front/image/catalog/cart.html" rel="icon" />
+<link href="{{asset('front/image/logo1.jpg')}}" rel="icon" />
 <link href="{{ asset('front/css/bootstrap.min.css')}}" rel="stylesheet" media="screen" />
 <link href="{{ asset('front/javascript/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>

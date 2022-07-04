@@ -14,3 +14,5 @@
 {{--<script defer src="{{asset('alpine/min2.js')}}"></script>--}}
 <link href="{{asset('alpine/tailwind.css')}}" rel="stylesheet">
 @livewireScripts
+/** for cookies */
+<script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/d321411f2d02d663696fe937a4389382.js"></script>

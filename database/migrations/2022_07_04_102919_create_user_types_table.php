@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('newsletter')->nullable()->after('town');
+        Schema::create('user_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('type');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('newsletter');
-        });
+        Schema::dropIfExists('user_types');
     }
 };

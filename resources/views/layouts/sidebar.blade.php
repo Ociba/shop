@@ -106,12 +106,22 @@
                     <div class="badge badge-danger">0+</div>
                 </div>
             </a>
-        </li>
+        </li> 
         <li class="sidenav-divider mb-1"></li>
         <li  @if(\Request::route()->getName() == "Food") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/food/food" class="sidenav-link">
                 <i class="sidenav-icon feather icon-grid"></i>
                 <div>Food</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-danger">0+</div>
+                </div>
+            </a>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li  @if(\Request::route()->getName() == "Payments") class="sidenav-item active" @else class="sidenav-item" @endif>
+            <a href="/payments/pay-your-subscription" class="sidenav-link">
+                <i class="sidenav-icon feather icon-grid"></i>
+                <div>Make Payments</div>
                 <div class="pl-1 ml-auto">
                     <div class="badge badge-danger">0+</div>
                 </div>

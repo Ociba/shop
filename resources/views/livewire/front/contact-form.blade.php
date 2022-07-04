@@ -1,5 +1,6 @@
 <div>
     {{-- Be like water. --}}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="sendMessage">
         <fieldset>
           <h3>Contact Form</h3>
@@ -32,8 +33,16 @@
         </fieldset>
         <div class="buttons">
           <div class="pull-right">
-            <input type="submit" value="Submit" class="btn btn-primary">
+            <button class="g-recaptcha" 
+            data-sitekey="6LdqI8AgAAAAAPnFFULg_ehjau8t_izNz-M9MNIy" 
+            data-callback='onSubmit' 
+            data-action='submit' type="submit" value="Submit" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </form>
+      <script>
+        function onSubmit(token) {
+              document.getElementById("demo-form").submit();
+            }
+    </script>
 </div>

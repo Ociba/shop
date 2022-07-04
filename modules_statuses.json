@@ -13,5 +13,6 @@
     "ProductDetails": true,
     "Admin": true,
     "Food": true,
-    "Advertise": true
+    "Advertise": true,
+    "Payments": true
 }
