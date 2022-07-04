@@ -176,7 +176,7 @@
                 @livewire('front.featured')
                 @livewire('front.blog-latest')
             </div>
-            @livewire('front.slider2')
+               @livewire('front.slider2')
         </div>
     </div>
 </div>

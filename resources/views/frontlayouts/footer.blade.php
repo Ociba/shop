@@ -69,8 +69,7 @@
                     <li class="mastero"><a href="#"><img alt="" src="{{asset('front/image/payment/mtn.png')}}" style="width:50px; height:30px;"></a></li>
                     {{--<li class="visa"><a href="#"><img alt="" src="{{asset('front/image/payment/visa.jpg')}}"></a></li>--}}
                     <li class="currus"><a href="#"><img alt="" src="{{asset('front/image/payment/airtel.png')}}" style="width:50px; height:30px;"></a></li>
-                    {{--<li class="discover"><a href="#"><img alt="" src="{{asset('front/image/payment/discover.jpg')}}"></a></li>--}}
-                    <li class="bank"><a href="#"><img alt="" src="{{asset('front/image/payment/bank.jpg')}}"></a></li>
+                    <li class="bank"><a href="#"><img alt="" src="{{asset('front/image/payment/cash2.png')}}"  style="border-radius:50%; width:50px; height:40px;"></a></li>
                 </ul>
             </div>
         </div>
