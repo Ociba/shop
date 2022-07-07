@@ -106,7 +106,10 @@
                         </div>
                     </div>
                 </fieldset>
-                <button  type="submit" class="btn btn-primary" style="background-color:#55ad37; color:#ffffff;" value="Continue">Continue 
+                <button  class="g-recaptcha text-center" 
+                    data-sitekey="6LdqI8AgAAAAAPnFFULg_ehjau8t_izNz-M9MNIy" 
+                    data-callback='onSubmit' 
+                    data-action='submit'  type="submit" class="btn btn-primary" style="background-color:#55ad37; color:#ffffff;" value="Continue">Continue 
                 </button>
             </form>
             <script>

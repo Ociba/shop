@@ -34,6 +34,12 @@ class ShopController extends Controller
     public function getShopItemDetails($shop_id){
         return view('shop::shop_item_details',compact('shop_id'));
     }
+      /**
+     * This function gets shop discount details
+     */
+    public function getShopItemDiscountDetails($shop_id){
+        return view('shop::discount_details',compact('shop_id'));
+    }
     /**
      * Show the form for creating a new resource.
      * @return Renderable

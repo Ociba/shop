@@ -24,6 +24,6 @@ class CartController extends Controller
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
         
-        return redirect()->to('cart/my-cart');
+        return redirect()->back();
     }
 }

@@ -1,5 +1,10 @@
 <div>
     {{-- Stop trying to control. --}}
+        @if(session()->has('success'))
+        <div class="card-header bg-success">
+            <h4 class="mb-0 text-white" style="color:#ffffff">{{session('success')}}</h4>
+        </div>
+        @endif
     <div id="cart" class="btn-group btn-block">
         <button type="button" class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button"><span id="cart-total">{{Cart::getTotalQuantity()}} item(s) - ugx:{{ number_format(Cart::getTotal()) }}</span><i class="fa fa-caret-down"></i></button>
         <ul class="dropdown-menu pull-right cart-dropdown-menu">

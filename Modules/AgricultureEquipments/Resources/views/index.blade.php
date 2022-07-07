@@ -11,7 +11,6 @@
 @include('frontlayouts.css')
 </head>
 <body class="category col-2 left-col">
-@include('frontlayouts.preloader')
 <header>
     @include('frontlayouts.topheader')
     @include('frontlayouts.middle-topheader')
@@ -19,6 +18,7 @@
 @include('frontlayouts.menu')
 <div class="container">
   @include('frontlayouts.breadcrumb')
+  @livewire('front.equipments-with-discount')
   <div class="row">
     <div id="column-left" class="col-sm-3 hidden-xs column-left">
       @livewire('front.side-refine-search')

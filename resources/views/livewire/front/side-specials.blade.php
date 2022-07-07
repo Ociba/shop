@@ -24,7 +24,7 @@
                           <input type="hidden" value="{{ $food->photo }}"  name="image">
                           <input type="hidden" value="1" name="quantity">
                           <div class="col-xs-12 mb-5">
-                          <button type="submit" class="addtocart-btn" style="border:none; hover:green;">Add to Cart</button>
+                          <button type="submit" class="addtocart-btn" style="border:none; hover:green; margin-left:-10px">Add to Cart</button>
                           </div>
                       </form>
                   </div>

@@ -3,7 +3,7 @@
     <div class="blog-heading">
             <h3>Your Agriculture Eqipments</h3>
     </div>
-    <div id="brand_carouse" class="owl-carousel brand-logo">
+    <div id="brand_carouse" class="owl-carousel brand-log">
          @foreach($get_equipments as $equipments)
         <div class="item"> 
             <a href="/agricultureequipments/view-equipment-details/{{$equipments->id}}"><img src="{{ asset('storage/shop_items_photos/'.$equipments->photo)}}" style="height:150px;" alt="Equipments" class="img-responsive" /></a>

@@ -18,13 +18,15 @@
 <link href="{{ asset('front/javascript/owl-carousel/owl.transitions.css')}}" type="text/css" rel="stylesheet" media="screen" />
 </head>
 <body>
-@include('frontlayouts.preloader')
+{{--@include('frontlayouts.preloader')--}}
 <header>
     @include('frontlayouts.topheader')
     @include('frontlayouts.middle-topheader')
 </header>
 @include('frontlayouts.menu')
 <div class="container col-2">
+<h3 class="productblock-title">Products With Discount</h3>
+    @livewire('front.with-discount') 
     @include('frontlayouts.slider')
     @livewire('front.discount')
     <div class="row">
