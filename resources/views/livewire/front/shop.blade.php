@@ -54,7 +54,7 @@
             <div class="caption product-detail">
               <h4 class="product-name"> <a href="/shop/view-details/{{$shop->id}}" title="{{$shop->item_name}} "> {{$shop->item_name}} </a> </h4>
               
-                <p class="price product-price"><span class="price-old">$272.00</span> ugx.{{ number_format($shop->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
+                <p class="price product-price"><span class="price-old">Ugx:0</span> ugx.{{ number_format($shop->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
                 <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
             </div>
           </div>

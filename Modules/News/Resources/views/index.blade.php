@@ -12,7 +12,6 @@
 @include('frontlayouts.css')
 </head>
 <body class="single-blog col-2">
-@include('frontlayouts.preloader')
 <header>
     @include('frontlayouts.topheader')
     @include('frontlayouts.middle-topheader')

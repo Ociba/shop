@@ -26,3 +26,4 @@ Route::get('/cart/my-cart', [CartController::class, 'cart']);
 Route::get('/logout',[LogoutController::Class, 'logoutUser']);
 Route::get('/submit-order',[OrderController::Class,'submitOrder'])->middleware('auth');
 Route::get('/information',function(){ return view('information');});
+Route::get('/join-us-as-rider-or-partner',function(){ return view('rider_or_partner');})->name('Become Rider OR Partner');

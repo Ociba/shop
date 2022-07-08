@@ -32,7 +32,7 @@
                 <label for="input-password" class="control-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password">
                 @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}">Forgotten Password</a>
+                <a href="{{ route('password.request') }}">Forgot Password</a>
                 @endif
             </div>
               <input type="submit" class="btn btn-primary" value="Login">

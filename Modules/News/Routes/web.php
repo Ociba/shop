@@ -14,3 +14,6 @@
 Route::prefix('news')->group(function() {
     Route::get('/our-news', 'NewsController@index')->name('News Update');
 });
+Route::group(['prefix'=>'news', 'middleware'=>['auth']],function(){
+    Route::get('/get-news', 'NewsController@getNews')->name('News');
+ });

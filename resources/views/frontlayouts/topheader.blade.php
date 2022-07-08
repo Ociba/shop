@@ -26,7 +26,7 @@
                                     <li><a href="/login"><i class="fa fa-unlock"></i> Login Your Account</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#" id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart"></i> <span>Wish List</span><span> (0)</span></a></li>
+                            <li><a href="/join-us-as-rider-or-partner" id="wishlist-total" title="Join Us Now"><i class="fa fa-plus"></i> <span>Join Us</span><span></span></a></li>
                         </ul>
                     </div>
                 </div>

@@ -87,7 +87,7 @@
                             <td>{{$items->status}}</td>
                             <td>
                                 <a href="/admin/edit/{{$items->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                               
+                                <a href="#" class="btn btn-success btn-sm" onclick="Livewire.emit('openModal', 'admin.add-shop-discount',{{ json_encode(['shop_id' => $items->id])}})"><i class="feather icon-plus"></i>&nbsp;Add Discount </a>
                                 <a href="/admin/delete-accomodation/{{$items->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
                         </tr>

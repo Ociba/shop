@@ -11,7 +11,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
-                    <button onclick="Livewire.emit('openModal', 'admin.add-produce')" class="btn btn-info  m-l-15 text-white mb-3"><i class="fa fa-plus-circle"></i> Add Shop produces</button>
+                    <button onclick="Livewire.emit('openModal', 'admin.add-produce')" class="btn btn-info  m-l-15 text-white mb-3"><i class="fa fa-plus-circle"></i> Add Produces</button>
                 </div>
             </div>
             <div class="row">
@@ -100,7 +100,6 @@
                             <td>{{$produces->status}}</td>
                             <td>
                                 <a href="/admin/edit/{{$produces->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                               
                                 <a href="/admin/delete-accomodation/{{$produces->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
                         </tr>

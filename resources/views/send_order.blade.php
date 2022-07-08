@@ -12,7 +12,6 @@
 @include('frontlayouts.css')
 </head>
 <body class="checkout col-2 left-col">
-@include('frontlayouts.preloader')
 <header>
     @include('frontlayouts.topheader')
     @include('frontlayouts.middle-topheader')

@@ -15,8 +15,10 @@ class AccomodationController extends Controller
     public function index()
     {
         return view('accomodation::index');
+    } 
+    public function getCategorizedAccomodationAndProperty($category_id){
+        return view('accomodation::categorized_accomodation',compact('category_id'));
     }
-
     /**
      * Show the form for creating a new resource.
      * @return Renderable

@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
 use App\Models\LikesAndUnlikes;
-
+use App\Models\Blog;
 class LikesForm extends Component
 {
     protected $listeners =['LikesForm' =>'$refresh'];

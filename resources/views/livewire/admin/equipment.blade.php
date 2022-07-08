@@ -85,13 +85,19 @@
                             <td>{{$equipments->equipment}}</td>
                             <td>{{$equipments->quantity}}</td>
                             <td>{{ number_format($equipments->price)}}</td>
-                            <td>{{number_format($equipments->discount_amount)}}</td>
+                            @php
+                            $percentage =0.01;
+                             $discount_amount =$equipments->equipment_discount * $percentage;
+                            $percentage_discount_amount =$equipments->price * $discount_amount;
+                            $discount_amount =$equipments->price -$percentage_discount_amount;
+                            @endphp
+                            <td>{{number_format($discount_amount)}}</td>
                             <td>{{ $equipments->equipment_discount}}</td>
                             <td>{{$equipments->description}}</td>
                             <td><img src="{{ asset('storage/shop_items_photos/'.$equipments->photo)}}" style="width:40px;height:40px;"></td>
                             <td>{{$equipments->status}}</td>
                             <td>
-                                <a href="/admin/edit/{{$equipments->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
+                                <button class="btn btn-sm btn-primary" onclick="Livewire.emit('openModal', 'admin.add-equipment-discount',{{ json_encode(['equipment_id' => $equipments->id])}})"><i class="feather icon-edit"></i>&nbsp;Edit</button>
                                
                                 <a href="/admin/delete-accomodation/{{$equipments->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>

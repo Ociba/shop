@@ -11,7 +11,6 @@
 @include('frontlayouts.css')
 </head>
 <body class="cart col-2">
-@include('frontlayouts.preloader')
 <header>
     @include('frontlayouts.topheader')
     @include('frontlayouts.middle-topheader')

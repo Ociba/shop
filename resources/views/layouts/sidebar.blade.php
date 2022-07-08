@@ -128,39 +128,17 @@
             </a>
         </li>
         <li class="sidenav-divider mb-1"></li>
-       
-        <li class="sidenav-item">
-            <a href="javascript:" class="sidenav-link sidenav-toggle">
-                <i class="sidenav-icon feather icon-layout"></i>
-                <div>Clients (Loans)</div>
-                <div class="pl-1 ml-auto"> 
-                    <div class="badge badge-success">0+</div>
-                </div>
-            </a>
-            <ul class="sidenav-menu">
-                <li @if(\Request::route()->getName() == "All Clients") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/admin/all-clients" class="sidenav-link">
-                        <div>Clients With Paid Loans</div>
-                    </a>
-                </li>
-                <li @if(\Request::route()->getName() == "Clients With Loans") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/admin/clients-with-loans" class="sidenav-link">
-                        <div>Clients with Loans</div>
-                    </a>
-                </li>
-                <li @if(\Request::route()->getName() == "Loan Defaulters") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/admin/loan-defaulters" class="sidenav-link">
-                        <div>Loan Defaulters</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="sidenav-divider mb-1"></li>
         
-        <li @if(\Request::route()->getName() == "interests") class="sidenav-item active" @else class="sidenav-item" @endif>
-            <a href="/admin/get-interests" class="sidenav-link">
+        <li @if(\Request::route()->getName() == "Admin Blog") class="sidenav-item active" @else class="sidenav-item" @endif>
+            <a href="/blog/blog" class="sidenav-link">
                 <i class="sidenav-icon ion ion-md-wallet"></i>
-                <div>Interests</div>
+                <div>Blog</div>
+            </a>
+        </li>
+        <li @if(\Request::route()->getName() == "News") class="sidenav-item active" @else class="sidenav-item" @endif>
+            <a href="/news/get-news" class="sidenav-link">
+                <i class="sidenav-icon ion ion-md-wallet"></i>
+                <div>News</div>
             </a>
         </li>
         <li class="sidenav-divider mb-1"></li>

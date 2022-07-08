@@ -84,7 +84,7 @@
                             <td><img src="{{ asset('storage/shop_items_photos/'.$foods->photo)}}" style="width:40px;height:40px;"></td>
                             
                             <td>
-                                <a href="/admin/edit/{{$foods->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
+                                <a href="#" class="btn btn-info btn-sm"  onclick="Livewire.emit('openModal', 'admin.add-food-discount',{{ json_encode(['food_id' => $foods->id])}})"><i class="feather icon-plus"></i>&nbsp;Add Discount </a>
                                
                                 <a href="/admin/delete-accomodation/{{$foods->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>

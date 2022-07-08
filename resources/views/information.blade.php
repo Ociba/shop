@@ -18,7 +18,6 @@
 <link href="{{ asset('front/javascript/owl-carousel/owl.transitions.css')}}" type="text/css" rel="stylesheet" media="screen" />
 </head>
 <body>
-@include('frontlayouts.preloader')
 <header>
     @include('frontlayouts.topheader')
     @include('frontlayouts.middle-topheader')

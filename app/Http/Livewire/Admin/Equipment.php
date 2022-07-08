@@ -17,8 +17,7 @@ class Equipment extends Component
 
     public $sortBy = 'equipment';
     public $search = '';
-
-
+    
     public function render()
     {
         $get_all_equipments  =$this->getEquipment();
@@ -33,4 +32,5 @@ class Equipment extends Component
      ->search($this->search)
     ->Paginate($this->perPage,['equipment.*','users.name']);
     }
+    
 }

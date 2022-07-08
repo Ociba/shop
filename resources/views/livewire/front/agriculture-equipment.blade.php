@@ -54,7 +54,7 @@
             <div class="caption product-detail">
               <h4 class="product-name"> <a href="/agricultureequipments/view-equipment-details/{{$equipment->id}}" title="{{$equipment->equipment}}"> {{$equipment->equipment}} </a> </h4>
               
-                <p class="price product-price"><span class="price-old">$272.00</span> ugx.{{ number_format($equipment->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
+                <p class="price product-price"><span class="price-old">Ugx:0</span> ugx.{{ number_format($equipment->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
                 <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
             </div>
           </div>
@@ -84,7 +84,30 @@
           </ul>
         </div>
       </div>
-      @livewire('front.carousel')
+      <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="heading-section mb-5 pb-md-4 productblock-title">Get More Products</h3>
+                </div>
+                <div class="col-sm-12">
+                    <div class="featured-carousel owl-carousel">
+                        @foreach($all_equipments as $item)
+                        <div class="item">
+                            <div class="work">
+                                <div class="img d-flex align-items-center justify-content-center rounded">
+                                    <a href="/agricultureequipments/view-equipment-details/{{$item->id}}" title="view Item Details">
+                                    <img src="{{ asset('storage/shop_items_photos/'.$item->photo)}}" style="height:100%;">
+                                    </a>
+                                </div>
+                                <div class="text pt-3 w-100 text-center mt-5">
+                                    <h3><a href="#">{{$item->equipment}}</a></h3>
+                                    <span style="color:#ff6600;">Ugx: {{ number_format($item->price)}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
 @livewireScripts

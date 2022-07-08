@@ -12,7 +12,6 @@
 @include('frontlayouts.css')
 </head>
 <body class="account-register col-2">
-@include('frontlayouts.preloader')
 <header>
    @include('frontlayouts.topheader')
    @include('frontlayouts.middle-topheader')

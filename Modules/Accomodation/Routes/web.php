@@ -12,6 +12,7 @@
 */
 Route::prefix('accomodation')->group(function() { 
     Route::get('/all-accomodation', 'AccomodationController@index')->name('Accomodations');
+    Route::get('/get-categorized-accomodation-and-property/{category_id}', 'AccomodationController@getCategorizedAccomodationAndProperty')->name('Categorized Accomodation & Property');
 });
  
 Route::group(['prefix'=>'accomodation', 'middleware'=>['auth']],function(){  

@@ -17,7 +17,7 @@
                @endphp
                 <div class="item">
                     <div class="work">
-                        <div class="img d-flex align-items-center justify-content-center rounded">
+                        <div class="img d-flex align-items-center justify-content-center rounded text-center">
                             <a href="#" title="Joome Equipments With Discount">
                             <img src="{{ asset('storage/shop_items_photos/'.$equip->photo)}}" style="height:80%; width:80%">
                             </a>

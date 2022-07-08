@@ -32,6 +32,7 @@ class AddFood extends ModalComponent
     public function addFoodDetails(){
         $this->validate();
         $this->emit('Foods','refreshComponent');
+        $this->emit('Front/Food','refreshComponent');
         
         Food::create(array(
         'food_type'     =>$this->food_type,

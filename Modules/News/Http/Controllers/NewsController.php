@@ -16,7 +16,12 @@ class NewsController extends Controller
     {
         return view('news::index');
     }
-
+    /**
+     * This function gets news
+     */
+    public function getNews(){
+        return view('news::news');
+    }
     /**
      * Show the form for creating a new resource.
      * @return Renderable

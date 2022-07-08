@@ -31,7 +31,7 @@
     @livewire('front.discount')
     <div class="row">
         <div id="column-left" class="col-sm-3 hidden-xs column-left">
-            <h3 class="productblock-title">Latest</h3>
+            <h3 class="productblock-title">Latest  Top Shopping </h3>
             <div class="row latest-grid product-grid">
                    @php
                         $get_shop_items=\DB::table('shops')->join('shop_items_categories','shop_items_categories.id','shops.item_category_id')
@@ -178,7 +178,9 @@
                 @livewire('front.featured')
                 @livewire('front.blog-latest')
             </div>
+            <div class="row">
                @livewire('front.slider2')
+            </div>
         </div>
     </div>
 </div>
