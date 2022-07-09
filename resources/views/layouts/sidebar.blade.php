@@ -22,6 +22,16 @@
             </a>
         </li>
         <li class="sidenav-divider mb-1"></li>
+        <li  @if(\Request::route()->getName() == "Customer Orders") class="sidenav-item active" @else class="sidenav-item" @endif>
+            <a href="/customershoppingorders/received-orders" class="sidenav-link">
+                <i class="sidenav-icon feather icon-folder"></i>
+                <div>Customer Orders</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-danger">0+</div>
+                </div>
+            </a>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-users"></i>
@@ -120,7 +130,7 @@
         <li class="sidenav-divider mb-1"></li>
         <li  @if(\Request::route()->getName() == "Payments") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/payments/pay-your-subscription" class="sidenav-link">
-                <i class="sidenav-icon feather icon-grid"></i>
+                <i class="sidenav-icon ion ion-md-wallet"></i>
                 <div>Make Payments</div>
                 <div class="pl-1 ml-auto">
                     <div class="badge badge-danger">0+</div>
@@ -128,34 +138,40 @@
             </a>
         </li>
         <li class="sidenav-divider mb-1"></li>
-        
-        <li @if(\Request::route()->getName() == "Admin Blog") class="sidenav-item active" @else class="sidenav-item" @endif>
-            <a href="/blog/blog" class="sidenav-link">
-                <i class="sidenav-icon ion ion-md-wallet"></i>
-                <div>Blog</div>
+
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-check-square"></i>
+                <div>About Joome</div>
             </a>
-        </li>
-        <li @if(\Request::route()->getName() == "News") class="sidenav-item active" @else class="sidenav-item" @endif>
-            <a href="/news/get-news" class="sidenav-link">
-                <i class="sidenav-icon ion ion-md-wallet"></i>
-                <div>News</div>
-            </a>
+            <ul class="sidenav-menu">
+                <li @if(\Request::route()->getName() == "Admin Blog") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/blog/blog" class="sidenav-link">
+                        <div>Blog</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "News") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/news/get-news" class="sidenav-link">
+                        <div>News</div>
+                    </a>
+                </li>
+            </ul>
         </li>
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-menu"></i>
-                <div>Other Entries</div>
+                <div>Requests</div>
             </a>
             <ul class="sidenav-menu">
                 <li @if(\Request::route()->getName() == "Category") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/accountsettings/get-categories" class="sidenav-link">
-                        <div>Categories</div>
+                        <div>Rider</div>
                     </a>
                 </li>
                 <li @if(\Request::route()->getName() == "Districts") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/accountsettings/get-districts" class="sidenav-link">
-                        <div>Districts</div>
+                        <div>Partner</div>
                     </a>
                 </li>
             </ul>

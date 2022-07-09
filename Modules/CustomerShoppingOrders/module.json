@@ -1,0 +1,13 @@
+{
+    "name": "CustomerShoppingOrders",
+    "alias": "customershoppingorders",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CustomerShoppingOrders\\Providers\\CustomerShoppingOrdersServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

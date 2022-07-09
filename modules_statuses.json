@@ -15,5 +15,6 @@
     "Food": true,
     "Advertise": true,
     "Payments": true,
-    "WishList": true
+    "WishList": true,
+    "CustomerShoppingOrders": true
 }
