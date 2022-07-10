@@ -127,7 +127,7 @@
                 </div>
             </a>
         </li>
-        <li class="sidenav-divider mb-1"></li>
+        {{--<li class="sidenav-divider mb-1"></li>
         <li  @if(\Request::route()->getName() == "Payments") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/payments/pay-your-subscription" class="sidenav-link">
                 <i class="sidenav-icon ion ion-md-wallet"></i>
@@ -136,7 +136,7 @@
                     <div class="badge badge-danger">0+</div>
                 </div>
             </a>
-        </li>
+        </li>--}}
         <li class="sidenav-divider mb-1"></li>
 
         <li class="sidenav-item">

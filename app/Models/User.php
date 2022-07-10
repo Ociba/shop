@@ -36,6 +36,7 @@ class User extends Authenticatable
         'newsletter',
         'amount',
         'payment_date',
+        'payment_status',
         'user_type',
     ];
 

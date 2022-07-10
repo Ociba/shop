@@ -18,4 +18,5 @@ Route::prefix('agricultureproduce')->group(function() {
 Route::group(['prefix'=>'agricultureproduce', 'middleware'=>['auth']],function(){
     Route::get('/produce-category', 'AgricultureProduceController@getProduceCategory')->name('Agriculture Produce Category');
     Route::get('/produce', 'AgricultureProduceController@getProduce')->name('Produce');
+    Route::get('/my-produce', 'AgricultureProduceController@getMyProduce')->name('My Produce');
 });

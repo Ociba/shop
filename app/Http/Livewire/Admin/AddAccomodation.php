@@ -43,6 +43,7 @@ class AddAccomodation extends ModalComponent
         $this->validate();
         $this->emit('Accomodation','refreshComponent');
         $this->emit('Front/Accomodation','refreshComponent');
+        $this->emit('Clients/MyAccomodation','refreshComponent');
         
         Acomodation::create(array(
         'category_id'       =>$this->category_id,

@@ -17,13 +17,22 @@ use App\Http\Controllers\LogoutController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome');  
 });
-Route::get('/dashboard',[DashboardController::Class,'getDashboard'])->name('Admin Dashboard')->middleware('auth');
-Route::get('/my-order',[OrderController::Class,'getFrontOrder'])->name('My Order')->middleware('auth');
+
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
 Route::get('/cart/my-cart', [CartController::class, 'cart']); 
-Route::get('/logout',[LogoutController::Class, 'logoutUser']);
-Route::get('/submit-order',[OrderController::Class,'submitOrder'])->middleware('auth');
 Route::get('/information',function(){ return view('information');});
 Route::get('/join-us-as-rider-or-partner',function(){ return view('rider_or_partner');})->name('Become Rider OR Partner');
+
+
+Route::group(['middleware' => ['auth']], function () {
+Route::get('/accomodation-dashboard',[DashboardController::Class,'getAccomodationDashboard'])->name('My Accomodation Dashboard');
+Route::get('/produce-dashboard',[DashboardController::Class,'getProduceDashboard'])->name('My Produce Dashboard');
+Route::get('/logout',[LogoutController::Class, 'logoutUser']);
+Route::get('/submit-order',[OrderController::Class,'submitOrder']);
+Route::get('/dashboard',[DashboardController::Class,'getDashboard'])->name('Admin Dashboard');
+Route::get('/my-order',[OrderController::Class,'getFrontOrder'])->name('My Order');
+Route::get('/pay-your-subscription',[DashboardController::Class,'getPaymentForm'])->name('Payments Form');
+Route::get('/pay-subscription',[DashboardController::Class,'getAccomodationPaymentForm'])->name('Accomodation Payments Form');
+});

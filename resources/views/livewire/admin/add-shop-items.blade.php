@@ -33,7 +33,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="form-group fill">
-                    <label class="floating-label" for="Number">Numbr of Items</label>
+                    <label class="floating-label" for="Number">Number of Items</label>
                     <input type="text" class="form-control" id="Number" wire:model="number" placeholder="e.g 5">
                 </div>
             </div>

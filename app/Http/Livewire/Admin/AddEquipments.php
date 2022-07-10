@@ -34,6 +34,7 @@ class AddEquipments extends ModalComponent
     public function createEquipment(){
         $this->validate();
         $this->emit('Equipment','refreshComponent');
+        $this->emit('Clients/MyProduce','refreshComponent');
         
         Equipment::create(array(
         'equipment'           =>$this->equipment,

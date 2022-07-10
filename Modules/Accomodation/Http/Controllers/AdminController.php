@@ -22,6 +22,13 @@ class AdminController extends Controller
         return view('accomodation::admin_accomodation_categories');
     }
     /**
+     * This function gets logged in clients available accomodoation
+     */
+    public function getLoggedinClientsAccomodation()
+    {
+        return view('accomodation::clients_available_accomodation');
+    }
+    /**
      * Show the form for creating a new resource.
      * @return Renderable
      */

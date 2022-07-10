@@ -28,6 +28,12 @@ class AgricultureProduceController extends Controller
   public function getProduce(){
     return view('agricultureproduce::produce');
   }
+   /**
+   * This function gets Agriculture Produce for the logged in user
+   */
+  public function getMyProduce(){
+    return view('agricultureproduce::my_produce');
+  }
   /**
    * Thisfunction gets produce details when u want to view
    */

@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('customershoppingorders')->group(function() { 
+Route::group(['prefix'=>'customershoppingorders', 'middleware'=>['auth']],function(){
     Route::get('/received-orders', 'CustomerShoppingOrdersController@index')->name('Customers Order'); 
     Route::get('/view-order-details/{user_id}', 'CustomerShoppingOrdersController@getOrderDetails')->name('Customers Order Details');
     Route::get('/print-order/{user_id}', 'CustomerShoppingOrdersController@getOrderPrintView')->name('Print Customers Order');

@@ -18,4 +18,5 @@ Route::prefix('accomodation')->group(function() {
 Route::group(['prefix'=>'accomodation', 'middleware'=>['auth']],function(){  
     Route::get('/adnin-available-accomodation', 'AdminController@getAdminAccomodation')->name('Available Accomodations');
     Route::get('/adnin-accomodation-categories', 'AdminController@getAccomodationCategories')->name('Accomodation Categories');
+    Route::get('/my-accomodation', 'AdminController@getLoggedinClientsAccomodation')->name('My Accomodation');
 });

@@ -29,10 +29,10 @@ class AddShopItems extends ModalComponent
     public $rules =[
         'item_name'        =>'required',
         'price'            =>'required',
-        'number'           =>'required',
+        'number'           =>'',
         'description'      =>'required',
         'photo'            =>'required',
-        'item_category_id' =>'required',
+        'item_category_id' =>'',
     ];
     public function render()
     {

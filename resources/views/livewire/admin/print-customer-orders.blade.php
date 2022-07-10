@@ -1,9 +1,10 @@
 <div>
     {{-- Nothing in the world is as soft and yielding as water. --}}
     <div class="container-fluid flex-grow-1 container-p-y">
+        
+    @foreach($print_customer_order as $order)
         <div class="card">
             <div class="card-body p-5">
-            @foreach($print_customer_order as $i=>$order)
                 <div class="row">
                     <div class="col-sm-6 pb-4">
                         <div class="media align-items-center mb-4">
@@ -75,7 +76,6 @@
                         </table>
                     </div>
                 </div>
-                @endforeach
                 <div class="table-responsive mb-4">
                     <table class="table m-0">
                         <thead>
@@ -161,10 +161,10 @@
                 </div>
             </div>
             <div class="card-footer text-right">
-                @foreach($print_customer_order as $i=>$order)
                 <a href="/customershoppingorders/print-order-now/{{$order->user_id}}" target="_blank" class="btn btn-default"><i class="ion ion-md-print"></i>&nbsp; Print</a>
-                @endforeach
+                
             </div>
         </div>
+        @endforeach
     </div>
 </div>

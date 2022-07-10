@@ -5,7 +5,7 @@
 </style>
 <nav id="menu" class="navbar">
     <div class="nav-inner container">
-        <div class="navbar-header"><span id="category" class="visible-xs">Categories</span>
+        <div class="navbar-header"><span id="category" class="visible-xs">Menu</span>
             <button type="button" class="btn btn-navbar navbar-toggle" ><i class="fa fa-bars"></i></button>
         </div>
         <div class="navbar-collapse">
