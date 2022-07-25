@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('new_price')->nullable();
             $table->text('description');
             $table->foreignId('created_by');
-            $table->enum('status',['active','out of stock','delivered'])->default('active');
+            $table->enum('status', ['active', 'out of stock', 'delivered'])->default('active');
             $table->timestamps();
         });
     }

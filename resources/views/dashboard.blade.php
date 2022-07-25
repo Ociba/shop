@@ -45,7 +45,7 @@
                             <div class="col-xl-12 col-md-12">
                                 <div class="card mb-4">
                                     <div class="card-body">
-                                       
+                                       @livewire('admin.graphs')
                                     </div>
                                 </div>
                             </div>
@@ -72,5 +72,7 @@
     
     <!-- Core scripts -->
    @include('layouts.javascript')
+   <script src="{{ asset('assets/libs/chartjs/chartjs.js')}}"></script>
+    <script src="{{ asset('assets/js/pages/charts_chartjs.js')}}"></script>
 </body>
 </html>

@@ -22,6 +22,7 @@
           <div class="well">
             <h2>Returning Customer</h2>
             <p><strong>I am a returning customer</strong></p>
+            <x-jet-validation-errors class="mb-4" />
             <form  method="POST" action="{{ route('login') }}">
                @csrf
               <div class="form-group">

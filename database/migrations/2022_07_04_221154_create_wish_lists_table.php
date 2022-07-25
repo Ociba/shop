@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('item_id');
             $table->foreignId('user_id');
-            $table->enum('status',['pending','bought'])->default('pending');
+            $table->enum('status', ['pending', 'bought'])->default('pending');
             $table->timestamps();
         });
     }

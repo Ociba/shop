@@ -7,6 +7,7 @@ use Livewire\Component;
 class CartUpdate extends Component
 {
     public $cartItems = [];
+
     public $quantity = 1;
 
     public function mount($item)
@@ -21,11 +22,11 @@ class CartUpdate extends Component
         \Cart::update($this->cartItems['id'], [
             'quantity' => [
                 'relative' => false,
-                'value' => $this->quantity
-            ]
+                'value' => $this->quantity,
+            ],
         ]);
 
-        $this->emit('cartUpdated'); 
+        $this->emit('cartUpdated');
         $this->emit('Cart');
         $this->emit('MiddleMenu');
     }

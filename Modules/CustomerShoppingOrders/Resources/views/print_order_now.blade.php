@@ -97,8 +97,8 @@
                             <tbody>
                                 @php
                                 $sum =\DB::table('customer_orders')->where('customer_orders.status','active')
-                                ->whereDate('customer_orders.created_at' , '=',\Carbon\Carbon::yesterday())
-                                ->whereTime('customer_orders.created_at' , '>',\Carbon\Carbon::now()->subHours(5))
+                                ->whereDate('customer_orders.created_at' , '=',\Carbon\Carbon::today())
+                                ->whereTime('customer_orders.created_at' , '>',\Carbon\Carbon::now()->subHours(1))
                                 ->where('customer_orders.user_id',$order->user_id)->sum('price');
                                 @endphp
                                 <tr>
@@ -153,8 +153,8 @@
                             $get_order_info =\DB::table('customer_orders')->join('users','users.id','customer_orders.user_id')
                             ->join('shops','shops.id','customer_orders.item_id')
                             ->where('customer_orders.status','active')
-                            ->whereDate('customer_orders.created_at' , '=',\Carbon\Carbon::yesterday())
-                            ->whereTime('customer_orders.created_at' , '>',\Carbon\Carbon::now()->subHours(5))
+                            ->whereDate('customer_orders.created_at' , '=',\Carbon\Carbon::today())
+                            ->whereTime('customer_orders.created_at' , '>',\Carbon\Carbon::now()->subHours(1))
                             ->where('customer_orders.user_id',$order->user_id)
                             ->get(['customer_orders.*','shops.item_name']);
                             @endphp

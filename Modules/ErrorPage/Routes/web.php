@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('errorpage')->group(function() {
+Route::prefix('errorpage')->group(function () {
     Route::get('/404', 'ErrorPageController@index');
 });

@@ -11,11 +11,11 @@
 |
 */
 
-Route::prefix('agricultureequipments')->group(function() {
+Route::prefix('agricultureequipments')->group(function () {
     Route::get('/all-agriculture-equipments', 'AgricultureEquipmentsController@index')->name('Agriculture Equipments');
     Route::get('/view-equipment-details/{equipment_id}', 'AgricultureEquipmentsController@getEquipmentInfo')->name('Agriculture Equipments Details');
 });
 
-Route::group(['prefix'=>'agricultureequipments', 'middleware'=>['auth']],function(){
+Route::group(['prefix' => 'agricultureequipments', 'middleware' => ['auth']], function () {
     Route::get('/equipment', 'AgricultureEquipmentsController@getEquipment')->name('Equipments');
 });

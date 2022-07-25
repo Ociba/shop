@@ -11,6 +11,8 @@
 |
 */
 
-Route::group(['prefix'=>'payments', 'middleware'=>['auth']],function(){ 
+Route::group(['prefix' => 'payments', 'middleware' => ['auth']], function () {
     Route::get('/pay-your-subscription', 'PaymentsController@index')->name('Payments');
+    Route::get('/registration-payments', 'PaymentsController@allRegistrationPayments')->name('All Registration Payments');
+    Route::get('/sales-payments', 'PaymentsController@allSalesPayments')->name('All Sales Payments');
 });

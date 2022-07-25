@@ -21,7 +21,7 @@
                         <p class="price product-price"> <span class="price-new">Ugx: {{ number_format($new_discount_amount)}}</span> <span class="price-old">Ugx: {{ number_format($shop->price)}}</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
                     </div>
                     <div class="m-2">
-                        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                        <form wire:submit.prevent="addToCart" action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                                 <input type="hidden" value="{{ $shop->id }}" name="id">
                                 <input type="hidden" value="{{$shop->item_name }}" name="name">

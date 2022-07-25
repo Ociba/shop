@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('cart')->group(function() {
+Route::prefix('cart')->group(function () {
     Route::get('/my-cart', 'CartController@index')->name('My Cart');
 });

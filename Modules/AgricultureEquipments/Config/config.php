@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'name' => 'AgricultureEquipments'
+    'name' => 'AgricultureEquipments',
 ];

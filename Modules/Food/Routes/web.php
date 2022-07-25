@@ -11,10 +11,10 @@
 |
 */
 
-Route::prefix('food')->group(function() {
+Route::prefix('food')->group(function () {
     Route::get('/all-food', 'FoodController@index')->name('Food');
     Route::get('/view-food-details/{food_id}', 'FoodController@getSingleFoodInfo')->name('Food Description');
 });
-Route::group(['prefix'=>'food', 'middleware'=>['auth']],function(){
+Route::group(['prefix' => 'food', 'middleware' => ['auth']], function () {
     Route::get('/food', 'FoodController@getFood')->name('Food');
 });

@@ -58,8 +58,8 @@
                         <tr style="font-weight:bold;">
                             @php
                             $sum =\DB::table('customer_orders')->where('customer_orders.status','active')
-                            ->whereDate('customer_orders.created_at' , '=',\Carbon\Carbon::yesterday())
-                            ->whereTime('customer_orders.created_at' , '>',\Carbon\Carbon::now()->subHours(5))
+                            ->whereDate('customer_orders.created_at' , '=',\Carbon\Carbon::today())
+                            ->whereTime('customer_orders.created_at' , '>',\Carbon\Carbon::now()->subHours(1))
                             ->where('customer_orders.user_id',$this->user_id)->sum('price');
                             @endphp
                           <td colspan="3">Total</td>

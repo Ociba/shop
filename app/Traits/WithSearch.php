@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Traits;
 
 trait WithSearch
@@ -13,7 +14,8 @@ trait WithSearch
     /**
      * this function resets the page after search
      */
-    public function updatingSearch(){
+    public function updatingSearch()
+    {
         $this->resetPage();
     }
 }

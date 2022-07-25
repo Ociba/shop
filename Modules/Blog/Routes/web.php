@@ -11,12 +11,10 @@
 |getBlog
 */
 
-Route::prefix('blog')->group(function() {
+Route::prefix('blog')->group(function () {
     Route::get('/our-blog', 'BlogController@index')->name('Blog');
 });
 
-Route::group(['prefix'=>'blog', 'middleware'=>['auth']],function(){ 
+Route::group(['prefix' => 'blog', 'middleware' => ['auth']], function () {
     Route::get('/blog', 'BlogController@getBlog')->name('Admin Blog');
 });
-
-

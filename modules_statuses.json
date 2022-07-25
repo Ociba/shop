@@ -16,5 +16,10 @@
     "Advertise": true,
     "Payments": true,
     "WishList": true,
-    "CustomerShoppingOrders": true
+    "CustomerShoppingOrders": true,
+    "Requests": true,
+    "Slider": true,
+    "Promotions": true,
+    "Messages": true,
+    "Users": true
 }

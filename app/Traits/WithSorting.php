@@ -1,10 +1,13 @@
 <?php
+
 namespace App\Traits;
 
 trait WithSorting
 {
     public $sortDirection = 'asc';
+
     public $perPage = 10;
+
     public $search = '';
 
     public function sortBy($field)
@@ -26,7 +29,8 @@ trait WithSorting
     /**
      * this function resets the page after search
      */
-    public function updatingSearch(){
+    public function updatingSearch()
+    {
         $this->resetPage();
     }
 }

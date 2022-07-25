@@ -1,4 +1,4 @@
-<link rel="icon" type="image/x-icon" href="{{ asset('front/images/logo.png')}}">
+<link rel="icon" type="image/x-icon" href="{{asset('front/image/logo1.jpg')}}">
 
 <!-- Google fonts -->
 {{--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">--}}

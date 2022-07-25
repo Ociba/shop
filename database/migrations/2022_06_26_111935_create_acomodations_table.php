@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('discount_price')->nullable();
             $table->string('photo')->nullable();
             $table->string('property_status')->nullable();
-            $table->enum('status',['available','taken'])->default('available');
+            $table->enum('status', ['available', 'taken'])->default('available');
             $table->timestamps();
         });
     }

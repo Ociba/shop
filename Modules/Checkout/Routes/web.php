@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('checkout')->group(function() {
+Route::prefix('checkout')->group(function () {
     Route::get('/my-checkout', 'CheckoutController@index')->name('My Checkout');
 });

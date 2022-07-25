@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('payment_status',['pending','failed','successful'])->default('pending');
+            $table->enum('payment_status', ['pending', 'failed', 'successful'])->default('pending');
         });
     }
 

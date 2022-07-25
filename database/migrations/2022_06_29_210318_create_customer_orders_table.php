@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('item_id');
             $table->string('price');
             $table->string('quantity');
-            $table->enum('status',['active','delivered'])->default('active');
+            $table->enum('status', ['active', 'delivered'])->default('active');
             $table->timestamps();
         });
     }

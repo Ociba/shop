@@ -34,6 +34,25 @@
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon fas fa-coins"></i>
+                <div>Payments</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li @if(\Request::route()->getName() == "Registration") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/payments/registration-payments" class="sidenav-link">
+                        <div>Registration Fee</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "Sales") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/payments/sales-payments" class="sidenav-link">
+                        <div>Sales</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-users"></i>
                 <div>Accomodation</div>
                 <div class="pl-1 ml-auto">
@@ -127,16 +146,7 @@
                 </div>
             </a>
         </li>
-        {{--<li class="sidenav-divider mb-1"></li>
-        <li  @if(\Request::route()->getName() == "Payments") class="sidenav-item active" @else class="sidenav-item" @endif>
-            <a href="/payments/pay-your-subscription" class="sidenav-link">
-                <i class="sidenav-icon ion ion-md-wallet"></i>
-                <div>Make Payments</div>
-                <div class="pl-1 ml-auto">
-                    <div class="badge badge-danger">0+</div>
-                </div>
-            </a>
-        </li>--}}
+       
         <li class="sidenav-divider mb-1"></li>
 
         <li class="sidenav-item">
@@ -164,13 +174,13 @@
                 <div>Requests</div>
             </a>
             <ul class="sidenav-menu">
-                <li @if(\Request::route()->getName() == "Category") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/accountsettings/get-categories" class="sidenav-link">
+                <li @if(\Request::route()->getName() == "Riders Request") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/requests/get-riders-request" class="sidenav-link">
                         <div>Rider</div>
                     </a>
                 </li>
-                <li @if(\Request::route()->getName() == "Districts") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/accountsettings/get-districts" class="sidenav-link">
+                <li @if(\Request::route()->getName() == "Partners Request") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/requests/get-patners-request" class="sidenav-link">
                         <div>Partner</div>
                     </a>
                 </li>
@@ -184,33 +194,18 @@
             </a>
             <ul class="sidenav-menu">
                 <li @if(\Request::route()->getName() == "Slider") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/front/get-slider" class="sidenav-link">
+                    <a href="/slider/get-slider" class="sidenav-link">
                         <div>Slider</div>
                     </a>
                 </li>
-                <li @if(\Request::route()->getName() == "Services") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/front/get-services" class="sidenav-link">
-                        <div>Services</div>
+                <li @if(\Request::route()->getName() == "Promotions") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/promotions/get-promotion-items" class="sidenav-link">
+                        <div>Promotions</div>
                     </a>
                 </li>
                 <li @if(\Request::route()->getName() == "Messages") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/front/get-messages" class="sidenav-link">
+                    <a href="/messages/get-messages" class="sidenav-link">
                         <div>Messages</div>
-                    </a>
-                </li>
-                <li @if(\Request::route()->getName() == "Happy Clients") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/front/get-happy-clients" class="sidenav-link">
-                        <div>Happy Clients</div>
-                    </a>
-                </li>
-                <li @if(\Request::route()->getName() == "News") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/front/get-news" class="sidenav-link">
-                        <div>News</div>
-                    </a>
-                </li>
-                <li @if(\Request::route()->getName() == "Comments") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/front/get-comments" class="sidenav-link">
-                        <div>Comments</div>
                     </a>
                 </li>
             </ul>
@@ -223,7 +218,7 @@
             </a>
             <ul class="sidenav-menu">
                 <li @if(\Request::route()->getName() == "Users") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/accountsettings/get-all-users" class="sidenav-link">
+                    <a href="/users/get-all-users" class="sidenav-link">
                         <div>Users</div>
                     </a>
                 </li>

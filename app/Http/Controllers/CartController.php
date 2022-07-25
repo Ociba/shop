@@ -18,12 +18,12 @@ class CartController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
-            'attributes' => array(
+            'attributes' => [
                 'image' => $request->image,
-            )
+            ],
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
-        
+
         return redirect()->back();
     }
 }

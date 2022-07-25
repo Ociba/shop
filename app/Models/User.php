@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -69,4 +68,18 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //Tis function searches by any of this fields
+    public function scopeSearch($query, $val)
+    {
+        return $query
+        ->where('name', 'like', '%'.$val.'%')
+        ->Orwhere('user_types.type', 'like', '%'.$val.'%')
+        ->Orwhere('email', 'like', '%'.$val.'%')
+        ->Orwhere('telephone', 'like', '%'.$val.'%')
+        ->Orwhere('amount', 'like', '%'.$val.'%')
+        ->Orwhere('payment_date', 'like', '%'.$val.'%')
+        ->Orwhere('payment_status', 'like', '%'.$val.'%')
+        ->Orwhere('address', 'like', '%'.$val.'%');
+    }
 }

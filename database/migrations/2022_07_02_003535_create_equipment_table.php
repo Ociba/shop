@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('discount_amount')->nullable();
             $table->string('equipment_discount')->nullable();
             $table->string('photo');
-            $table->enum('status',['active', 'taken', 'out of stock'])->default('active');
+            $table->enum('status', ['active', 'taken', 'out of stock'])->default('active');
             $table->timestamps();
         });
     }

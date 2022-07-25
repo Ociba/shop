@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('likes_and_unlikes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('post_id');
-            $table->string('likes_and_unlikes')->comment="1 is for likes and 0 is for unlikes";
+            $table->string('likes_and_unlikes')->comment = '1 is for likes and 0 is for unlikes';
             $table->timestamps();
         });
     }

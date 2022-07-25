@@ -13,7 +13,7 @@
 
     <!-- Links -->
     <ul class="sidenav-inner py-1">
-        @if(auth()->user()->user_type == '4' && (auth()->user()->payment_status =='successful'))
+        @if(auth()->user()->user_type == '2' && (auth()->user()->payment_status =='successful'))
         <!-- Dashboards -->
         <li  @if(\Request::route()->getName() == "My Accomodation Dashboard") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/accomodation-dashboard" class="sidenav-link">
@@ -29,8 +29,8 @@
             </a>
         </li>
         <li class="sidenav-divider mb-1"></li>
-        <li  @if(\Request::route()->getName() == "My Payments") class="sidenav-item active" @else class="sidenav-item" @endif>
-            <a href="/pay-your-subscription" class="sidenav-link">
+        <li  @if(\Request::route()->getName() == "My Subscriptions") class="sidenav-item active" @else class="sidenav-item" @endif>
+            <a href="/my_accomodation_subscriptions" class="sidenav-link">
                 <i class="sidenav-icon ion ion-md-wallet"></i>
                 <div>My Payments Data</div>
             </a>
@@ -43,7 +43,7 @@
             </a>
             <ul class="sidenav-menu">
                 <li @if(\Request::route()->getName() == "Change Password") class="sidenav-item active" @else class="sidenav-item" @endif>
-                    <a href="/change-password" class="sidenav-link">
+                    <a href="/change-your-password" class="sidenav-link">
                         <div>Change Password</div>
                     </a>
                 </li>

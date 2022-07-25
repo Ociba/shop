@@ -7,6 +7,8 @@
                    @php
                         $get_shop_items=\DB::table('shops')->join('shop_items_categories','shop_items_categories.id','shops.item_category_id')
                         ->join('users','users.id','shops.created_by')
+                        ->where('shops.item_category_id','!=',11)
+                        ->where('shops.item_category_id','!=',12)
                         ->orderBy('shops.created_at','DESC')->limit(3)
                         ->get(['shops.*','shop_items_categories.item']);
                     @endphp
@@ -41,10 +43,12 @@
     </div>
       <div class="col-md-6">
         <div id="main-banner" class="owl-carousel home-slider">
-        <div class="item"> <a href="#"><img src="{{asset('front/image/banners/1.png')}}" style="width:100%;height:350px;" alt="main-banner2" class="img-responsive" /></a> </div>
-            <div class="item"> <a href="#"><img src="{{asset('front/image/banners/Main-Banner1.jpg')}}" style="width:100%;height:350px" alt="main-banner1" class="img-responsive" /></a> </div>
-            <div class="item"> <a href="#"><img src="{{asset('front/image/banners/2.png')}}" style="width:100%;height:350px" alt="main-banner2" class="img-responsive" /></a> </div>
-            <div class="item"> <a href="#"><img src="{{asset('front/image/banners/Main-Banner3.jpg')}}" style="width:100%;height:350px" alt="main-banner3" class="img-responsive" /></a> </div>
+            @php 
+            $get_slider_images =\DB::table('sliders')->get();
+            @endphp
+            @foreach($get_slider_images as $slider)
+        <div class="item"> <a href="#"><img src="{{ asset('storage/slider/'.$slider->image)}}" style="width:100%;height:350px;" alt="main-banner2" class="img-responsive" /></a> </div>
+            @endforeach
         </div>
         </div>
         <div class="col-md-3">

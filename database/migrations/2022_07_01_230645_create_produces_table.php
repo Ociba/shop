@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('percentage_discount')->nullable();
             $table->string('new_amount')->nullable();
-            $table->enum('status',['available', 'sold'])->default('available');
+            $table->enum('status', ['available', 'sold'])->default('available');
             $table->timestamps();
         });
     }

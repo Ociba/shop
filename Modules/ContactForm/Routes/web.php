@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('contactform')->group(function() {
+Route::prefix('contactform')->group(function () {
     Route::get('/contacts', 'ContactFormController@index');
 });

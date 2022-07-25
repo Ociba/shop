@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('productdetails')->group(function() {
+Route::prefix('productdetails')->group(function () {
     Route::get('/view-details/{accomodations_id}', 'ProductDetailsController@index')->name('Property Details');
 });

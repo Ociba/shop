@@ -3,7 +3,7 @@
     <h3 class="productblock-title">Specials</h3>
       <div class="row special-grid product-grid">
       @php
-              $get_food_items=\DB::table('food')->orderBy('food.created_at','DESC')->limit(3)->get();
+              $get_food_items=\DB::table('shops')->where('discount',null)->orderBy('shops.created_at','DESC')->where('item_category_id',11)->limit(3)->get();
           @endphp
           @foreach($get_food_items as $food)
           <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
@@ -12,15 +12,15 @@
                       
                   </div>
                   <div class="caption product-detail">
-                      <h4 class="product-name"> <a href="/food/view-food-details/{{$food->id}}" title="Joome Food">{{$food->food_type}}</a> </h4>
-                      <p class="price product-price"> <span class="price-new">Ugx:{{ number_format($food->amount)}}</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
+                      <h4 class="product-name"> <a href="/food/view-food-details/{{$food->id}}" title="Joome Food">{{$food->item_name}}</a> </h4>
+                      <p class="price product-price"> <span class="price-new">Ugx:{{ number_format($food->price)}}</span> {{--<span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span>--}} </p>
                   </div>
                   <div class="button-group">
                     <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                           @csrf
                           <input type="hidden" value="{{ $food->id }}" name="id">
-                          <input type="hidden" value="{{ $food->food_type }}" name="name">
-                          <input type="hidden" value="{{ $food->amount }}" name="price">
+                          <input type="hidden" value="{{ $food->item_name }}" name="name">
+                          <input type="hidden" value="{{ $food->price }}" name="price">
                           <input type="hidden" value="{{ $food->photo }}"  name="image">
                           <input type="hidden" value="1" name="quantity">
                           <div class="col-xs-12 mb-5">

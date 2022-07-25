@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('advertise')->group(function() {
+Route::prefix('advertise')->group(function () {
     Route::get('/advertise-with-us', 'AdvertiseController@index')->name('Advertise Your Produce OR Accomodation');
 });

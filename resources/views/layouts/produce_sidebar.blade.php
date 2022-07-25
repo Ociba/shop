@@ -13,7 +13,7 @@
 
     <!-- Links -->
     <ul class="sidenav-inner py-1">
-         @if(auth()->user()->user_type == '2' && (auth()->user()->payment_status =='successful'))
+         @if(auth()->user()->user_type == '4' && (auth()->user()->payment_status =='successful'))
         <!-- Dashboards -->
         <li  @if(\Request::route()->getName() == "My Produce Dashboard") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/produce-dashboard" class="sidenav-link">
@@ -29,8 +29,8 @@
             </a>
         </li>
         <li class="sidenav-divider mb-1"></li>
-        <li  @if(\Request::route()->getName() == "My Payments Infomation") class="sidenav-item active" @else class="sidenav-item" @endif>
-            <a href="/pay-your-subscription" class="sidenav-link">
+        <li  @if(\Request::route()->getName() == "My Payments") class="sidenav-item active" @else class="sidenav-item" @endif>
+            <a href="/my_payments" class="sidenav-link">
                 <i class="sidenav-icon ion ion-md-wallet"></i>
                 <div>My Payments Data</div>
             </a>

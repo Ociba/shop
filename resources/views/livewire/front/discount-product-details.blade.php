@@ -12,8 +12,10 @@
         <div class="col-sm-6">
             @foreach($get_shop_item_details as $details)
             @php 
-            $product_amount =DB::table('shops')->where('id',$shop_id)->value('price');
-            $calculate_percentage_mount =$product_amount * 0.01;
+            $product_id=$shop->id;
+            $percetage =$shop->discount * 0.01;
+            $product_amount =DB::table('shops')->where('id',$shop->id)->where('discount','!=',null)->value('price');
+            $calculate_percentage_mount =$product_amount * $percetage;
             $new_discount_amount =$product_amount-$calculate_percentage_mount;
             @endphp
             <h1 class="productpage-title">{{$details->item_name}}</h1> 

@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class NewLikesAndUnlikes extends Model
 {
     use HasFactory;
-    protected $fillable =['news_id','likes_and_unlikes'];
+
+    protected $fillable = ['news_id', 'likes_and_unlikes'];
 }

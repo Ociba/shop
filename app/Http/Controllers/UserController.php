@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Repositories\UserRepository;
 use App\Models\User;
+use App\Repositories\UserRepository;
 
 class UserController extends Controller
 {
-       /**
+    /**
      * The user repository implementation.
      *
      * @var UserRepository
@@ -34,7 +33,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = $this->users->where('id',$id);
+        $user = $this->users->where('id', $id);
 
         return view('user.profile', ['user' => $user]);
     }

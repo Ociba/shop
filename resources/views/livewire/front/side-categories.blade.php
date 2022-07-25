@@ -6,7 +6,7 @@
     <ul class="box-category treeview-list treeview">
         <li><a href="/accomodation/all-accomodation" class="activSub">Accomodation</a>
         </li>
-        <li><a href="//shop/all-shop-items" class="activSub">Shop</a>
+        <li><a href="/shop/all-shop-items" class="activSub">Shop</a>
         </li>
         <li><a href="/agricultureproduce/all-produce" class="activSub">Agriculture Produce</a>
             

@@ -10,7 +10,8 @@ class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @return Renderable  
+     *
+     * @return Renderable
      */
     public function getAdminAccomodation()
     {
@@ -21,6 +22,7 @@ class AdminController extends Controller
     {
         return view('accomodation::admin_accomodation_categories');
     }
+
     /**
      * This function gets logged in clients available accomodoation
      */
@@ -28,8 +30,10 @@ class AdminController extends Controller
     {
         return view('accomodation::clients_available_accomodation');
     }
+
     /**
      * Show the form for creating a new resource.
+     *
      * @return Renderable
      */
     public function create()
@@ -39,7 +43,8 @@ class AdminController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param Request $request
+     *
+     * @param  Request  $request
      * @return Renderable
      */
     public function store(Request $request)
@@ -49,7 +54,8 @@ class AdminController extends Controller
 
     /**
      * Show the specified resource.
-     * @param int $id
+     *
+     * @param  int  $id
      * @return Renderable
      */
     public function show($id)
@@ -59,7 +65,8 @@ class AdminController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     * @param int $id
+     *
+     * @param  int  $id
      * @return Renderable
      */
     public function edit($id)
@@ -69,8 +76,9 @@ class AdminController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
+     *
+     * @param  Request  $request
+     * @param  int  $id
      * @return Renderable
      */
     public function update(Request $request, $id)
@@ -80,7 +88,8 @@ class AdminController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     * @param int $id
+     *
+     * @param  int  $id
      * @return Renderable
      */
     public function destroy($id)

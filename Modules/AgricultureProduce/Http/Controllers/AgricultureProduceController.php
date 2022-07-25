@@ -10,38 +10,49 @@ class AgricultureProduceController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
      * @return Renderable
      */
     public function index()
     {
         return view('agricultureproduce::index');
     }
-  /**
-   * This function gets Agriculture Produce  Category 
-   */
-  public function getProduceCategory(){
-    return view('agricultureproduce::produce_category');
-  }
-  /**
-   * This function gets Agriculture Produce 
-   */
-  public function getProduce(){
-    return view('agricultureproduce::produce');
-  }
-   /**
-   * This function gets Agriculture Produce for the logged in user
-   */
-  public function getMyProduce(){
-    return view('agricultureproduce::my_produce');
-  }
-  /**
-   * Thisfunction gets produce details when u want to view
-   */
-  public function getProduceDetails($produces_id){
-    return view('agricultureproduce::produce_details',compact('produces_id'));
-  }
+
+    /**
+     * This function gets Agriculture Produce  Category
+     */
+    public function getProduceCategory()
+    {
+        return view('agricultureproduce::produce_category');
+    }
+
+    /**
+     * This function gets Agriculture Produce
+     */
+    public function getProduce()
+    {
+        return view('agricultureproduce::produce');
+    }
+
+    /**
+     * This function gets Agriculture Produce for the logged in user
+     */
+    public function getMyProduce()
+    {
+        return view('agricultureproduce::my_produce');
+    }
+
+    /**
+     * Thisfunction gets produce details when u want to view
+     */
+    public function getProduceDetails($produces_id)
+    {
+        return view('agricultureproduce::produce_details', compact('produces_id'));
+    }
+
     /**
      * Show the form for creating a new resource.
+     *
      * @return Renderable
      */
     public function create()
@@ -51,7 +62,8 @@ class AgricultureProduceController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param Request $request
+     *
+     * @param  Request  $request
      * @return Renderable
      */
     public function store(Request $request)
@@ -61,7 +73,8 @@ class AgricultureProduceController extends Controller
 
     /**
      * Show the specified resource.
-     * @param int $id
+     *
+     * @param  int  $id
      * @return Renderable
      */
     public function show($id)
@@ -71,7 +84,8 @@ class AgricultureProduceController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     * @param int $id
+     *
+     * @param  int  $id
      * @return Renderable
      */
     public function edit($id)
@@ -81,8 +95,9 @@ class AgricultureProduceController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
+     *
+     * @param  Request  $request
+     * @param  int  $id
      * @return Renderable
      */
     public function update(Request $request, $id)
@@ -92,7 +107,8 @@ class AgricultureProduceController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     * @param int $id
+     *
+     * @param  int  $id
      * @return Renderable
      */
     public function destroy($id)

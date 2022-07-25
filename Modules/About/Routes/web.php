@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('about')->group(function() {
+Route::prefix('about')->group(function () {
     Route::get('/about-joome', 'AboutController@index')->name('About Us');
 });
