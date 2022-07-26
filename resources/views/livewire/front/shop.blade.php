@@ -44,7 +44,7 @@
         </div>
       </div>
       <br />
-      <div class="grid-list-wrapper">
+      <div class="grid-list-wrapper" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">
         @foreach($get_all_shop_items as $shop)
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">

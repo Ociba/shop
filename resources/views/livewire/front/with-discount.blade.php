@@ -1,7 +1,7 @@
 <div>
     {{-- The whole world belongs to you. --}}
     <div class="box">
-        <div id="bestseller-slidertab" class="row owl-carousel product-slider" style="margin-top:50px;">
+        <div id="bestseller-slidertab" class="row owl-carousel product-slider">
             @foreach($get_shop_items as $shop)
             @php 
             $product_id=$shop->id;
@@ -10,10 +10,10 @@
             $calculate_percentage_mount =$product_amount * $percetage;
             $new_discount_amount =$product_amount-$calculate_percentage_mount;
             @endphp
-            <div class="item text-center">
+            <div class="item text-center" style="margin:8px;">
                 <div class="product-thumb transition">
                 <span style="border-radius:50%; background-color:green; color:#ffffff; padding:10px;">{{$shop->discount}} %</span>
-                    <div class="image product-imageblock" style="margin-left:60px;"> <a href="/shop/discount-product-details/{{$shop->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:150px;" alt="shop" title="shop" class="img-responsive" /> </a>
+                    <div class="image product-imageblock" style="margin-lef:60px;"> <a href="/shop/discount-product-details/{{$shop->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:150px;" alt="shop" title="shop" class="img-responsive" /> </a>
                         
                     </div>
                     <div class="caption product-detail">

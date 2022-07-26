@@ -41,7 +41,7 @@
           </table>
         </div>
       </form>
-      <h2>What would you like to do next?</h2>
+      {{--<h2>What would you like to do next?</h2>
       <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
       <div id="accordion" class="panel-group">
         <div class="panel panel-default">
@@ -469,7 +469,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>--}}
       <br>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-8">

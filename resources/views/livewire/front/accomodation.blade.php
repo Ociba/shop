@@ -44,7 +44,7 @@
         </div>
       </div>
       <br />
-      <div class="grid-list-wrapper">
+      <div class="grid-list-wrapper" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">
         @foreach($available_accomodation as $accomodation)
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
@@ -55,7 +55,6 @@
               <h4 class="product-name"> <a href="/productdetails/view-details/{{$accomodation->id}}" title="{{$accomodation->category}} "> {{$accomodation->category}} </a> </h4>
               
                 <p class="price product-price"><span class="price-old">$272.00</span> ugx.{{ number_format($accomodation->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
-                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
             </div>
           </div>
            <div class="m-2">

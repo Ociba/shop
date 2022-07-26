@@ -44,15 +44,15 @@
         </div>
       </div>
       <br />
-      <div class="grid-list-wrapper">
+      <div class="grid-list-wrapper" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">
         @foreach($get_equipments as $equipment)
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="/agricultureequipments/view-equipment-details/{{$equipment->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$equipment->photo)}}" style="height:150px;" alt="{{$equipment->equipment}}" title="{{$equipment->equipment}}" class="img-responsive" /> </a>
+            <div class="image product-imageblock"> <a href="/agricultureequipments/view-equipment-details/{{$equipment->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$equipment->photo)}}" style="height:150px;" alt="{{$equipment->item_name}}" title="{{$equipment->item_name}}" class="img-responsive" /> </a>
               
             </div>
             <div class="caption product-detail">
-              <h4 class="product-name"> <a href="/agricultureequipments/view-equipment-details/{{$equipment->id}}" title="{{$equipment->equipment}}"> {{$equipment->equipment}} </a> </h4>
+              <h4 class="product-name"> <a href="/agricultureequipments/view-equipment-details/{{$equipment->id}}" title="{{$equipment->equipment}}"> {{$equipment->item_name}} </a> </h4>
               
                 <p class="price product-price"><span class="price-old">Ugx:0</span> ugx.{{ number_format($equipment->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
                 <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
@@ -63,7 +63,7 @@
                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                       <input type="hidden" value="{{ $equipment->id }}" name="id">
-                      <input type="hidden" value="{{ $equipment->equipment }}" name="name">
+                      <input type="hidden" value="{{ $equipment->item_name }}" name="name">
                       <input type="hidden" value="{{ $equipment->price }}" name="price">
                       <input type="hidden" value="{{ $equipment->photo }}"  name="image">
                       <input type="hidden" value="1" name="quantity">
@@ -85,10 +85,7 @@
         </div>
       </div>
       <div class="row">
-                <div class="col-sm-12">
-                    <h3 class="heading-section mb-5 pb-md-4 productblock-title">Get More Products</h3>
-                </div>
-                <div class="col-sm-12">
+                <div class="col-sm-12" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">
                     <div class="featured-carousel owl-carousel">
                         @foreach($all_equipments as $item)
                         <div class="item">
@@ -99,8 +96,7 @@
                                     </a>
                                 </div>
                                 <div class="text pt-3 w-100 text-center mt-5">
-                                    <h3><a href="#">{{$item->equipment}}</a></h3>
-                                    <span style="color:#ff6600;">Ugx: {{ number_format($item->price)}}</span>
+                                    <h3><a href="#">{{$item->item_name}}</a> <span style="color:#ff6600;">Ugx: {{ number_format($item->price)}}</span></h3>
                                 </div>
                             </div>
                         </div>

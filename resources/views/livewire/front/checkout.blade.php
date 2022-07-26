@@ -5,7 +5,7 @@
       <div id="accordion" class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title"><a class="accordion-toggle collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse-checkout-option" aria-expanded="false">Step 1: Checkout Options <i class="fa fa-caret-down"></i></a></h4>
+            <h4 class="panel-title"><a class="accordion-toggle collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse-checkout-option" aria-expanded="false">Step 1: Login Or Create Account Options <i class="fa fa-caret-down"></i></a></h4>
           </div>
           <div id="collapse-checkout-option" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
@@ -18,18 +18,18 @@
                       <input type="radio" checked="checked" value="register" name="account">
                       Register Account</label>
                   </div>
-                  <div class="radio">
+                  {{--<div class="radio">
                     <label>
                       <input type="radio" value="guest" name="account">
                       Guest Checkout</label>
-                  </div>
+                  </div>--}}
                   <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
                   {{--<input type="button" class="btn btn-primary" data-loading-text="Loading..." id="button-account" value="Continue">--}}
                   <a href="{{route('register')}}" class="btn btn-primary">Continue</a>
                 </div>
                 <div class="col-sm-6">
                   <h2>Returning Customer</h2>
-                  <p>I am a returning customer</p>
+                  {{--<p>I am a returning customer</p>--}}
                   <form  method="POST" action="{{ route('login') }}">
                    @csrf
                   <div class="form-group">
@@ -38,7 +38,7 @@
                   </div>
                   <div class="form-group">
                     <label for="input-password" class="control-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password">
+                      <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password" style="margin-bottom:4px;">
                     {{--<a href="http://localhost/opc001/index.php?route=account/forgotten">Forgotten Password</a></div>--}}
                   <button type="submit" class="btn btn-primary" data-loading-text="Loading..." id="button-login" value="Login">Login</a>
                 </div>
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
+        {{--<div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title"><a class="accordion-toggle collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse-payment-address" aria-expanded="false">Step 2: Billing Details <i class="fa fa-caret-down"></i></a></h4>
           </div>
@@ -837,10 +837,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>--}}
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title"><a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse-checkout-confirm" aria-expanded="true">Step 6: Confirm Order <i class="fa fa-caret-down"></i></a></h4>
+            <h4 class="panel-title"><a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse-checkout-confirm" aria-expanded="true">Step 2: Confirm Order <i class="fa fa-caret-down"></i></a></h4>
           </div>
           <div id="collapse-checkout-confirm" class="panel-collapse collapse in" aria-expanded="true" style="">
             <div class="panel-body">
@@ -892,5 +892,6 @@
         </div>
       </div>
     </div>
+    @livewire('front.carousel')
   </div>
 </div>

@@ -2,10 +2,7 @@
     {{-- Stop trying to control. --}}
     <div class="row">
         <div class="col-sm-12">
-            <h3 class="heading-section mb-5 pb-md-4 productblock-title">Get More Products</h3>
-        </div>
-        <div class="col-sm-12">
-            <div class="featured-carousel owl-carousel">
+            <div class="featured-carousel owl-carousel" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">
                 @foreach($get_shop_items as $item)
                 <div class="item">
                     <div class="work">
@@ -15,8 +12,8 @@
                             </a>
                         </div>
                         <div class="text pt-3 w-100 text-center mt-5">
-                            <h3><a href="#">{{$item->item_name}}</a></h3>
-                            <span style="color:#ff6600;">Ugx: {{ number_format($item->price)}}</span>
+                            <h3><a href="#">{{$item->item_name}}</a> <span style="color:#ff6600;"> Ugx: {{ number_format($item->price)}}</span></h3>
+                            
                         </div>
                     </div>
                 </div>

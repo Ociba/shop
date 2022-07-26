@@ -11,7 +11,7 @@
         </div>
         <div class="col-sm-6">
             @foreach($get_single_equipmet_details as $details)
-            <h1 class="productpage-title">{{$details->equipment}}</h1> 
+            <h1 class="productpage-title">{{$details->item_name}}</h1> 
             <ul class="list-unstyled productinfo-details-top">
                 <li>
                     <h2 class="productpage-price">Ugx: {{ number_format($details->price)}}</h2>
@@ -23,7 +23,7 @@
                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                      <input type="hidden" value="{{ $details->id }}" name="id">
-                      <input type="hidden" value="{{ $details->equipment }}" name="name">
+                      <input type="hidden" value="{{ $details->item_name }}" name="name">
                       <input type="hidden" value="{{ $details->price }}" name="price">
                       <input type="hidden" value="{{ $details->photo }}"  name="image">
                     <div class="form-group">

@@ -3,9 +3,9 @@
     <div class="blog-heading">
             <h3>Your Agriculture Eqipments</h3>
     </div>
-        <div id="brand_carouse" class="owl-carousel brand-log">
+        <div id="brand_carouse" class="owl-carousel brand-log" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:97%">
             @foreach($get_equipment as $equipments)
-            <div class="item"> 
+            <div class="item" style="margin:2px;"> 
                 <a href="/agricultureequipments/view-equipment-details/{{$equipments->id}}"><img src="{{ asset('storage/shop_items_photos/'.$equipments->photo)}}" style="height:150px;" alt="Equipments" class="img-responsive" /></a>
                 <p class="text-center">{{$equipments->item_name}} | Ugx: {{ number_format($equipments->price)}}</p>
                 <div class="">

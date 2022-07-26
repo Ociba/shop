@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Front;
 
-use App\Models\Equipment;
+use App\Models\Shop;
 use Livewire\Component;
 
 class AgricultureEquipment extends Component
@@ -20,11 +20,11 @@ class AgricultureEquipment extends Component
     */
     private function getEquipment()
     {
-        return Equipment::where('equipment_discount', null)->orderBy('created_at', 'Desc')->limit(4)->get();
+        return Shop::where('discount', null)->where('item_category_id',12)->orderBy('created_at', 'Desc')->limit(4)->get();
     }
 
     private function getAllEquipmentsWithOutDiscount()
     {
-        return Equipment::where('equipment_discount', null)->orderBy('created_at', 'Desc')->get();
+        return Shop::where('discount', null)->where('item_category_id',12)->orderBy('created_at', 'Desc')->get();
     }
 }

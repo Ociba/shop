@@ -44,7 +44,7 @@
         </div>
       </div>
       <br />
-      <div class="grid-list-wrapper">
+      <div class="grid-list-wrapper" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">
         @foreach($get_all_produces as $produce)
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
@@ -76,10 +76,7 @@
         </div>
       </div>
       <div class="row">
-            <div class="col-sm-12">
-                <h3 class="heading-section mb-5 pb-md-4 productblock-title">Get More Products</h3>
-            </div>
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">
                 <div class="featured-carousel owl-carousel">
                     @foreach($get_available_produce_without_discount as $item)
                     <div class="item">
@@ -90,8 +87,7 @@
                                 </a>
                             </div>
                             <div class="text pt-3 w-100 text-center mt-5">
-                                <h3><a href="#">{{$item->produce_name}}</a></h3>
-                                <span style="color:#ff6600;">Ugx: {{ number_format($item->price)}}</span>
+                                <h3><a href="#">{{$item->produce_name}}</a> <span style="color:#ff6600;">Ugx: {{ number_format($item->price)}}</span></h3>
                             </div>
                         </div>
                     </div>

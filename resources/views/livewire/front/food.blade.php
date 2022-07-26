@@ -44,7 +44,7 @@
         </div>
       </div>
       <br />
-      <div class="grid-list-wrapper">
+      <div class="grid-list-wrapper" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:99%">
         @foreach($get_food_data as $food)
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
@@ -55,7 +55,6 @@
               <h4 class="product-name"> <a href="/food/view-food-details/{{$food->id}}" title="{{$food->food_type}}"> {{$food->food_type}} </a> </h4>
               
                 <p class="price product-price"><span class="price-old">Ugx:0</span> ugx.{{ number_format($food->amount)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
-                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
             </div>
           </div>
           <div class="m-2">
@@ -85,10 +84,7 @@
         </div>
       </div>
       <div class="row">
-                <div class="col-sm-12">
-                    <h3 class="heading-section mb-5 pb-md-4 productblock-title">Get More Products</h3>
-                </div>
-                <div class="col-sm-12">
+                <div class="col-sm-12" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">
                     <div class="featured-carousel owl-carousel">
                         @foreach($all_foods as $foods)
                         <div class="item">
@@ -99,8 +95,8 @@
                                     </a>
                                 </div>
                                 <div class="text pt-3 w-100 text-center mt-5">
-                                    <h3><a href="#">{{$foods->food_type}}</a></h3>
-                                    <span style="color:#ff6600;">Ugx: {{ number_format($foods->amount)}}</span>
+                                    <h3><a href="#">{{$foods->food_type}}</a>  <span style="color:#ff6600;">Ugx: {{ number_format($foods->amount)}}</span></h3>
+                                   
                                 </div>
                             </div>
                         </div>

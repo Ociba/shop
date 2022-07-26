@@ -50,7 +50,7 @@ $(function() {
         '</div>' +
         '<div class="ui-block">' +
         '<div class="style-head">' +
-        '<h5 class="m-0">TECHNEST HOLDING LTD</h5>' +
+        '<h5 class="m-0">JOOME SHOPPING CENTER</h5>' +
         '</div>' +
         '<div class="style-body">' +
         '<div class="scroll-div mst-scroll">' +

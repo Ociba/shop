@@ -41,6 +41,15 @@
                     <div class="container-fluid flex-grow-1 container-p-y">
                         @include('layouts.breadcrumbs')
                         <div class="row">
+                            <div class="col-xl-12 col-md-12">
+                                <div class=" mb-4">
+                                    <div class="card-body">
+                                        @livewire('cards')
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                               <!-- customar project  start -->
                             <div class="col-xl-12 col-md-12">
                                 <div class="card mb-4">
