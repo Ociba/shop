@@ -23,15 +23,14 @@
             <div class="image product-imageblock"> <a href="/shop/view-details/{{$shop->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:150px;" alt="{{$shop->item_name}} " title="{{$shop->item_name}} " class="img-responsive" /> </a>
               
             </div>
-            <div class="caption product-detail">
+            <div class="caption product-detail text-center">
               <h4 class="product-name"> <a href="/shop/view-details/{{$shop->id}}" title="{{$shop->item_name}} "> {{$shop->item_name}} </a> </h4>
               
                 <p class="price product-price"><span class="price-old">Ugx:0</span> ugx.{{ number_format($shop->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
-                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
             </div>
           </div>
           <div class="m-2">
-               <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+               <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data" class="text-center">
                     @csrf
                       <input type="hidden" value="{{ $shop->id }}" name="id">
                       <input type="hidden" value="{{ $shop->item_name }}" name="name">
