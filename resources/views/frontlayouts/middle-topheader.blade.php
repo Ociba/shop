@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="header-inner" style="height:100px;">
+    <div class="header-inner">
         <div class="col-sm-4 col-xs-6 header-left">
         <div class="shipping">
                     <div class="shipping-img"></div>

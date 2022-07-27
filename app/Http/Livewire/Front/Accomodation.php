@@ -61,7 +61,7 @@ class Accomodation extends Component
     */
     private function getAllAvailableAccomodation()
     {
-        return Acomodation::join('categories', 'categories.id', 'acomodations.category_id')
+    return Acomodation::join('categories', 'categories.id', 'acomodations.category_id')
      ->join('users', 'users.id', 'acomodations.user_id')
      ->orderBy('acomodations.created_at', 'Desc')
     ->Paginate($this->perPage, ['acomodations.*', 'users.name', 'users.telephone', 'categories.category']);

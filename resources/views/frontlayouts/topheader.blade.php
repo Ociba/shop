@@ -3,14 +3,14 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="top-left pull-left">
-                    <div class="language">
+                    {{--<div class="language">
                         <form action="#" method="post" enctype="multipart/form-data" id="language">
                             <div class="btn-group">
                                 <a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i> joomeproperty2022@gmail.com </a>
                        
                             </div>
                         </form>
-                    </div>
+                    </div>--}}
                     <div class="currency">
                             <div class="btn-group">
                                 <span class="btn btn-link dropdown-toggle"> <strong><i class="fa fa-phone"></i> <a href="tel:+256775401793" style="color:#ffffff">0775401793</a> | <a href="tel:+256753926367" style="color:#ffffff">0753 926367</a></strong> </span>

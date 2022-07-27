@@ -25,10 +25,10 @@
                   </div>--}}
                   <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
                   {{--<input type="button" class="btn btn-primary" data-loading-text="Loading..." id="button-account" value="Continue">--}}
-                  <a href="{{route('register')}}" class="btn btn-primary">Continue</a>
+                  <a href="{{route('register')}}" class="btn btn-primary">Continue To Register</a>
                 </div>
                 <div class="col-sm-6">
-                  <h2>Returning Customer</h2>
+                  <h2 style="margin-top:20px;">Returning Customer</h2>
                   {{--<p>I am a returning customer</p>--}}
                   <form  method="POST" action="{{ route('login') }}">
                    @csrf
