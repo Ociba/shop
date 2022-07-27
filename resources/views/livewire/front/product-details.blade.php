@@ -82,7 +82,8 @@
             <div id="product">
                 <div class="form-group">
                     <div class="btn-group">
-                        <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block addtocart" title="{{$details->telephone}}"><i class="fa fa-eye"> View Contact</i></button>
+                        <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block addtocart clicker" tabindex="1" title="{{$details->telephone}}"><i class="fa fa-eye"> View Contact</i></button>
+                            <span class="hiddendiv" style="color:#ffffff;">{{$details->telephone}}</span>
                     </div>
                 </div>
             </div>

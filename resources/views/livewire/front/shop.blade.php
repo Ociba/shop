@@ -3,7 +3,7 @@
     {{-- Success is as dangerous as failure. --}}
     <div id="content" class="col-sm-9">
       <h2 class="category-title">{{request()->route()->getName()}}</h2>
-      <div class="row category-banner" style="height:10px">
+      <div class="row category-banner">
         <div class="col-sm-12 category-image"><img src="{{ asset('front/image/banners/3.png')}}" style="width:100%;;" alt="Joome Shop" title="Joome Shop" class="img-thumbnail" /></div>
         @include('frontlayouts.information')
       </div>
@@ -14,34 +14,6 @@
             <button type="button" id="grid-view" class="btn btn-default grid" data-toggle="tooltip" title="Grid"><i class="fa fa-th"></i></button>
           </div>
           <a href="#" id="compare-total">Product Compare (0)</a> </div>
-        <div class="col-md-1 text-right page-wrapper">
-          <label class="control-label" for="input-limit">Show:</label>
-          <div class="limit">
-            <select id="input-limit" class="form-control">
-              <option value="8" selected="selected">8</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-              <option value="75">75</option>
-              <option value="100">100</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-2 text-right sort-wrapper">
-          <label class="control-label" for="input-sort">Sort By:</label>
-          <div class="sort-inner">
-            <select id="input-sort" class="form-control">
-              <option value="ASC" selected="selected">Default</option>
-              <option value="ASC">Name (A - Z)</option>
-              <option value="DESC">Name (Z - A)</option>
-              <option value="ASC">Price (Low &gt; High)</option>
-              <option value="DESC">Price (High &gt; Low)</option>
-              <option value="DESC">Rating (Highest)</option>
-              <option value="ASC">Rating (Lowest)</option>
-              <option value="ASC">Model (A - Z)</option>
-              <option value="DESC">Model (Z - A)</option>
-            </select>
-          </div>
-        </div>
       </div>
       <br />
       <div class="grid-list-wrapper" style="margin:2px 1px 5px 15px; border:10px solid #55ad37; width:98%">

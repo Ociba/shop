@@ -34,8 +34,8 @@ class Accomodation extends Component
     public function render()
     {
         $available_accomodation = $this->getAvailableAccomodation();
-
-        return view('livewire.front.accomodation', compact('available_accomodation'));
+        $all_available_accomodation =$this->getAllAvailableAccomodation();
+        return view('livewire.front.accomodation', compact('available_accomodation','all_available_accomodation'));
     }
 
     /*
@@ -45,7 +45,7 @@ class Accomodation extends Component
     {
         return Acomodation::join('categories', 'categories.id', 'acomodations.category_id')
      ->join('users', 'users.id', 'acomodations.user_id')
-     ->orderBy('acomodations.created_at', 'Desc')
+     ->orderBy('acomodations.created_at', 'Desc')->limit(4)
     ->Paginate($this->perPage, ['acomodations.*', 'users.name', 'users.telephone', 'categories.category']);
     }
 
@@ -55,5 +55,16 @@ class Accomodation extends Component
     public function load()
     {
         $this->perPage += 4;
+    }  
+     /*
+    * this function gets the accomodation Details
+    */
+    private function getAllAvailableAccomodation()
+    {
+        return Acomodation::join('categories', 'categories.id', 'acomodations.category_id')
+     ->join('users', 'users.id', 'acomodations.user_id')
+     ->orderBy('acomodations.created_at', 'Desc')
+    ->Paginate($this->perPage, ['acomodations.*', 'users.name', 'users.telephone', 'categories.category']);
     }
+    
 }

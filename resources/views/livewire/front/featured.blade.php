@@ -3,7 +3,7 @@
     <div class="box">
         <div id="feature-slider" class="row owl-carousel product-slider">
             @foreach($get_featured_online_shop as $shop)
-            <div class="item product-slider-item">
+            <div class="item product-slider-item text-center">
                 <div class="product-thumb transition">
                     <div class="image product-imageblock"> <a href="/shop/view-details/{{$shop->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:150px;" alt="Joome Shop" title="Joome Shop" class="img-responsive" /> </a>
                         

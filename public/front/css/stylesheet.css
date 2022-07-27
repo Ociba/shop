@@ -43,6 +43,22 @@ a {
 	color: #808080;
 	text-decoration: none;
 }
+
+.clicker {
+	outline:none;
+	cursor:pointer;
+	}
+	.hiddendiv{
+	display:none;
+	background-color:#55ad37;
+	color:#ffffff;
+	text-align: center;
+	margin-top:3px;
+	padding:4px;
+	}
+	.clicker:focus + .hiddendiv{
+	display:block;
+	}
 a:hover {
 	text-decoration: none;
 	color: #55ad37;
@@ -911,7 +927,7 @@ h2.price {
 	color: #ff6600;
 }
 #content .product-thumb .product-price {
-	float: left;
+	float: center;
 }
 #content .product-thumb .rating {
 	float: right;
@@ -1434,7 +1450,7 @@ ul.main-navigation > li.menu-last ul ul {
 .addtocart-btn2 {
     background-color: #55ad37;
 	color:#ffffff;
-	padding:4px;
+	padding:5px;
 }
 .column-left .product-grid .button-group .addtocart-btn:hover,  .column-right .product-grid .button-group .addtocart-btn:hover {
 	color: #55ad37;
@@ -1816,6 +1832,7 @@ span.review-count, span.review-edit {
 	color: #000;
 	font-weight: bold;
 }
+
 #product {
 	clear: both;
 }

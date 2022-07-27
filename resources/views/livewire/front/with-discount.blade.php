@@ -12,11 +12,11 @@
             @endphp
             <div class="item text-center" style="margin:8px;">
                 <div class="product-thumb transition">
-                <span style="border-radius:50%; background-color:green; color:#ffffff; padding:10px;">{{$shop->discount}} %</span>
-                    <div class="image product-imageblock" style="margin-lef:60px;"> <a href="/shop/discount-product-details/{{$shop->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:150px;" alt="shop" title="shop" class="img-responsive" /> </a>
+                   <span style="border-radius:50%; background-color:green; color:#ffffff; padding:10px;">{{$shop->discount}} %</span>
+                    <div class="image product-imageblock text-center"> <a href="/shop/discount-product-details/{{$shop->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$shop->photo)}}" style="height:150px;" alt="shop" title="shop" class="img-responsive" /> </a>
                         
                     </div>
-                    <div class="caption product-detail">
+                    <div class="caption product-detail text-center">
                         <h4 class="product-name"><a href="/shop/discount-product-details/{{$shop->id}}" title="shop">{{$shop->item_name}}</a></h4>
                         <p class="price product-price"> <span class="price-new">Ugx: {{ number_format($new_discount_amount)}}</span> <span class="price-old">Ugx: {{ number_format($shop->price)}}</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
                     </div>
