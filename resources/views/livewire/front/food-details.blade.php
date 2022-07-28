@@ -4,27 +4,27 @@
         <div class="col-sm-6">
             @foreach($get_single_food_details as $food)
             <ul class="thumbnails">
-                <li><a class="thumbnail fancybox" target="_blank" href="{{ asset('storage/shop_items_photos/'.$food->photo)}}" title="{{$food->food_type}}"><img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="height:40%; width:40%" title="{{$food->food_type}}" alt="{{$food->food_type}}" /></a></li>
+                <li><a class="thumbnail fancybox" target="_blank" href="{{ asset('storage/shop_items_photos/'.$food->photo)}}" title="{{$food->item_name}}"><img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="height:60%; width:60%" title="{{$food->item_name}}" alt="{{$food->item_name}}" /></a></li>
                
             </ul>
             @endforeach
         </div>
         <div class="col-sm-6">
             @foreach($get_single_food_details as $details)
-            <h1 class="productpage-title">{{$details->food_type}}</h1>
+            <h1 class="productpage-title">{{$details->item_name}}</h1>
             <ul class="list-unstyled productinfo-details-top">
                 <li>
-                    <h2 class="productpage-price">Ugx: {{ number_format($details->amount)}}</h2>
+                    <h2 class="productpage-price">Ugx: {{ number_format($details->price)}}</h2>
                 </li>
                 {{--<li><span class="productinfo-tax">Ex Tax: $100.00</span></li>--}}
             </ul>
-            <p class="product-desc">{{$details->ingredients}} </p>
+            <p class="product-desc">{{$details->description}} </p>
             <div id="product">
                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                      <input type="hidden" value="{{ $details->id }}" name="id">
-                      <input type="hidden" value="{{ $details->food_type }}" name="name">
-                      <input type="hidden" value="{{ $details->amount }}" name="price">
+                      <input type="hidden" value="{{ $details->item_name }}" name="name">
+                      <input type="hidden" value="{{ $details->price }}" name="price">
                       <input type="hidden" value="{{ $details->photo }}"  name="image">
                     <div class="form-group">
                         <label class="control-label qty-label" for="input-quantity">Qty</label>
@@ -52,7 +52,7 @@
                     <div>
                         <p> <strong>Food Specifications </strong></p>
                         @foreach($get_single_food_details as $details)
-                        <p>{{$details->ingredients}}</p>
+                        <p>{{$details->description}}</p>
                         @endforeach
                     </div>
                 </div>
