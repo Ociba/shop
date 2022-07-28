@@ -50,8 +50,8 @@
                             <li><span class="location2"> <i class="fa fa-map-marker"></i> Joome Shopping Center,<br>
                                 Along Moroto Road, Opposite Soroti University Main Gate &nbsp;
                                 Soroti Municipality</span></li>
-                            <li><i class="fa fa-envelope"></i><span class="mail2"><a href="#">joomeproperty2022@gmail.com</a></span></li>
-                            <li><i class="fa fa-mobile"></i><span class="phone2">+ 0775-401-793 or 0753926367</span></li>
+                            <li><i class="fa fa-envelope"></i><span class="mail2"><a href="mailto:joomeproperty2022@gmail.com">joomeproperty2022@gmail.com</a></span></li>
+                            <li><i class="fa fa-mobile"></i><span class="phone2"><a href="tel:0775401793">0775-401-793</a> or<a href="tel:0753926367"> 0753926367</a></span></li>
                         </ul>
                     </div>
                 </div>

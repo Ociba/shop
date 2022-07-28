@@ -13,7 +13,7 @@
                     </div>--}}
                     <div class="currency">
                             <div class="btn-group">
-                                <span class="btn btn-link dropdown-toggle"> <strong><i class="fa fa-phone"></i> <a href="tel:+256775401793" style="color:#ffffff">0775401793</a> | <a href="tel:+256753926367" style="color:#ffffff">0753 926367</a></strong> </span>
+                                <span class="btn btn-link dropdown-toggle"> <strong><i class="fa fa-mobile"></i> <a href="tel:+256775401793" style="color:#ffffff">0775401793</a> | <a href="tel:+256753926367" style="color:#ffffff">0753 926367</a></strong> </span>
                             </div>
                     </div>
                 </div>
