@@ -30,7 +30,7 @@
             @include('frontlayouts.slider')
             @livewire('front.discount')
             <div class="row">
-                <div id="column-left" class="col-sm-3 hidden-xs column-left">
+                <div id="column-left" class="col-sm-3  hidden-xs column-left">
                     <h3 class="productblock-title">Latest  Top Shopping </h3>
                     <div class="row latest-grid product-grid">
                         @php

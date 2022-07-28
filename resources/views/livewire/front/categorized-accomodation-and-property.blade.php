@@ -25,11 +25,11 @@
             <div class="caption product-detail text-center">
               <h4 class="product-name"> <a href="/productdetails/view-details/{{$accomodation->id}}" title="{{$accomodation->category}} "> {{$accomodation->category}} </a> </h4>
               
-                <p class="price product-price"><span class="price-old">$272.00</span> ugx.{{ number_format($accomodation->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
+                <p class="price product-price">{{--<span class="price-old">$272.00</span>--}} ugx.{{ number_format($accomodation->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
             </div>
           </div>
            <div class="m-2">
-                  <div class="col-xs-12 mb-5">
+                  <div class="col-xs-12 mb-5 text-center">
                   <a href="/productdetails/view-details/{{$accomodation->id}}" type="button" class="view">View Details</a>
                   <button type="button" class="addtocart-btn2 clicker" tabindex="1" title="{{$accomodation->telephone}}"><i class="fa fa-eye"></i> View Contact</button>
                   <span class="hiddendiv" style="color:#ffffff;">{{$accomodation->telephone}}</span>

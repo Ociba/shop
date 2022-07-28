@@ -10,7 +10,7 @@
                     </div>
                     <div class="caption product-detail">
                         <h4 class="product-name"><a href="/shop/view-details/{{$shop->id}}" title="Joome Shop">{{$shop->item_name}} </a></h4>
-                        <p class="price product-price"> <span class="price-new"> ugx.{{ number_format($shop->price)}}</span> <span class="price-old">$272.00</span> <span class="price-tax">Ex Tax: $210.00</span> </p>
+                        <p class="price product-price"> <span class="price-new"> ugx.{{ number_format($shop->price)}}</span> {{--<span class="price-old">$272.00</span>--}} <span class="price-tax">Ex Tax: $210.00</span> </p>
                     </div>
                        <div class="m-2">
                             <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">

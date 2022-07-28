@@ -6109,6 +6109,11 @@ button.close {
         display: table-cell!important;
     }
 }
+@media (min-width:393px) and (max-width:851px){
+    .hidden-xs,tr.hidden-xs,th.hidden-xs,td.hidden-xs {
+        display: inline!important;
+    }
+}
 
 @media (max-width:767px) {
     .hidden-xs,tr.hidden-xs,th.hidden-xs,td.hidden-xs {
