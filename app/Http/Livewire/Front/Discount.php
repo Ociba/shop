@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
-use App\Models\Promotion;
+use App\Models\Shop;
 
 class Discount extends Component
 {
@@ -17,6 +17,6 @@ class Discount extends Component
     */
     private function getPromotionItem()
     {
-        return Promotion::orderBy('created_at','DESC')->limit(3)->get();
+        return Shop::where('classification','promotion')->orderBy('created_at','DESC')->get();
     }
 }

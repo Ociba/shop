@@ -65,6 +65,9 @@
                         <th scope="col" wire:click="sortBy('photo')" style="cursor: pointer;">Photo
                             @include('partials._sort-icon',['field'=>'photo'])
                         </th>
+                        <th scope="col" wire:click="sortBy('classification')" style="cursor: pointer;">Classification
+                            @include('partials._sort-icon',['field'=>'classification'])
+                        </th>
                         <th scope="col" wire:click="sortBy('status')" style="cursor: pointer;">Status
                             @include('partials._sort-icon',['field'=>'status'])
                         </th>
@@ -82,8 +85,9 @@
                             <td>{{$items->number}}</td>
                             <td>{{$items->discount}}</td>
                             <td>{{ number_format($items->new_price)}}</td>
-                            <td>{{$items->description}}</td>
+                            <td>{{$items->description}}</td> 
                             <td><img src="{{ asset('storage/shop_items_photos/'.$items->photo)}}" style="width:40px;height:40px;"></td>
+                            <td style="text-transform:capitalize">{{$items->classification}}</td>
                             <td>{{$items->status}}</td>
                             <td>
                                 <a href="/admin/edit/{{$items->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>

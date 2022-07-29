@@ -3,7 +3,7 @@
     <h3 class="productblock-title">Specials</h3>
       <div class="row special-grid product-grid">
       @php
-              $get_food_items=\DB::table('shops')->where('discount',null)->orderBy('shops.created_at','DESC')->where('item_category_id',11)->limit(4)->get();
+              $get_food_items=\DB::table('shops')->where('discount',null)->orderBy('shops.created_at','DESC')->where('item_category_id',11)->where('classification', 'unclassified')->limit(4)->get();
           @endphp
           @foreach($get_food_items as $food)
           <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">

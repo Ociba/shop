@@ -37,7 +37,7 @@
                         $get_shop_items=\DB::table('shops')->join('shop_items_categories','shop_items_categories.id','shops.item_category_id')
                         ->join('users','users.id','shops.created_by')
                         ->orderBy('shops.created_at','DESC')->where('shops.item_category_id','!=',11)
-                        ->where('shops.item_category_id','!=',12)->limit(3)
+                        ->where('shops.item_category_id','!=',12)->where('shops.classification', 'unclassified')->limit(3)
                         ->get(['shops.*','shop_items_categories.item']);
                         @endphp
                         @foreach($get_shop_items as $shop)
@@ -67,7 +67,7 @@
                     <h3 class="productblock-title">Specials</h3>
                     <div class="row special-grid product-grid">
                         @php
-                        $get_food_items=\DB::table('shops')->orderBy('shops.created_at','DESC')->where('shops.item_category_id','=',11)->limit(3)->get();
+                        $get_food_items=\DB::table('shops')->orderBy('shops.created_at','DESC')->where('shops.item_category_id','=',11)->where('shops.classification', 'unclassified')->limit(3)->get();
                         @endphp
                         @foreach($get_food_items as $food)
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">

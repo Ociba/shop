@@ -19,6 +19,6 @@ class BlogLatest extends Component
     */
     private function getFood()
     {
-        return Shop::where('item_category_id', '=', 11)->where('discount', null)->get();
+        return Shop::where('item_category_id', '=', 11)->where('discount', null)->where('classification', 'unclassified')->get();
     }
 }

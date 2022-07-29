@@ -25,6 +25,7 @@ class Shop extends Component
      ->where('shops.discount', null)
      ->where('shops.item_category_id', '!=', 11)
      ->where('shops.item_category_id', '!=', 12)
+     ->where('shops.classification', 'unclassified')
      ->orderBy('shops.created_at', 'DESC')->limit(4)
     ->get(['shops.*', 'shop_items_categories.item']);
     }

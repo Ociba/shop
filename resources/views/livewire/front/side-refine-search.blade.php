@@ -6,7 +6,7 @@
                    @php
                         $get_shop_items=\DB::table('shops')->join('shop_items_categories','shop_items_categories.id','shops.item_category_id')
                         ->join('users','users.id','shops.created_by')
-                        ->orderBy('shops.created_at','DESC')->limit(3)
+                        ->orderBy('shops.created_at','DESC')->where('shops.classification', 'unclassified')->limit(3)
                         ->get(['shops.*','shop_items_categories.item']);
                     @endphp
                     @foreach($get_shop_items as $shop)

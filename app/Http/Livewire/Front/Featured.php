@@ -23,6 +23,7 @@ class Featured extends Component
      ->join('users', 'users.id', 'shops.created_by')
      ->where('shops.item_category_id', '!=', 11)
      ->where('shops.item_category_id', '!=', 12)
+     ->where('shops.classification', 'unclassified')
      ->orderBy('shops.created_at', 'DESC')
     ->get(['shops.*', 'shop_items_categories.item']);
     }
