@@ -9,7 +9,7 @@ class Shop extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['item_category_id', 'item_name', 'photo', 'price', 'number', 'discount', 'new_price', 'description', 'created_by'];
+    protected $fillable = ['item_category_id', 'item_name', 'photo', 'price', 'number', 'discount', 'new_price', 'description', 'classification','created_by'];
 
     //Tis function searches by any of this fields
     public function scopeSearch($query, $val)
@@ -22,6 +22,7 @@ class Shop extends Model
         ->Orwhere('item_name', 'like', '%'.$val.'%')
         ->Orwhere('discount', 'like', '%'.$val.'%')
         ->Orwhere('new_price', 'like', '%'.$val.'%')
+        ->Orwhere('classification', 'like', '%'.$val.'%')
         ->Orwhere('shops.status', 'like', '%'.$val.'%');
     }
 }

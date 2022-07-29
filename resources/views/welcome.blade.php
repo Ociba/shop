@@ -149,6 +149,7 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="item" style="margin-bottom:20px;" > <a href="#"><img src="{{ asset('front/image/banners/LeftBanner.jpg')}}" alt="Left Banner" class="img-responsive" /></a> </div>
                 </div>
                 <div id="content" class="col-sm-9">
                     <div class="customtab">
@@ -177,6 +178,7 @@
                     <div class="row">
                         @livewire('front.slider2')
                     </div>
+                    @livewire('front.classified-items')
                 </div>
             </div>
         </div>

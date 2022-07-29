@@ -1,13 +1,13 @@
 <div>
-    {{-- The whole world belongs to you. --}}
+    {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
     @livewireStyles
-    <form  class="m-2" wire:submit.prevent="createShopItem">
+    <form  class="m-2" wire:submit.prevent="createShopItemClassfication">
         @if(session()->has('success'))
         <div class="card-header bg-success">
             <h4 class="mb-0 text-white">{{session('success')}}</h4>
         </div>
         @endif
-    <h5 class="modal-title mb-3">Add Shop Items</h5>
+    <h5 class="modal-title mb-3">Add Classified Shop Items</h5>
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
@@ -48,8 +48,7 @@
                 <div class="form-group">
                     <label class="floating-label" for="Classification">Classification</label>
                     <select class="form-control" wire:model="classification">
-                         <option value="unclassified">UnClassified </option>
-                        <option value="classified">Classified (Top Selling)</option>
+                        <option value="classified">Classified</option>
                         <option value="promotion">Promotion</option>
                     </select>
                 </div>

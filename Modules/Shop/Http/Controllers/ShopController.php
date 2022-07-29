@@ -33,7 +33,12 @@ class ShopController extends Controller
     {
         return view('shop::shop_item_category');
     }
-
+    /**
+     * This function gets add classfied or promotion items
+     */
+    public function addClassfiedAndPromotionItems(){
+        return view('shop::add_classfied_or_promotion_items'); 
+    }
     /**
      * This function gets shop items categories
      */

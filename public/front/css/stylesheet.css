@@ -1439,6 +1439,9 @@ ul.main-navigation > li.menu-last ul ul {
 	text-transform: capitalize;
 	color: #55ad37;
 }
+.product-cart {
+	color: #55ad37;
+}
 .view {
     background-color: #ff6600;	
 	color:#ffffff;

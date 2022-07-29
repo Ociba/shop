@@ -17,8 +17,8 @@
                         <input type="hidden" value="{{ $equipments->photo }}"  name="image">
                         <input type="hidden" value="1" name="quantity">
                         <div class="mt-5">
-                        <a href="/agricultureequipments/view-equipment-details/{{$equipments->id}}" type="button" class="view">View Details</a>
-                        <button type="submit" class="addtocart-btn2">Add to Cart</button>
+                        <a href="/agricultureequipments/view-equipment-details/{{$equipments->id}}" type="button" style="color:#ff6600">view details</a>
+                        <button type="submit" style="color:#55ad37; border:none;background:#fff;">add to cart</button>
                         </div>
                     </form>
                 </div> 

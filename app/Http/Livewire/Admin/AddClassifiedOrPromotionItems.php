@@ -2,14 +2,14 @@
 
 namespace App\Http\Livewire\Admin;
 
+use Livewire\Component;
 use App\Models\Shop;
 use App\Models\ShopItemsCategory;
 use App\Traits\SaveToFolder;
 use Livewire\WithFileUploads;
-use LivewireUI\Modal\ModalComponent;
 use Session;
 
-class AddShopItems extends ModalComponent
+class AddClassifiedOrPromotionItems extends Component
 {
     use SaveToFolder,WithFileUploads;
 
@@ -30,7 +30,6 @@ class AddShopItems extends ModalComponent
     public $photo;
 
     public $status;
-
     public $classification;
 
     public $created_by;
@@ -48,26 +47,22 @@ class AddShopItems extends ModalComponent
     public function render()
     {
         $items_category = $this->getShopItemCategory();
-
-        return view('livewire.admin.add-shop-items', compact('items_category'));
+        return view('livewire.admin.add-classified-or-promotion-items',compact('items_category'));
     }
-
-    public function createShopItem()
+    public function createShopItemClassfication()
     {
         $this->validate();
-        $this->emit('Shop', 'refreshComponent');
 
         Shop::create([
             'item_name' => $this->item_name,
             'item_category_id' => $this->item_category_id,
             'price' => $this->price,
             'number' => $this->number,
-            'classification' =>$this->classification,
             'description' => $this->description,
+            'classification' =>$this->classification,
             'photo' => $this->saveItemToFolder('shop_items_photos', $this->photo),
             'created_by' => auth()->user()->id,
         ]);
-        $this->closeModal();
         Session::flash('success', 'Operation successfully');
     }
 

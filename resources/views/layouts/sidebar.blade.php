@@ -97,6 +97,11 @@
                         <div>Shop Items Available</div>
                     </a>
                 </li>
+                {{--<li @if(\Request::route()->getName() == "Classfied") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/shop/add-classfied-items" class="sidenav-link">
+                        <div>Add Classfied & Promotion</div>
+                    </a>
+                </li>--}}
                 <li @if(\Request::route()->getName() == "Out of Stock") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/shop/out-of-stock-shop-items" class="sidenav-link">
                         <div>Out of Stock Items</div>

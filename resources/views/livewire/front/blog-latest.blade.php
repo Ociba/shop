@@ -11,7 +11,7 @@
                     <div class="panel-default">
                         <div class="blog-image"> <a href="/food/view-food-details/{{$food->id}}" class="blog-imagelink"><img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="height:300px;" alt="#"></a> <span class="blog-hover"></span> <span class="blog-date">{{$food->item_name}}</span> <span class="blog-readmore-outer"><a href="/food/view-food-details/{{$food->id}}" class="blog-readmore">View More Details</a></span> </div>
                         <div class="blog-content"> <a href="/food/view-food-details/{{$food->id}}" class="blog-name">
-                            <h2 style="color:green;">{{$food->description}}</h2>
+                            <h2 style="color:green; text-transform:lowercase;">{{$food->description}}</h2>
                             </a>
                             <div class="m-2">
                                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
