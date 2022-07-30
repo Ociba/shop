@@ -47,7 +47,7 @@
             $get_slider_images =\DB::table('sliders')->get();
             @endphp
             @foreach($get_slider_images as $slider)
-        <div class="item"> <a href="#"><img src="{{ asset('storage/slider/'.$slider->image)}}" style="width:100%;height:350px;" alt="main-banner2" class="img-responsive" /></a> </div>
+            <div class="item"> <a href="#"><img src="{{ asset('storage/slider/'.$slider->image)}}" style="width:100%;height:350px;" alt="main-banner2" class="img-responsive" /></a> </div>
             @endforeach
         </div>
         </div>

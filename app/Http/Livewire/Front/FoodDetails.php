@@ -27,6 +27,6 @@ class FoodDetails extends Component
     */
     private function getFood()
     {
-        return Shop::where('item_category_id',11)->where('id', $this->food_id)->where('discount',null)->get();
+        return Shop::where('item_category_id',11)->where('classification','unclassified')->where('id', $this->food_id)->where('discount',null)->get();
     }
 }

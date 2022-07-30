@@ -16,7 +16,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/xproduct07.png.pagespeed.ic.fLNCvoVVwK.png')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Electronics</p>
@@ -28,7 +28,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/xproduct08.png.pagespeed.ic.aaUMhbY1m8.png')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Electronics</p>
@@ -40,7 +40,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/xproduct09.png.pagespeed.ic.ZyaawIedge.png')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Electronics</p>
@@ -54,7 +54,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/xproduct01.png.pagespeed.ic.bnOya297qz.png')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Electronics</p>
@@ -66,7 +66,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/xproduct02.png.pagespeed.ic.0F2Q-2YhXR.png')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Electronics</p>
@@ -78,7 +78,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/xproduct03.png.pagespeed.ic.-8OzpBNts2.png')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Electronics</p>
@@ -102,7 +102,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/prod-1.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Saloon</p>
@@ -114,7 +114,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/prod-3.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Clothes</p>
@@ -127,7 +127,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/prod-7.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Bags</p>
@@ -141,7 +141,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/prod-8.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Bags</p>
@@ -153,7 +153,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/prod-10.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Bags</p>
@@ -165,7 +165,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/prod-11.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Electronics</p>
@@ -190,7 +190,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/img-5.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Fruits</p>
@@ -202,7 +202,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/img-15.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Poultry</p>
@@ -214,7 +214,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/big-1.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Fruits</p>
@@ -228,7 +228,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/chiken.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Food</p>
@@ -240,7 +240,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/papper.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Food Spice</p>
@@ -252,7 +252,7 @@
 
 <div class="product-widget">
 <div class="product-img">
-<img src="{{ asset('new/img/sukuma.jpg')}}" alt="">
+<img src="{{ asset('storage/shop_items_photos/prod-1.jpg')}}" alt="">
 </div>
 <div class="product-body">
 <p class="product-category">Vegetables</p>

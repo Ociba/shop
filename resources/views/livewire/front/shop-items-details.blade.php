@@ -9,7 +9,7 @@
             </ul>
             @endforeach
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 text-center">
             @foreach($single_shop_item as $details)
             <h1 class="productpage-title">{{$details->item_name}}</h1> 
             {{--<div class="rating product"> 

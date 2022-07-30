@@ -900,8 +900,9 @@ textarea.input {
 .product {
   position: relative;
   margin: 15px 0px;
-  -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+  /**-webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
   box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+  */
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
@@ -1513,7 +1514,7 @@ textarea.input {
   margin-top: 60px;
 }
 
-#product-tab .tab-nav {
+#product-tab .tab-na {
   position: relative;
   text-align: center;
   padding: 15px 0px;

@@ -25,8 +25,7 @@
         </header>
         @include('frontlayouts.menu')
         <div class="container col-2">
-            <h3 class="productblock-title">Products With Discount</h3>
-            @livewire('front.with-discount') 
+            @livewire('front.with-discount')
             @include('frontlayouts.slider')
             @livewire('front.discount')
             <div class="row">
@@ -63,6 +62,13 @@
                             </div>
                         </div>
                         @endforeach
+                    </div>
+                    <div id="main-banner" class="owl-carousel home-slider" style="border:1px solid #55ad37;">
+                        <div class="item"> <a href="#"><img src="{{ asset('front/image/adverts/adv1.png')}}" style="height:150px; width:100%" alt="main-banner1" class="img-responsive" /></a> </div>
+                        <div class="item"> <a href="#"><img src="{{ asset('front/image/adverts/adv5.jpg')}}" style="height:150px; width:100%" alt="main-banner2" class="img-responsive" /></a> </div>
+                        <div class="item"> <a href="#"><img src="{{ asset('front/image/adverts/adv6.jpg')}}" style="height:150px; width:100%" alt="main-banner3" class="img-responsive" /></a> </div>
+                        <div class="item"> <a href="#"><img src="{{ asset('front/image/adverts/adv7.jpg')}}" style="height:150px; width:100%" alt="main-banner3" class="img-responsive" /></a> </div>
+                        <div class="item"> <a href="#"><img src="{{ asset('front/image/adverts/adv9.jpg')}}" style="height:150px; width:100%" alt="main-banner3" class="img-responsive" /></a> </div>
                     </div>
                     <h3 class="productblock-title">Specials</h3>
                     <div class="row special-grid product-grid">
@@ -101,12 +107,6 @@
                             <ul class="box-category treeview-list treeview">
                                 <li>
                                     <a href="/accomodation/all-accomodation" class="activSub">Accomodation</a>
-                                    {{--
-                                    <ul>
-                                        <li><a href="#">PC</a></li>
-                                        <li><a href="#">MAC</a></li>
-                                    </ul>
-                                    --}}
                                 </li>
                                 <li><a href="/shop/all-shop-items" class="activSub">Shop</a>
                                 </li>
@@ -136,7 +136,7 @@
                                 @foreach($get_produce as $produce)
                                 <li class="item blog-slider-item">
                                     <div class="panel-default">
-                                        <div class="blog-image"> <a class="blog-imagelink" href="/agricultureproduce/view-produce-details/{{$produce->id}}"><img src="{{asset('storage/produce_photos/'.$produce->image)}}" style="width:65px;height:40px" alt="#"></a> </div>
+                                        <div class="blog-image"> <a class="blog-imagelink" href="/agricultureproduce/view-produce-details/{{$produce->id}}"><img src="{{asset('storage/produce_photos/'.$produce->image)}}" alt="#"></a> </div>
                                         <div class="blog-content">
                                             <a class="blog-name" href="/agricultureproduce/view-produce-details/{{$produce->id}}">
                                                 <h2>{{$produce->produce_name}}</h2>
@@ -150,28 +150,25 @@
                         </div>
                     </div>
                     <div class="item" style="margin-bottom:20px;" > <a href="#"><img src="{{ asset('front/image/banners/LeftBanner.jpg')}}" alt="Left Banner" class="img-responsive" /></a> </div>
+                    
                 </div>
                 <div id="content" class="col-sm-9">
                     <div class="customtab">
                         <div id="tabs" class="customtab-wrapper">
                             <ul class='customtab-inner'>
                                 <li class='tab'><a href="#tab-latest">Accomodation</a></li>
-                                <li class='tab'><a href="#tab-special">Agriculture Produce</a></li>
-                                {{--<li class='tab'><a href="#tab-bestseller">Agriculture Equipments</a></li>--}}
                             </ul>
                         </div>
                             <div id="tab-latest" class="tab-content">
                                 @livewire('front.latest')
                             </div>
-                            <!-- tab-latest-->
-                            <div id="tab-special" class="tab-content">
+                     </div>
+                     <!-- tab-latest-->
+                     <h3 class="productblock-title">Your Produce</h3>
+                     <div id="tab-special" class="tab-content">
                                 @livewire('front.special')
                             </div>
                             <!-- tab-special-->
-                            {{--<div id="tab-bestseller" class="tab-content">
-                                @livewire('front.best-seller')
-                            </div>--}}
-                     </div>
                         <h3 class="productblock-title">Your Shop</h3>
                         @livewire('front.featured')
                         @livewire('front.blog-latest')

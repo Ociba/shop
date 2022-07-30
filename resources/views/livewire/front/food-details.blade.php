@@ -9,7 +9,7 @@
             </ul>
             @endforeach
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 text-center">
             @foreach($get_single_food_details as $details)
             <h1 class="productpage-title">{{$details->item_name}}</h1>
             <ul class="list-unstyled productinfo-details-top">

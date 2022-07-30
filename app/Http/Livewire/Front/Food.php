@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Front;
 
-use App\Models\Food as Foods;
+use App\Models\Shop;
 use Livewire\Component;
 
 class Food extends Component
@@ -22,13 +22,14 @@ class Food extends Component
     */
     private function getFood()
     {
-        return Foods::where('discount_percentage', null)->limit(4)->get();
+        return Shop::where('item_category_id',11)->where('classification','unclassified')->where('discount',null)->limit(4)
+        ->get();
     }
 
     /*
     * This function gets all the  Foods without discount    */
     private function getAllFoods()
     {
-        return Foods::where('discount_percentage', null)->get();
+        return Shop::where('item_category_id',11)->where('classification','unclassified')->where('discount',null)->get();
     }
 }

@@ -20,13 +20,13 @@
         @foreach($get_food_data as $food)
         <div class="product-layout product-list col-xs-12 text-center">
           <div class="product-thumb">
-            <div class="image product-imageblock"> <a href="/food/view-food-details/{{$food->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="height:150px;" alt="shop" title="{{$food->food_type}}" class="img-responsive" /> </a>
+            <div class="image product-imageblock"> <a href="/food/view-food-details/{{$food->id}}"> <img src="{{ asset('storage/shop_items_photos/'.$food->photo)}}" style="height:150px;" alt="shop" title="{{$food->item_name}}" class="img-responsive" /> </a>
               
             </div>
             <div class="caption product-detail text-center">
-              <h4 class="product-name"> <a href="/food/view-food-details/{{$food->id}}" title="{{$food->food_type}}"> {{$food->food_type}} </a> </h4>
+              <h4 class="product-name"> <a href="/food/view-food-details/{{$food->id}}" title="{{$food->item_name}}"> {{$food->item_name}} </a> </h4>
               
-                <p class="price product-price"><span class="price-old">Ugx:0</span> ugx.{{ number_format($food->amount)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
+                <p class="price product-price"><span class="price-old">Ugx:0</span> ugx.{{ number_format($food->price)}} <span class="price-tax">Ex Tax: $100.00</span> </p>
             </div>
           </div>
           <div class="m-2">
@@ -34,8 +34,8 @@
                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data" class="text-center">
                     @csrf
                       <input type="hidden" value="{{ $food->id }}" name="id">
-                      <input type="hidden" value="{{ $food->food_type }}" name="name">
-                      <input type="hidden" value="{{ $food->amount }}" name="price">
+                      <input type="hidden" value="{{ $food->item_name }}" name="name">
+                      <input type="hidden" value="{{ $food->price }}" name="price">
                       <input type="hidden" value="{{ $food->photo }}"  name="image">
                       <input type="hidden" value="1" name="quantity">
                       <div class="col-xs-12 mb-5">
@@ -67,7 +67,7 @@
                                     </a>
                                 </div>
                                 <div class="text pt-3 w-100 text-center mt-5">
-                                    <h3><a href="#">{{$foods->food_type}}</a>  <span style="color:#ff6600;">Ugx: {{ number_format($foods->amount)}}</span></h3>
+                                    <h3><a href="#">{{$foods->item_name}}</a>  <span style="color:#ff6600;">Ugx: {{ number_format($foods->price)}}</span></h3>
                                    
                                 </div>
                             </div>
