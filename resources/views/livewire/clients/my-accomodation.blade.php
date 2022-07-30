@@ -6,7 +6,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
-                    <button onclick="Livewire.emit('openModal', 'admin.add-accomodation')" class="btn btn-info  m-l-15 text-white mb-3"><i class="fa fa-plus-circle"></i> Add Accomodation</button>
+                    <button onclick="Livewire.emit('openModal', 'admin.add-accomodation')" class="btn btn-info  m-l-15 text-white mb-3"><i class="fa fa-plus-circle"></i> Add Accomodation</button>--}}
                 </div>
             </div>
             <div class="row">

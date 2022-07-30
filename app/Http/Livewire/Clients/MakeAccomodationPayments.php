@@ -45,4 +45,17 @@ class MakeAccomodationPayments extends ModalComponent
 
         return redirect()->to('/my_accomodation_subscriptions');
     }
+    /**
+     * This function pays with mtn mobile money
+     */
+    protected function payWithMobileMoney(){
+        $now = Carbon::now();
+        $days_from_now = $now->addYear(1);
+        User::where('id',auth()->user()->id)->update(array(
+          'amount'        =>request()->amount,
+          'payment_date' =>$days_from_now
+        ));
+        return redirect('/property/my-property')->with('msg','Operation successful,Wait pop up to Confirm Payment');
+    }
+    
 }

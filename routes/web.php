@@ -4,7 +4,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\OrderController;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; 
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/pay-subscription', [DashboardController::class, 'getAccomodationPaymentForm'])->name('Accomodation Payments Form');
     Route::get('/my_payments', [DashboardController::class, 'getPaymentsInfo'])->name('My Payments');
     Route::get('/my_accomodation_subscriptions', [DashboardController::class, 'getMyAccomodationPaymentsInfo'])->name('My Subscriptions');
-    Route::get('/change-password', [DashboardController::class, 'getChangePassword'])->name('Change Password');
+    Route::get('/change-password', [DashboardController::class, 'getChangePassword'])->name('Change Password'); 
     Route::get('/change-your-password', [DashboardController::class, 'changePassword'])->name('Change My Password');
+    Route::get('/make-payments',[PaymentController::Class,'makeDeposit']);
 });

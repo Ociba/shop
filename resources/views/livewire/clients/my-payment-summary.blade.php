@@ -6,7 +6,8 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-1">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
-                    <button onclick="Livewire.emit('openModal', 'clients.make-payments')" class="btn btn-info  m-l-15 text-white mb-3"><i class="fa fa-plus-circle"></i> Make Payments</button>
+                    {{--<button onclick="Livewire.emit('openModal', 'clients.make-payments')" class="btn btn-info  m-l-15 text-white mb-3"><i class="fa fa-plus-circle"></i> Make Payments</button>--}}
+                    <button class="btn btn-info btn-sm mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Make Payment</button>
                 </div>
             </div>
             <div class="row">
@@ -73,6 +74,40 @@
                     <div class="col-md-6 col-sm-12 col-xs-12 ml-0">
                       {{$get_my_payments_info->links()}}
                     </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-report" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Make Payments</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/make-payments" method="get">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="hidden" value="{{auth()->user()->id}}">
+                            <div class="form-group">
+                                <label class="floating-label" for="Amount">Amount</label>
+                                <input type="number" name="amount" class="form-control" id="Amount" placeholder="Enter Amount" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Email">Mobile Money Phone Number</label>
+                                <input type="number" name="phone_number" class="form-control" placeholder="e.g 2567********" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary">Pay Now</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
