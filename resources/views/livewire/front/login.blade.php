@@ -36,7 +36,7 @@
                 <a href="{{ route('password.request') }}">Forgot Password</a>
                 @endif
             </div>
-            <div type="submit" value="Login" class="btn btn-primary" style="background:#55ad37; color:#fff;">Login
+            <button type="submit" value="Login" class="btn btn-primary" style="background:#55ad37; color:#fff;">Login
                   </button>
                 </div>
             </div>

@@ -107,10 +107,7 @@
                     <div class="pull-right">I have read and agree to the <a class="agree" href="#"><b>Privacy Policy</b></a>
                         <input type="checkbox" value="1" name="agree">
                         &nbsp;
-                        <button class="g-recaptcha" 
-                        data-sitekey="6LdqI8AgAAAAAPnFFULg_ehjau8t_izNz-M9MNIy" 
-                        data-callback='onSubmit' 
-                        data-action='submit' type="submit" class="btn btn-primary" value="Continue" style="background:#55ad37; color:#fff;">Continue </button>
+                        <button type="submit" class="btn btn-primary" value="Continue" style="background:#55ad37; color:#fff;">Continue </button>
                     </div>
                 </div>
             </form>
