@@ -51,6 +51,7 @@
                          <option value="unclassified">UnClassified </option>
                         <option value="classified">Classified (Top Selling)</option>
                         <option value="promotion">Promotion</option>
+                        <option value="special days">Special Days</option>
                     </select>
                 </div>
             </div>

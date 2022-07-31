@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('shops', function (Blueprint $table) {
-            $table->enum('classification',['unclassified','classified','promotion'])->default('unclassified')->after('description');
+            $table->enum('classification',['unclassified','classified','promotion','special days'])->default('unclassified')->after('description');
         });
     }
 

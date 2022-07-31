@@ -17,7 +17,7 @@
                             <img src="{{ asset('storage/shop_items_photos/'.$classified->photo)}}" alt="">
                         </div>
                         <div class="product-body">
-                            <p class="product-category">{{$classified->item}}</p>
+                            <p class="product-category" style="text-transform:capitalize;">{{$classified->description}}</p>
                             <h3 class="product-name"><a href="#">{{$classified->item_name}}</a></h3>
                             <h4 class="product-price">Ugx: {{ number_format($classified->price)}}  <span><a href="shop/view-details/{{$classified->id}}"  class="product-cart">Buy Now</a></span></h4>
                         </div>
@@ -31,7 +31,7 @@
                             <img src="{{ asset('storage/shop_items_photos/'.$classified_computers->photo)}}" alt="">
                         </div>
                         <div class="product-body">
-                            <p class="product-category">{{$classified_computers->item}}</p>
+                            <p class="product-category" style="text-transform:capitalize;">{{$classified_computers->description}}</p>
                             <h3 class="product-name"><a href="#">{{$classified_computers->item_name}}</a></h3>
                             <h4 class="product-price">Ugx: {{ number_format($classified_computers->price)}}  <span><a href="shop/view-details/{{$classified_computers->id}}"  class="product-cart">Buy Now</a></span></h4>
                         </div>
@@ -55,7 +55,7 @@
                             <img src="{{ asset('storage/shop_items_photos/'.$clothesbagsaloonitems->photo)}}" alt="">
                         </div>
                         <div class="product-body">
-                            <p class="product-category">{{$clothesbagsaloonitems->item}}</p>
+                            <p class="product-category" style="text-transform:capitalize;">{{$clothesbagsaloonitems->description}}</p>
                             <h3 class="product-name"><a href="#">{{$clothesbagsaloonitems->item_name}}</a></h3>
                             <h4 class="product-price">Ugx: {{ number_format($clothesbagsaloonitems->price)}}  <span><a href="shop/view-details/{{$clothesbagsaloonitems->id}}"  class="product-cart">Buy Now</a></span></h4>
                         </div>
@@ -69,7 +69,7 @@
                             <img src="{{ asset('storage/shop_items_photos/'.$bags->photo)}}" alt="">
                         </div>
                         <div class="product-body">
-                            <p class="product-category">{{$bags->item}}</p>
+                            <p class="product-category" style="text-transform:capitalize;">{{$bags->description}}</p>
                             <h3 class="product-name"><a href="#">{{$bags->item_name}}</a></h3>
                             <h4 class="product-price">Ugx: {{ number_format($bags->price)}}  <span><a href="shop/view-details/{{$bags->id}}"  class="product-cart">Buy Now</a></span></h4>
                         </div>
@@ -94,7 +94,7 @@
                              <img src="{{ asset('storage/shop_items_photos/'.$fooditems->photo)}}" alt="">
                         </div>
                         <div class="product-body">
-                            <p class="product-category">{{$fooditems->item}}</p>
+                            <p class="product-category" style="text-transform:capitalize;">{{$fooditems->description}}</p>
                             <h3 class="product-name"><a href="#">{{$fooditems->item_name}}</a></h3>
                                <h4 class="product-price">Ugx: {{ number_format($fooditems->price)}}  <span><a href="shop/view-details/{{$fooditems->id}}"  class="product-cart">Buy Now</a></span></h4>
                         </div>
@@ -108,7 +108,7 @@
                            <img src="{{ asset('storage/shop_items_photos/'.$morefooditems->photo)}}" alt="">
                         </div>
                         <div class="product-body">
-                            <p class="product-category">{{$morefooditems->item}}</p>
+                            <p class="product-category" style="text-transform:capitalize;">{{$morefooditems->description}}</p>
                             <h3 class="product-name"><a href="#">{{$morefooditems->item_name}}</a></h3>
                                <h4 class="product-price">Ugx: {{ number_format($morefooditems->price)}}  <span><a href="shop/view-details/{{$morefooditems->id}}"  class="product-cart">Buy Now</a></span></h4>
                         </div>
