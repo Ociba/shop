@@ -1,7 +1,6 @@
 <div>
     {{-- Stop trying to control. --}}
     <div class="col-sm-9" id="content">
-        <script src="https://www.google.com/recaptcha/api.js"></script>
             <h1>Register Account</h1>
             <p>If you already have an account with us, please login at the <a href="{{route('login')}}"><span class="text-success">login page</a></a>.</p>
                <div class="bg-white p-4 sm:px-6 sm:py-4 border-b border-gray-150">
@@ -115,11 +114,6 @@
                     </div>
                 </div>
             </form>
-            <script>
-                function onSubmit(token) {
-                    document.getElementById("demo-form").submit();
-                    }
-            </script>
         </div>
     </div>
 </div>

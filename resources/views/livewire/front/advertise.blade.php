@@ -1,7 +1,6 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
     <div class="col-sm-9" id="content">
-    <script src="https://www.google.com/recaptcha/api.js"></script>
         <h1>Register Account</h1>
         <p>If you already have an account with us, please login at the <a href="{{route('login')}}"><span class="text-success">login page</a></a>.</p>
         <p style="color:red;"><b>Note: All the information required below will be confidential, We shall only display  Contact Number</b></p>
@@ -106,17 +105,9 @@
                         </div>
                     </div>
                 </fieldset>
-                <button  class="g-recaptcha text-center" 
-                    data-sitekey="6LcxviIhAAAAALKFtZk9-AWvPOVc5wCSIMV-LnHa" 
-                    data-callback='onSubmit' 
-                    data-action='submit'  type="submit" class="btn btn-primary" style="background-color:#55ad37; color:#ffffff;" value="Continue">Continue 
+                <button   type="submit" class="btn btn-primary" style="background-color:#55ad37; color:#ffffff;" value="Continue">Continue 
                 </button>
             </form>
-            <script>
-                function onSubmit(token) {
-                    document.getElementById("demo-form").submit();
-                    }
-            </script>
         </div>
     </div>
 </div>

@@ -26,18 +26,9 @@
         </div>
         <div class="buttons">
             <div class="pull-center">
-                <button class="g-recaptcha" 
-                data-sitekey="6LcxviIhAAAAALKFtZk9-AWvPOVc5wCSIMV-LnHa" 
-                data-callback='onSubmit' 
-                data-action='submit' type="submit" value="Send Your Details" class="btn btn-primary" style="background:#55ad37; color:#fff;"> Send Your Details
+                <button type="submit" value="Send Your Details" class="btn btn-primary" style="background:#55ad37; color:#fff;"> Send Your Details
                 </button>
             </div>
         </div>
     </form>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-        function onSubmit(token) {
-                document.getElementById("demo-form").submit();
-            }
-    </script>
 </div>

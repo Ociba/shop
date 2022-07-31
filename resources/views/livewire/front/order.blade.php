@@ -63,7 +63,7 @@
                     
                   <div class="pull-right">
                     <button type="submit" data-loading-text="Loading..." class="btn btn-primary" id="button-confirm" value="Submit Order">Submit Your Order</button>
-                    {{--<div wire:loading>Submitting Your Order.....</div>--}}
+                   
                   </div>
                 </form>
               </div>

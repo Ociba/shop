@@ -36,12 +36,7 @@
                 <a href="{{ route('password.request') }}">Forgot Password</a>
                 @endif
             </div>
-            <div class="buttons">
-                <div class="pull-center">
-                    <button class="g-recaptcha" 
-                    data-sitekey="6LcxviIhAAAAALKFtZk9-AWvPOVc5wCSIMV-LnHa" 
-                    data-callback='onSubmit' 
-                    data-action='submit' type="submit" value="Login" class="btn btn-primary" style="background:#55ad37; color:#fff;">Login
+            <div type="submit" value="Login" class="btn btn-primary" style="background:#55ad37; color:#fff;">Login
                   </button>
                 </div>
             </div>
@@ -51,10 +46,4 @@
       </div>
     </div>
   </div>
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script>
-      function onSubmit(token) {
-            document.getElementById("demo-form").submit();
-          }
-  </script>
 </div>
