@@ -2,7 +2,7 @@
     <div class="row" style="margin-bottom:25px;">
         <div class="col-md-12">
             <div class="section-title">
-                <h3 class="title">Independence Day Celebration Special</h3>
+                <h3 class="title">Independence Day Celebration Offers</h3>
             </div>
         </div>
         <div class="col-md-12">
